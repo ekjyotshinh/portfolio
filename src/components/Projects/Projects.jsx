@@ -6,30 +6,24 @@ const projectList = [
     title: 'ChemTrack Mobile App',
     description:
       'An inventory tracking app with QR scanning, role-based access, and push/email notifications. Built using React Native, Go, and Firestore.',
-    tech: ['React Native', 'Go', 'Firestore', 'GCS', 'CI/CD'],
-    link: 'https://github.com/ekjyotshinh/chemtrack'
+    tech: ['React Native', 'Go', 'Firestore', 'GCS', 'CI/CD', 'TypeScript','Testing'],
+    link: 'https://github.com/ekjyotshinh/ChemTrack'
   },
   {
     title: 'Redis-like Key-Value Store',
     description:
       'Built a multithreaded key-value store in Python supporting RESP protocol, key expiration, and persistent disk storage.',
     tech: ['Python', 'Sockets', 'Multithreading'],
-    link: 'https://github.com/ekjyotshinh/redis-clone'
+    link: 'https://github.com/ekjyotshinh/Lightweight-Redis-clone'
   },
   {
     title: 'Parallel Branch & Bound Solver',
     description:
       'Optimized load balancing for SOP in C++ using OpenMP, reducing runtime by 15% for large datasets.',
-    tech: ['C++', 'OpenMP', 'Parallel Algorithms'],
-    link: 'https://github.com/ekjyotshinh/parallel-sop'
+    tech: ['C++', 'Parallel Algorithms', 'Multithreading'],
+    link: 'https://github.com/jacobnormington/SOP_Solver'
   },
-  {
-    title: 'Secure Checkout Platform',
-    description:
-      'Engineered payment flow using Braintree, supporting $15K/day in transactions. Includes microservice-based queuing for email delivery.',
-    tech: ['PHP', 'SQL Server', 'Braintree', 'Microservices'],
-    link: 'https://github.com/ekjyotshinh/secure-checkout'
-  }
+
 ]
 
 function Projects() {
@@ -38,7 +32,7 @@ function Projects() {
       <h2 className="projects-heading">Projects</h2>
       <div className="projects-grid">
         {projectList.map((project, index) => (
-          <div key={index} className="project-card">
+          <div key={index} className="project-card" tabIndex={0}>
             <h3>{project.title}</h3>
             <p className="project-description">{project.description}</p>
             <ul className="tech-list">
