@@ -7,9 +7,10 @@ const experiences = [
     company: "Office of Water Programs",
     date: "Feb 2024 – Present",
     details: [
-      "Built secure checkout system integrating PayPal Braintree API.",
-      "Optimized SQL & PHP APIs reducing response time by 40%.",
-      "Created admin tools for data editing and filtering."
+      "Built a secure checkout system integrating PayPal Braintree API, handling $15K daily transactions.",
+      "Developed an email microservice with queuing, improving delivery across four client applications.",
+      "Optimized SQL procedures and PHP APIs, reducing response times by 40%.",
+      "Created admin tools for data editing, filtering, and workflow improvements."
     ]
   },
   {
@@ -17,9 +18,9 @@ const experiences = [
     company: "CSU Sacramento",
     date: "Mar 2024 – Present",
     details: [
-      "Optimized Parallel Branch & Bound for Sequential Ordering Problem.",
-      "Achieved 15% speedup with custom load-balancing strategy.",
-      "Developed a progress estimation model."
+      "Optimized parallel Branch & Bound algorithm for the Sequential Ordering Problem, achieving 15% speedup through custom load balancing.",
+      "Developed a progress estimation metric for task tracking and performance analysis.",
+      "Researching execution time reduction using LKH-based pruning and early termination techniques."
     ]
   },
   {
