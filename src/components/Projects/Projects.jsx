@@ -32,7 +32,16 @@ const projectList = [
     description:
       'A chrome extension extension that lets you filter out unwanted videos on youtube based on Keywords, Channel names, Subscription status, Mixes or Shorts content',
     tech: ['JavaScript', 'HTML', 'CSS', 'Manifest V3'],
-    live: 'https://chromewebstore.google.com/detail/youtube-filter/illdholaaiimmiikblhejpkoplibhhjo'
+    live: 'https://chromewebstore.google.com/detail/youtube-filter/illdholaaiimmiikblhejpkoplibhhjo',
+    link: 'https://github.com/ekjyotshinh/youtube-filter-extension'
+  },
+
+  {
+    title: 'Programming Mentor RAG Chatbot',
+    description:
+      'A Retrieval-Augmented Generation (RAG) chatbot designed to help users with programming questions.',
+    tech: ['LangChain', 'OpenAI API', 'Vector DB'],
+    link: 'https://github.com/ekjyotshinh/Programming-Mentor-RAG-Chatbot/tree/main/rag-chatbot'
   },
 
   {
