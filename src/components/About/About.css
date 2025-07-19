@@ -1,6 +1,6 @@
 .about {
     padding: 4rem 2rem;
-    background-color: #ffffff;
+    color: var(--text-color);
 }
 
 .about-container {
@@ -10,24 +10,29 @@
 }
 
 .about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2.75rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
 .about-text {
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 1.15rem;
+    line-height: 1.8;
     opacity: 0.85;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .skills-section {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .skills-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
 }
 
 .skills-list {
@@ -41,23 +46,42 @@
 
 .skills-list li {
     background-color: #f1f1f1;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-weight: 500;
-}
-
-.resume-btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    background-color: var(--accent-color);
-    color: white;
-    border-radius: 5px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 9999px;
     font-weight: 600;
-    transition: background 0.3s ease;
-    text-decoration: none;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    transition: background-color 0.3s ease;
+    cursor: default;
 }
 
-.resume-btn:hover {
-    background-color: #005f99;
+.skills-list li:hover {
+    background-color: #e0d7ff;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .skills-section h3 {
+        font-size: 1.4rem;
+    }
+
+    .skills-list li {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .resume-btn {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
 }
