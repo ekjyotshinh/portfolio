@@ -63,6 +63,7 @@
 }
 
 .project-link {
+  display: block;
   font-weight: 700;
   color: #0066cc;
   text-decoration: none;
