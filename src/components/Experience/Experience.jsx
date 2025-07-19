@@ -46,7 +46,7 @@ const Experience = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.15 }
     );
 
     timelineRef.current.forEach(el => {
