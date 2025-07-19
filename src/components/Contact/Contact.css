@@ -1,6 +1,6 @@
 .contact {
     padding: 80px 20px;
-    background-color: #f9f9f9;
+    background: linear-gradient(to right, #e0e7ff, #f3e8ff);
     color: #333;
     text-align: left;
 }

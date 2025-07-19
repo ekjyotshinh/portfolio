@@ -1,5 +1,4 @@
 .hero-bg {
-    background: linear-gradient(to bottom, #ffffff, #f2f5f8);
     min-height: calc(100vh - var(--nav-height));
     display: flex;
     align-items: center;
