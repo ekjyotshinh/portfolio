@@ -5,7 +5,7 @@ const projectList = [
   {
     title: 'ChemTrack Mobile App',
     description:
-      'An inventory tracking app with QR scanning, role-based access, and push/email notifications. Built using React Native, Go, and Firestore.',
+      'Let a team of 7 to develop an inventory tracking app with QR scanning, role-based access, and push & email notifications. Built using React Native, Go, and Firestore. Currently Deployed via testflight to internal users.',
     tech: ['React Native', 'Go', 'Firestore', 'GCS', 'CI/CD', 'TypeScript'],
     link: 'https://github.com/ekjyotshinh/ChemTrack',
     demo: 'https://imgur.com/a/chemtrack-demo-h9Tlx1o'
@@ -22,7 +22,7 @@ const projectList = [
   {
     title: 'Redis-like Key-Value Store',
     description:
-      'Built a multithreaded key-value store in Python supporting RESP protocol, key expiration, and persistent disk storage.',
+      'Built a multithreaded key-value store in Python supporting RESP protocol, key expiration, and persistent disk storage. Addead a autosave mechanism to preiodically write active keys to disk and a autoload system to recuce cold starts.',
     tech: ['Python', 'Sockets', 'Multithreading'],
     link: 'https://github.com/ekjyotshinh/Lightweight-Redis-clone'
   },
@@ -39,7 +39,7 @@ const projectList = [
   {
     title: 'Programming Mentor RAG Chatbot',
     description:
-      'A Retrieval-Augmented Generation (RAG) chatbot designed to help users with programming questions.',
+      'A Retrieval-Augmented Generation (RAG) based chatbot designed to help users with programming questions by leveraging vector search and OpenAI’s language models for accurate, context-aware answers.',
     tech: ['LangChain', 'OpenAI API', 'Vector DB'],
     link: 'https://github.com/ekjyotshinh/Programming-Mentor-RAG-Chatbot/tree/main/rag-chatbot'
   },
@@ -47,13 +47,10 @@ const projectList = [
   {
     title: 'Pharma Study Simulator',
     description:
-      'Lead a team of 7 to build a secure web application to monitor patient progress and viral loads for Vendia Inc',
+      'Led a team of 7 to build a secure full-stack web app monitoring patient progress and viral loads with real-time updates and data integrity.',
     tech: ['React', 'Firebase', 'Node.js', 'JavaScript'],
     link: 'https://github.com/Runtime-Terror-131/Demo'
-  },
-
-
-
+  }
 
 ]
 
