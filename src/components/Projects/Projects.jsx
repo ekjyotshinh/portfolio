@@ -15,7 +15,7 @@ const projectList = [
     title: 'Gold Rate Website – Sarafa Association Bathinda',
     description:
       'Developed an official website for the Sarafa Association Bathinda to publish daily gold and silver rates. Features include real-time updates, admin dashboard, and archive access. Used daily by local vendors and customers.',
-    tech: ['React', 'TypeScript', 'Firebase', 'GCS', 'GCR'],
+    tech: ['React', 'JavaScript', 'Firebase', 'GCS', 'GCR'],
     live: 'https://sarafaassociationbathinda.com/' 
   },
 
