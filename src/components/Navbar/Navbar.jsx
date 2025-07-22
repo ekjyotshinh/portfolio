@@ -1,13 +1,12 @@
 import './Navbar.css'
+import logo from '../../assets/logo.svg'
 
 function Navbar() {
   return (
     <nav className="navbar">
-      {
-        // TODO : add somthing in the logo
-      <div className="logo"></div>
-
-      }
+      <div>
+        <img src={logo} alt="Logo" className="logo-img" />
+      </div>
 
       <ul className="nav-links">
         <li><a href="#hero">Home</a></li>
