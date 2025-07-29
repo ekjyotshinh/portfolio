@@ -12,19 +12,19 @@ const projectList = [
   },
 
   {
-    title: 'Gold Rate Website – Sarafa Association Bathinda',
+    title: 'Gold Price Website – Sarafa Association Bathinda',
     description:
-      'Developed the official website for the Sarafa Association Bathinda to publish daily gold and silver rates. Features include real-time updates, admin dashboard, and archive access. Used daily by local vendors and customers.',
+      'Developed the official website for the Sarafa Association Bathinda to publish daily gold and silver prices. Features include real-time updates, admin dashboard, and archive access. Used daily by local vendors and customers.',
     tech: ['React', 'JavaScript', 'Firebase', 'GCS', 'GCR'],
     live: 'https://sarafaassociationbathinda.com/' 
   },
 
   {
-    title: 'Redis-like Key-Value Store',
+    title: 'Programming Mentor RAG Chatbot',
     description:
-      'Built a multithreaded key-value store in Python supporting RESP protocol, key expiration, and persistent disk storage. Addead a autosave mechanism to preiodically write active keys to disk and a autoload system to recuce cold starts.',
-    tech: ['Python', 'Sockets', 'Multithreading'],
-    link: 'https://github.com/ekjyotshinh/Lightweight-Redis-clone'
+      'A Retrieval-Augmented Generation (RAG) based chatbot designed to help users with programming questions by leveraging vector search and OpenAI’s language models for accurate, context-aware answers.',
+    tech: ['LangChain', 'OpenAI API', 'Vector DB'],
+    link: 'https://github.com/ekjyotshinh/Programming-Mentor-RAG-Chatbot/tree/main/rag-chatbot'
   },
 
   {
@@ -37,11 +37,11 @@ const projectList = [
   },
 
   {
-    title: 'Programming Mentor RAG Chatbot',
+    title: 'Redis-like Key-Value Store',
     description:
-      'A Retrieval-Augmented Generation (RAG) based chatbot designed to help users with programming questions by leveraging vector search and OpenAI’s language models for accurate, context-aware answers.',
-    tech: ['LangChain', 'OpenAI API', 'Vector DB'],
-    link: 'https://github.com/ekjyotshinh/Programming-Mentor-RAG-Chatbot/tree/main/rag-chatbot'
+      'Built a multithreaded key-value store in Python supporting RESP protocol, key expiration, and persistent disk storage. Addead a autosave mechanism to preiodically write active keys to disk and a autoload system to recuce cold starts.',
+    tech: ['Python', 'Sockets', 'Multithreading'],
+    link: 'https://github.com/ekjyotshinh/Lightweight-Redis-clone'
   },
 
   {

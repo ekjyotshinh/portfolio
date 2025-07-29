@@ -18,9 +18,9 @@ const experiences = [
     company: "CSU Sacramento",
     date: "Mar 2024 – Present",
     details: [
-      "Optimized parallel Branch & Bound algorithm for the Sequential Ordering Problem, achieving 15% speedup through custom load balancing.",
-      "Developed a progress estimation metric for task tracking and performance analysis.",
-      "Researching execution time reduction using LKH-based pruning and early termination techniques."
+      "Optimized load balancing in a parallel Branch & Bound algorithm for Sequential Ordering Problem (SOP) using a custom progress-based strategy, achieving a speedup of 15%.",
+      "Leveraged Lin-Kernighan heuristic (LKH) entries for intelligent pruning & early termination, which reduced execution time by 10% and optimized resource utilization.",
+      "Developed a progress estimation metric for task tracking and performance analysis."
     ]
   },
   {
