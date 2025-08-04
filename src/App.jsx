@@ -6,6 +6,7 @@ import About from './components/About/About'
 import Projects from './components/Projects/Projects'
 import Contact from './components/Contact/Contact';
 import Experience from './components/Experience/Experience';
+import Certifications from './components/Certifications/Certifications';
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
       <div className="fade-section"><About /></div>
       <div className="fade-section"><Experience /></div>
       <div className="fade-section"><Projects /></div>
+      <div className="fade-section"><Certifications /></div>
       <div className="fade-section"><Contact /></div>
     </div>
   );
