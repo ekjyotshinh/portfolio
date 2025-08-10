@@ -61,36 +61,43 @@ function Projects() {
       <div className="projects-grid">
         {projectList.map((project, index) => (
           <div key={index} className="project-card" tabIndex={0}>
-            <h3>{project.title}</h3>
-            <p className="project-description">{project.description}</p>
-            <ul className="tech-list">
-              {project.tech.map((t, i) => (
-                <li key={i}>{t}</li>
-              ))}
-            </ul>
-            {project.live && (
-              <a
-                href={project.live}
-                className="project-link"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {project.title.includes('Extension') ? 'Checkout Extension →' : 'View Website →'}
-              </a>
-            )}
-
-            {project.link && (
-              <a href={project.link} className="project-link" target="_blank" rel="noreferrer">
-                View Code →
-              </a>
-            )}
-
-            {project.demo && (
-              <a href={project.demo} className="project-link" target="_blank" rel="noreferrer">
-                View Demo →
-              </a>
-            )}
-
+            <div className="project-content">
+              <h3>{project.title}</h3>
+              <p className="project-description">{project.description}</p>
+              <ul className="tech-list">
+                {project.tech.map((t, i) => (
+                  <li key={i}>{t}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="project-links">
+              {project.live && (
+                <div>
+                  <a
+                    href={project.live}
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {project.title.includes('Extension') ? 'Checkout Extension →' : 'View Website →'}
+                  </a>
+                </div>
+              )}
+              {project.link && (
+                <div>
+                  <a href={project.link} className="project-link" target="_blank" rel="noreferrer">
+                    View Code →
+                  </a>
+                </div>
+              )}
+              {project.demo && (
+                <div>
+                  <a href={project.demo} className="project-link" target="_blank" rel="noreferrer">
+                    View Demo →
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>
