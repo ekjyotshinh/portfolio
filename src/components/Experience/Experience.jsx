@@ -3,34 +3,34 @@ import "./Experience.css";
 
 const experiences = [
   {
-    role: "Software Developer Intern",
+    role: "Software Developer Intern (Full-Stack)",
     company: "Office of Water Programs",
     date: "Feb 2024 – Present",
     details: [
-      "Built a secure checkout system integrating PayPal Braintree API, handling $15K daily transactions.",
-      "Developed an email microservice with queuing, improving delivery across four client applications.",
-      "Optimized SQL procedures and PHP APIs, reducing response times by 40%.",
-      "Created admin tools for data editing, filtering, and workflow improvements.",
+      "Engineered a secure checkout system integrating PayPal’s Braintree API, handling $15K+ in daily transactions, ensuring data integrity, compliance, and error reporting for faster issue resolution.",
+      "Developed an emailing microservice with a queuing system and deferred sending functionality, used across four client applications and internal services to ensure reliable email delivery.",
+      "Identified and fixed a security vulnerability in the login system, strengthening authentication and protecting sensitive user data.",
+      "Refactored UPS API integration to use multi-cURL for parallel requests, improving shipping rate retrieval time by 75%.",
+      "Optimized SQL procedures and REST APIs, enhancing responsiveness and reducing query response time by 40%.",
     ],
   },
   {
-    role: "Research Assistant",
-    company: "CSU Sacramento",
+    role: "Research Assistant (Algorithmic Research)",
+    company: "California State University, Sacramento",
     date: "Mar 2024 – Present",
     details: [
-      "Optimized load balancing in a parallel Branch & Bound algorithm for Sequential Ordering Problem (SOP) using a custom progress-based strategy, achieving a speedup of 15%.",
-      "Leveraged Lin-Kernighan heuristic (LKH) entries for intelligent pruning & early termination, which reduced execution time by 10% and optimized resource utilization.",
-      "Developed a progress estimation metric for task tracking and performance analysis.",
+      "Optimized load balancing in a parallel Branch & Bound algorithm for the Sequential Ordering Problem (SOP) using a custom progress-based strategy, achieving a 15% performance speedup.",
+      "Leveraged Lin-Kernighan heuristic (LKH) entries for intelligent pruning with early termination and reuse within the solver, reducing execution time by 10% and improving resource utilization.",
+      "Developed a progress estimation metric to evaluate task progress, enabling comparative performance analysis across runs.",
     ],
   },
   {
-    role: "Student Assistant",
-    company: "CSU Sacramento",
+    role: "Student Assistant (Math Mentor & Orientation Leader)",
+    company: "California State University, Sacramento",
     date: "Sept 2021 – Feb 2024",
     details: [
-      "Tutored students in Linear Algebra, Calculus, and Pre-Calculus.",
-      "Led orientation sessions for 600+ new students.",
-      "Collaborated with 30+ leaders to enhance student onboarding.",
+      "Mentored students in Linear Algebra, Calculus, and Pre-Calculus, breaking down complex concepts into clear explanations.",
+      "Led orientation sessions and presentations for 600+ new students while collaborating with 30 orientation leaders to enhance student onboarding.",
     ],
   },
 ];
@@ -73,7 +73,7 @@ const Experience = () => {
             <div className="timeline-dot" />
             <div className="timeline-content">
               <h3>
-                {exp.role} @ {exp.company}
+                {exp.role} <br /> {exp.company}
               </h3>
               <span className="date">{exp.date}</span>
               <ul>
