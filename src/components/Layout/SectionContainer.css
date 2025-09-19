@@ -1,11 +1,11 @@
 .section {
-    width: 100%;
-    padding: 4rem 2rem;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
 }
 
 .section-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }

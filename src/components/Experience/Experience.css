@@ -1,100 +1,100 @@
 .experience {
-    padding: 100px 20px;
-    color: #111;
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
+  padding: 100px 20px;
+  color: #111;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .experience h2 {
-    text-align: center;
-    font-size: 2.75rem;
-    margin-bottom: 80px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    color: #222;
+  text-align: center;
+  font-size: 2.75rem;
+  margin-bottom: 80px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #222;
 }
 
 .timeline {
-    position: relative;
-    margin-left: 25px;
-    border-left: 2px solid #0077ff;
+  position: relative;
+  margin-left: 25px;
+  border-left: 2px solid #0077ff;
 }
 
 .timeline-item {
-    margin-bottom: 60px;
-    position: relative;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  margin-bottom: 60px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .timeline-item.show {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .timeline-dot {
-    width: 14px;
-    height: 14px;
-    background-color: #0077ff;
-    border-radius: 50%;
-    position: absolute;
-    left: -9px;
-    top: 7px;
-    box-shadow: 0 0 8px rgba(0, 119, 255, 0.4);
+  width: 14px;
+  height: 14px;
+  background-color: #0077ff;
+  border-radius: 50%;
+  position: absolute;
+  left: -9px;
+  top: 7px;
+  box-shadow: 0 0 8px rgba(0, 119, 255, 0.4);
 }
 
 .timeline-content {
-    padding-left: 25px;
+  padding-left: 25px;
 }
 
 .timeline-content h3 {
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #111;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #111;
 }
 
 .timeline-content .date {
-    font-size: 1rem;
-    color: #555;
-    font-style: italic;
+  font-size: 1rem;
+  color: #555;
+  font-style: italic;
 }
 
 .timeline-content ul {
-    margin-top: 12px;
-    padding-left: 20px;
-    list-style: disc;
+  margin-top: 12px;
+  padding-left: 20px;
+  list-style: disc;
 }
 
 .timeline-content ul li {
-    font-size: 1.05rem;
-    margin-bottom: 10px;
-    line-height: 1.7;
-    color: #333;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  line-height: 1.7;
+  color: #333;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-    .timeline {
-        margin-left: 15px;
-    }
+  .timeline {
+    margin-left: 15px;
+  }
 
-    .timeline-content {
-        padding-left: 15px;
-    }
+  .timeline-content {
+    padding-left: 15px;
+  }
 
-    .timeline-content h3 {
-        font-size: 1.1rem;
-    }
+  .timeline-content h3 {
+    font-size: 1.1rem;
+  }
 
-    .timeline-content .date {
-        font-size: 0.9rem;
-    }
+  .timeline-content .date {
+    font-size: 0.9rem;
+  }
 
-    .timeline-content ul li {
-        font-size: 0.95rem;
-        margin-bottom: 8px;
-    }
+  .timeline-content ul li {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
 }

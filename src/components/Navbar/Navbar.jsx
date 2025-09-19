@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import './Navbar.css';
-import logo from '../../assets/logo.svg';
+import React, { useState } from "react";
+import "./Navbar.css";
+import logo from "../../assets/logo.svg";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,23 +15,46 @@ function Navbar() {
 
       {/* Hamburger button visible on small screens */}
       <button
-        className={`hamburger ${isOpen ? 'open' : ''}`}
+        className={`hamburger ${isOpen ? "open" : ""}`}
         onClick={toggleMenu}
-        aria-label="Toggle navigation menu"
-      >
+        aria-label="Toggle navigation menu">
         <span />
         <span />
         <span />
       </button>
 
       {/* Side nav menu */}
-      <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
-        <li><a href="#hero" onClick={() => setIsOpen(false)}>Home</a></li>
-        <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
-        <li><a href="#experience" onClick={() => setIsOpen(false)}>Experience</a></li>
-        <li><a href="#projects" onClick={() => setIsOpen(false)}>Projects</a></li>
-        <li><a href="#certifications" onClick={() => setIsOpen(false)}>Certifications</a></li>
-        <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
+      <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+        <li>
+          <a href="#hero" onClick={() => setIsOpen(false)}>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#about" onClick={() => setIsOpen(false)}>
+            About
+          </a>
+        </li>
+        <li>
+          <a href="#experience" onClick={() => setIsOpen(false)}>
+            Experience
+          </a>
+        </li>
+        <li>
+          <a href="#projects" onClick={() => setIsOpen(false)}>
+            Projects
+          </a>
+        </li>
+        <li>
+          <a href="#certifications" onClick={() => setIsOpen(false)}>
+            Certifications
+          </a>
+        </li>
+        <li>
+          <a href="#contact" onClick={() => setIsOpen(false)}>
+            Contact
+          </a>
+        </li>
       </ul>
 
       {/* Overlay to close menu when clicking outside */}
