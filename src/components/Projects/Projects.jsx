@@ -1,58 +1,79 @@
-import SectionContainer from '../Layout/SectionContainer'
-import './Projects.css'
+import SectionContainer from "../Layout/SectionContainer";
+import "./Projects.css";
 
 const projectList = [
   {
-    title: 'ChemTrack Mobile App',
+    title: "ChemTrack Mobile App",
     description:
-      'Let a team of 7 to develop an inventory tracking app with QR scanning, role-based access, and push & email notifications. Built using React Native, Go, and Firestore. Currently Deployed via testflight to internal users.',
-    tech: ['React Native', 'Go', 'Firestore', 'GCS', 'CI/CD', 'TypeScript'],
-    link: 'https://github.com/ekjyotshinh/ChemTrack',
-    demo: 'https://imgur.com/a/chemtrack-demo-h9Tlx1o'
+      "Let a team of 7 to develop an inventory tracking app with QR scanning, role-based access, and push & email notifications. Built using React Native, Go, and Firestore. Currently Deployed via testflight to internal users.",
+    tech: ["React Native", "Go", "Firestore", "GCS", "CI/CD", "TypeScript"],
+    link: "https://github.com/ekjyotshinh/ChemTrack",
+    demo: "https://imgur.com/a/chemtrack-demo-h9Tlx1o",
   },
 
   {
-    title: 'Gold Price Website – Sarafa Association Bathinda',
+    title: "Gold Price Website – Sarafa Association Bathinda",
     description:
-      'Developed the official website for the Sarafa Association Bathinda to publish daily gold and silver prices. Features include real-time updates, admin dashboard, and archive access. Used daily by local vendors and customers.',
-    tech: ['React', 'JavaScript', 'Firebase', 'GCS', 'GCR'],
-    live: 'https://sarafaassociationbathinda.com/' 
+      "Developed the official website for the Sarafa Association Bathinda to publish daily gold and silver prices. Features include real-time updates, admin dashboard, and archive access. Used daily by local vendors and customers.",
+    tech: ["React", "JavaScript", "Firebase", "GCS", "GCR"],
+    live: "https://sarafaassociationbathinda.com/",
   },
 
   {
-    title: 'Programming Mentor RAG Chatbot',
+    title: "Programming Mentor RAG Chatbot",
     description:
-      'A Retrieval-Augmented Generation (RAG) based chatbot designed to help users with programming questions by leveraging vector search and OpenAI’s language models for accurate, context-aware answers.',
-    tech: ['LangChain', 'OpenAI API', 'Vector DB'],
-    link: 'https://github.com/ekjyotshinh/Programming-Mentor-RAG-Chatbot/tree/main/rag-chatbot'
+      "A Retrieval-Augmented Generation (RAG) based chatbot designed to help users with programming questions by leveraging vector search and OpenAI’s language models for accurate, context-aware answers.",
+    tech: ["LangChain", "OpenAI API", "Vector DB"],
+    link: "https://github.com/ekjyotshinh/Programming-Mentor-RAG-Chatbot/tree/main/rag-chatbot",
   },
 
   {
-    title: 'Youtube Filter Extension',
+    title: "Youtube Filter Extension",
     description:
-      'A chrome extension extension that lets you filter out unwanted videos on youtube based on Keywords, Channel names, Subscription status, Mixes or Shorts content',
-    tech: ['JavaScript', 'HTML', 'CSS', 'Manifest V3'],
-    live: 'https://chromewebstore.google.com/detail/youtube-filter/illdholaaiimmiikblhejpkoplibhhjo',
-    link: 'https://github.com/ekjyotshinh/youtube-filter-extension'
+      "A chrome extension extension that lets you filter out unwanted videos on youtube based on Keywords, Channel names, Subscription status, Mixes or Shorts content",
+    tech: ["JavaScript", "HTML", "CSS", "Manifest V3"],
+    live: "https://chromewebstore.google.com/detail/youtube-filter/illdholaaiimmiikblhejpkoplibhhjo",
+    link: "https://github.com/ekjyotshinh/youtube-filter-extension",
   },
 
   {
-    title: 'Redis-like Key-Value Store',
+    title: "Redis-like Key-Value Store",
     description:
-      'Built a multithreaded key-value store in Python supporting RESP protocol, key expiration, and persistent disk storage. Addead a autosave mechanism to preiodically write active keys to disk and a autoload system to recuce cold starts.',
-    tech: ['Python', 'Sockets', 'Multithreading'],
-    link: 'https://github.com/ekjyotshinh/Lightweight-Redis-clone'
+      "Built a multithreaded key-value store in Python supporting RESP protocol, key expiration, and persistent disk storage. Addead a autosave mechanism to preiodically write active keys to disk and a autoload system to recuce cold starts.",
+    tech: ["Python", "Sockets", "Multithreading"],
+    link: "https://github.com/ekjyotshinh/Lightweight-Redis-clone",
   },
 
   {
-    title: 'Pharma Study Simulator',
+    title: "CUDA-Accelerated Image Processing",
     description:
-      'Led a team of 7 to build a secure full-stack web app monitoring patient progress and viral loads with real-time updates and data integrity.',
-    tech: ['React', 'Firebase', 'Node.js', 'JavaScript'],
-    link: 'https://github.com/Runtime-Terror-131/Demo'
-  }
+      "Engineered a tiled 2D convolution kernel in C++/CUDA utilizing shared and constant memory for efficient filtering with a 5x5 convolutional mask across RGB channels. Optimized execution by reducing global memory accesses via coalescing and shared memory usage.",
+    tech: ["C++", "CUDA"],
+    link: "https://github.com/ekjyotshinh/Parallel-Programming-with-GPU/tree/main/Convolution",
+  },
+  {
+    title: "Pharma Study Simulator",
+    description:
+      "Led a team of 7 to build a secure full-stack web app monitoring patient progress and viral loads with real-time updates and data integrity.",
+    tech: ["React", "Firebase", "Node.js", "JavaScript"],
+    link: "https://github.com/Runtime-Terror-131/Demo",
+  },
+  {
+    title: "CPU Scheduling Simulator",
+    description:
+      "Developed a simulator implementing Round Robin, Shortest Job First, and Priority Scheduling algorithms to analyze CPU performance trade-offs. Applied OOP design and file I/O for workload handling, with detailed logs and metrics on turnaround, waiting, and response times.",
+    tech: ["Java", "OOP", "Operating Systems"],
+    link: "https://github.com/ekjyotshinh/Operating-Systems/tree/main/CPU%20Scheduling%20algo%20simulator",
+  },
 
-]
+  {
+    title: "Grocery List Manager",
+    description:
+      "Built a grocery management system in Java with a custom list implementation supporting add, remove, search, and retrieve. Implemented interfaces, Comparable, and OOP design patterns to ensure extensibility and maintainability.",
+    tech: ["Java", "OOP"],
+    link: "https://github.com/ekjyotshinh/My-Java-Programs/blob/main/GroceryShinh.java",
+  },
+];
 
 function Projects() {
   return (
@@ -77,22 +98,31 @@ function Projects() {
                     href={project.live}
                     className="project-link"
                     target="_blank"
-                    rel="noreferrer"
-                  >
-                    {project.title.includes('Extension') ? 'Checkout Extension →' : 'View Website →'}
+                    rel="noreferrer">
+                    {project.title.includes("Extension")
+                      ? "Checkout Extension →"
+                      : "View Website →"}
                   </a>
                 </div>
               )}
               {project.link && (
                 <div>
-                  <a href={project.link} className="project-link" target="_blank" rel="noreferrer">
+                  <a
+                    href={project.link}
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer">
                     View Code →
                   </a>
                 </div>
               )}
               {project.demo && (
                 <div>
-                  <a href={project.demo} className="project-link" target="_blank" rel="noreferrer">
+                  <a
+                    href={project.demo}
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer">
                     View Demo →
                   </a>
                 </div>
@@ -102,7 +132,7 @@ function Projects() {
         ))}
       </div>
     </SectionContainer>
-  )
+  );
 }
 
-export default Projects
+export default Projects;

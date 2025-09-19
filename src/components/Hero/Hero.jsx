@@ -13,7 +13,7 @@ function Hero() {
           target="_blank"
           rel="noreferrer"
         >
-          Resume
+          View Resume
         </a>
       </div>
     </SectionContainer>
