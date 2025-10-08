@@ -31,9 +31,6 @@ function App() {
       <Navbar />
       <Hero />
       <div className="fade-section">
-        <About />
-      </div>
-      <div className="fade-section">
         <Experience />
       </div>
       <div className="fade-section">
