@@ -40,10 +40,10 @@
 }
 
 .timeline-content h3 {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
-  color: var(--text-primary);
+  font-weight: 700;
+  color: var(--accent-color);
 }
 
 .timeline-content .date {
