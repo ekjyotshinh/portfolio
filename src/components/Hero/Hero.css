@@ -18,7 +18,7 @@
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(2.5rem);
   }
 
   100% {
@@ -32,10 +32,11 @@
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
+  color: #213547;
 }
 
 .highlight {
-  background: linear-gradient(90deg, #8f3fff, #5f9fff);
+  background: linear-gradient(90deg, #007bff, #0056b3);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -56,31 +57,29 @@
 
 .hero-content p {
   font-size: 1.25rem;
-  color: var(--text-secondary);
+  color: #495057;
   margin-bottom: 2rem;
 }
 
 .hero-btn {
-  background: linear-gradient(135deg, #8f3fff, #5f9fff);
-  color: white;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
   padding: 0.85rem 1.8rem;
   border-radius: 12px;
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: inline-block;
-  box-shadow: 0 4px 10px rgba(143, 63, 255, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.25);
 }
 
 .hero-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(143, 63, 255, 0.2);
-  color: black;
+  box-shadow: 0 6px 14px rgba(0, 123, 255, 0.2);
 }
 
 .hero-btn:active {
   transform: scale(0.98);
-  box-shadow: 0 4px 10px rgba(143, 63, 255, 0.15);
-  color: black;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.15);
 }
