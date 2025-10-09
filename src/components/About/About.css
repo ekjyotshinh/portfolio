@@ -12,7 +12,7 @@
   font-size: 2.75rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
-  color: #213547;
+  color: var(--text-primary);
 }
 
 .about-text {
@@ -22,7 +22,7 @@
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  color: #495057;
+  color: var(--text-secondary);
 }
 
 /* Responsive */

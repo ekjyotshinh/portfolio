@@ -11,7 +11,7 @@
   margin-bottom: 3rem;
   font-weight: 700;
   letter-spacing: 1.2px;
-  color: #213547;
+  color: var(--text-primary);
 }
 
 .cert-list {
@@ -35,11 +35,11 @@
   font-size: 1.4rem;
   margin-bottom: 0.25rem;
   font-weight: 600;
-  color: #213547;
+  color: var(--text-primary);
 }
 
 .cert-item h3 a {
-  color: #007bff;
+  color: var(--accent-color);
   text-decoration: none;
 }
 
@@ -49,7 +49,7 @@
 
 .cert-item .date {
   font-size: 1rem;
-  color: #495057;
+  color: var(--text-secondary);
   font-style: italic;
 }
 

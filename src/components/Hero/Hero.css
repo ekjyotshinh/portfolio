@@ -32,7 +32,7 @@
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
-  color: #213547;
+  color: var(--text-primary);
 }
 
 .highlight {
@@ -57,7 +57,7 @@
 
 .hero-content p {
   font-size: 1.25rem;
-  color: #495057;
+  color: var(--text-secondary);
   margin-bottom: 2rem;
 }
 
