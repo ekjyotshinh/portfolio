@@ -6,10 +6,6 @@
   padding: 0 2rem;
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(200, 200, 200, 0.3);
   z-index: 999;
 }
 
@@ -91,19 +87,15 @@
     right: -250px;
     height: 100vh;
     width: 250px;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-left: 1px solid rgba(200, 200, 200, 0.3);
     padding-top: 80px;
     gap: 2rem;
     transition: right 0.3s ease-in-out;
-    box-shadow: -3px 0 12px rgba(0, 0, 0, 0.1);
     z-index: 1000;
   }
 
   .nav-links.open {
     right: 0;
+    background: rgba(255, 255, 255, 0.1);
   }
 
   .nav-links li a {

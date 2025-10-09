@@ -8,7 +8,7 @@ function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar glass">
       <div className="logo-container">
         <img src={logo} alt="Logo" className="logo-img" />
       </div>
