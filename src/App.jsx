@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
-import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import Experience from "./components/Experience/Experience";
@@ -55,9 +54,6 @@ function App() {
     <div className="App">
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Hero />
-      <div className="fade-section">
-        <About />
-      </div>
       <div className="fade-section">
         <Experience />
       </div>
