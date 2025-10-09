@@ -5,7 +5,7 @@ const projectList = [
   {
     title: "ChemTrack Mobile App",
     description:
-      "Let a team of 7 to develop an inventory tracking app with QR scanning, role-based access, and push & email notifications. Built using React Native, Go, and Firestore. Currently Deployed via testflight to internal users.",
+      "Led a team of 7 to develop an inventory tracking app with QR scanning, role-based access, and push/email notifications. Built with React Native, Go, and Firestore. Deployed via TestFlight for internal use.",
     tech: ["React Native", "Go", "Firestore", "GCS", "CI/CD", "TypeScript"],
     link: "https://github.com/ekjyotshinh/ChemTrack",
     demo: "https://imgur.com/a/chemtrack-demo-h9Tlx1o",
@@ -14,7 +14,7 @@ const projectList = [
   {
     title: "Gold Price Website – Sarafa Association Bathinda",
     description:
-      "Developed the official website for the Sarafa Association Bathinda to publish daily gold and silver prices. Features include real-time updates, admin dashboard, and archive access. Used daily by local vendors and customers.",
+      "Developed the official website to publish daily gold/silver prices with real-time updates, admin dashboard, and archive access. Used daily by vendors and customers.",
     tech: ["React", "JavaScript", "Firebase", "GCS", "GCR"],
     live: "https://sarafaassociationbathinda.com/",
   },
@@ -22,7 +22,7 @@ const projectList = [
   {
     title: "Programming Mentor RAG Chatbot",
     description:
-      "A Retrieval-Augmented Generation (RAG) based chatbot designed to help users with programming questions by leveraging vector search and OpenAI’s language models for accurate, context-aware answers.",
+      "RAG-based chatbot assisting users with programming questions using vector search and OpenAI’s models for accurate, context-aware answers.",
     tech: ["LangChain", "OpenAI API", "Vector DB"],
     link: "https://github.com/ekjyotshinh/Programming-Mentor-RAG-Chatbot/tree/main/rag-chatbot",
   },
@@ -30,7 +30,7 @@ const projectList = [
   {
     title: "Youtube Filter Extension",
     description:
-      "A chrome extension extension that lets you filter out unwanted videos on youtube based on Keywords, Channel names, Subscription status, Mixes or Shorts content",
+      "Chrome extension to filter unwanted YouTube videos by keywords, channels, subscriptions, mixes, or Shorts content.",
     tech: ["JavaScript", "HTML", "CSS", "Manifest V3"],
     live: "https://chromewebstore.google.com/detail/youtube-filter/illdholaaiimmiikblhejpkoplibhhjo",
     link: "https://github.com/ekjyotshinh/youtube-filter-extension",
@@ -39,7 +39,7 @@ const projectList = [
   {
     title: "Redis-like Key-Value Store",
     description:
-      "Built a multithreaded key-value store in Python supporting RESP protocol, key expiration, and persistent disk storage. Addead a autosave mechanism to preiodically write active keys to disk and a autoload system to recuce cold starts.",
+      "Multithreaded Python key-value store supporting RESP, key expiration, persistent storage, autosave, and autoload to reduce cold starts.",
     tech: ["Python", "Sockets", "Multithreading"],
     link: "https://github.com/ekjyotshinh/Lightweight-Redis-clone",
   },
@@ -47,21 +47,23 @@ const projectList = [
   {
     title: "CUDA-Accelerated Image Processing",
     description:
-      "Engineered a tiled 2D convolution kernel in C++/CUDA utilizing shared and constant memory for efficient filtering with a 5x5 convolutional mask across RGB channels. Optimized execution by reducing global memory accesses via coalescing and shared memory usage.",
+      "Implemented a tiled 2D convolution kernel in C++/CUDA using shared and constant memory for efficient RGB filtering with a 5x5 mask. Optimized memory access and execution.",
     tech: ["C++", "CUDA"],
     link: "https://github.com/ekjyotshinh/Parallel-Programming-with-GPU/tree/main/Convolution",
   },
+
   {
     title: "Pharma Study Simulator",
     description:
-      "Led a team of 7 to build a secure full-stack web app monitoring patient progress and viral loads with real-time updates and data integrity.",
+      "Led a team of 7 to build a secure full-stack web app tracking patient progress and viral loads with real-time updates and data integrity.",
     tech: ["React", "Firebase", "Node.js", "JavaScript"],
     link: "https://github.com/Runtime-Terror-131/Demo",
   },
+
   {
     title: "CPU Scheduling Simulator",
     description:
-      "Developed a simulator implementing Round Robin, Shortest Job First, and Priority Scheduling algorithms to analyze CPU performance trade-offs. Applied OOP design and file I/O for workload handling, with detailed logs and metrics on turnaround, waiting, and response times.",
+      "Simulator for Round Robin, SJF, and Priority Scheduling to analyze CPU performance. Used OOP and file I/O to manage workloads with detailed logs and metrics.",
     tech: ["Java", "OOP", "Operating Systems"],
     link: "https://github.com/ekjyotshinh/Operating-Systems/tree/main/CPU%20Scheduling%20algo%20simulator",
   },
@@ -69,7 +71,7 @@ const projectList = [
   {
     title: "Grocery List Manager",
     description:
-      "Built a grocery management system in Java with a custom list implementation supporting add, remove, search, and retrieve. Implemented interfaces, Comparable, and OOP design patterns to ensure extensibility and maintainability.",
+      "Java-based grocery manager with custom list implementation supporting CRUD operations Leveraged OOP, interfaces, and Comparable for extensibility.",
     tech: ["Java", "OOP"],
     link: "https://github.com/ekjyotshinh/My-Java-Programs/blob/main/GroceryShinh.java",
   },
