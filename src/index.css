@@ -7,7 +7,14 @@
 
   color-scheme: light dark;
 
-  --background: linear-gradient(120deg, #f9fafb, #e0f2fe, #fce7f3);
+  --background: linear-gradient(
+    120deg,
+    #f8fafc 0%,
+    #e2e8f0 35%,
+    #dbeafe 70%,
+    #eef2ff 100%
+  );
+
   --text-primary: #213547;
   --text-secondary: #495057;
   --accent-color: #007bff;
@@ -26,7 +33,13 @@
 }
 
 body.dark-mode {
-  --background: linear-gradient(120deg, #242424, #424242);
+  --background: linear-gradient(
+    120deg,
+    #0f1324 0%,
+    #10192f 40%,
+    #121c3e 70%,
+    #101822 100%
+  );
   --text-primary: rgba(255, 255, 255, 0.87);
   --text-secondary: rgba(255, 255, 255, 0.7);
   --accent-color: #64b5f6;

@@ -3,7 +3,7 @@ import "./Experience.css";
 
 const experiences = [
   {
-    role: "Software Developer Intern (Full-Stack)",
+    role: "Software Developer (Full-Stack)",
     company: "Office of Water Programs",
     date: "Feb 2024 – Present",
     details: [
