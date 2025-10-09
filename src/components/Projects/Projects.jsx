@@ -80,7 +80,7 @@ const projectList = [
 function Projects() {
   return (
     <SectionContainer id="projects">
-      <h2 className="projects-heading">Projects</h2>
+      <h2 className="section-heading">Projects</h2>
       <div className="projects-grid">
         {projectList.map((project, index) => (
           <div key={index} className="project-card" tabIndex={0}>

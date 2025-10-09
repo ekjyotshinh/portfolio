@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section className="contact" id="contact">
       <div className="contact-content">
-        <h2>Get In Touch</h2>
+        <h2 className="section-heading">Get In Touch</h2>
         <p>
           Whether you have a project in mind or just want to connect, feel free
           to reach out. I’m always open to exciting opportunities and
