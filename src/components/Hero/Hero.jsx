@@ -9,9 +9,11 @@ function Hero() {
           Hey there 👋, I'm <span className="highlight">Ekjyot</span>
         </h1>
         <p>
-          A curious mind who loves turning coffee ☕ into clean, scalable code.
-          I build full-stack apps and optimize algorithms to make software
-          faster and smarter.
+          I'm a Full Stack Developer with over a year of experience building
+          scalable web applications. I graduated in May 2025 with a Bachelor's
+          in Computer Science from California State University. I’m also
+          interested in parallel programming and high-performance computing,
+          exploring efficient and optimized software design.
         </p>
         <a
           href="https://drive.google.com/file/d/1ifi4uxJcXVwBR5o7irkyWukOUk4Jl0ZC/view?usp=drive_link"
