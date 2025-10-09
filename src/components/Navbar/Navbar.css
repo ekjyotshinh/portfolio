@@ -14,6 +14,12 @@
   width: auto;
 }
 
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -33,6 +39,14 @@
 .nav-links li a:hover {
   opacity: 1;
   color: var(--accent-color);
+}
+
+.theme-toggle-desktop {
+  display: block;
+}
+
+.theme-toggle-mobile {
+  display: none;
 }
 
 /* Hamburger button */
@@ -76,25 +90,34 @@
 
 /* Mobile styles */
 @media (max-width: 720px) {
+  .nav-links {
+    display: none;
+  }
+
   .hamburger {
     display: flex;
   }
 
-  .nav-links {
+  .theme-toggle-desktop {
+    display: none;
+  }
+
+  .theme-toggle-mobile {
+    display: block;
+  }
+
+  .nav-links.open {
+    display: flex;
     flex-direction: column;
     position: fixed;
     top: 0;
-    right: -250px;
+    right: 0;
     height: 100vh;
     width: 250px;
     padding-top: 5rem;
     gap: 2rem;
     transition: right 0.3s ease-in-out;
     z-index: 1000;
-  }
-
-  .nav-links.open {
-    right: 0;
     background: var(--glass-bg);
   }
 

@@ -25,23 +25,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: linear-gradient(
-      135deg,
-      rgb(61, 68, 88) 10%,
-      rgb(37, 42, 93) 60%,
-      rgb(24, 21, 45) 89%
-    );
-
-    --text-primary: rgba(255, 255, 255, 0.87);
-    --text-secondary: rgba(255, 255, 255, 0.7);
-    --accent-color: #64b5f6;
-    --glass-bg: rgba(0, 0, 0, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --tech-bg: rgba(255, 255, 255, 0.1);
-    --tech-border: rgba(255, 255, 255, 0.2);
-  }
+body.dark-mode {
+  --background: linear-gradient(120deg, #242424, #424242);
+  --text-primary: rgba(255, 255, 255, 0.87);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --accent-color: #64b5f6;
+  --glass-bg: rgba(0, 0, 0, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --tech-bg: rgba(255, 255, 255, 0.1);
+  --tech-border: rgba(255, 255, 255, 0.2);
 }
 
 a {

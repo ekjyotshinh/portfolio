@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.svg";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
-function Navbar() {
+function Navbar({ theme, toggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -13,26 +14,27 @@ function Navbar() {
         <img src={logo} alt="Logo" className="logo-img" />
       </div>
 
-      {/* Hamburger button visible on small screens */}
-      <button
-        className={`hamburger ${isOpen ? "open" : ""}`}
-        onClick={toggleMenu}
-        aria-label="Toggle navigation menu">
-        <span />
-        <span />
-        <span />
-      </button>
+      <div className="nav-controls">
+        <div className="theme-toggle-mobile">
+          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+        </div>
+
+        {/* Hamburger button visible on small screens */}
+        <button
+          className={`hamburger ${isOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle navigation menu">
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
 
       {/* Side nav menu */}
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
         <li>
           <a href="#hero" onClick={() => setIsOpen(false)}>
             Home
-          </a>
-        </li>
-        <li>
-          <a href="#about" onClick={() => setIsOpen(false)}>
-            About
           </a>
         </li>
         <li>
@@ -54,6 +56,9 @@ function Navbar() {
           <a href="#contact" onClick={() => setIsOpen(false)}>
             Contact
           </a>
+        </li>
+        <li className="theme-toggle-desktop">
+          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         </li>
       </ul>
 
