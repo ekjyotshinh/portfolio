@@ -3,7 +3,7 @@ import SectionContainer from "../Layout/SectionContainer";
 
 function Hero() {
   return (
-    <SectionContainer id="hero" className="hero-bg">
+    <div className="hero-bg">
       <div className="hero-content">
         <h1>
           Hey there 👋, I'm <span className="highlight">Ekjyot</span>
@@ -23,7 +23,7 @@ function Hero() {
           🚀 View Resume
         </a>
       </div>
-    </SectionContainer>
+    </div>
   );
 }
 

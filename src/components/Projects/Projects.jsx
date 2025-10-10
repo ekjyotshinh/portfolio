@@ -1,4 +1,3 @@
-import SectionContainer from "../Layout/SectionContainer";
 import "./Projects.css";
 
 const projectList = [
@@ -79,7 +78,7 @@ const projectList = [
 
 function Projects() {
   return (
-    <SectionContainer id="projects">
+    <>
       <h2 className="section-heading">Projects</h2>
       <div className="projects-grid">
         {projectList.map((project, index) => (
@@ -133,7 +132,7 @@ function Projects() {
           </div>
         ))}
       </div>
-    </SectionContainer>
+    </>
   );
 }
 

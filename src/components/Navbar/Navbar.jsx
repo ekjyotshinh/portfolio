@@ -33,7 +33,7 @@ function Navbar({ theme, toggleTheme }) {
       {/* Side nav menu */}
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
         <li>
-          <a href="#hero" onClick={() => setIsOpen(false)}>
+          <a href="#home" onClick={() => setIsOpen(false)}>
             Home
           </a>
         </li>

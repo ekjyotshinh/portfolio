@@ -6,6 +6,7 @@ import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import Experience from "./components/Experience/Experience";
 import Certifications from "./components/Certifications/Certifications";
+import SectionContainer from "./components/Layout/SectionContainer";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -53,19 +54,21 @@ function App() {
   return (
     <div className="App">
       <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <Hero />
-      <div className="fade-section">
+      <SectionContainer id="home">
+        <Hero />
+      </SectionContainer>
+      <SectionContainer id="experience" className="fade-section">
         <Experience />
-      </div>
-      <div className="fade-section">
+      </SectionContainer>
+      <SectionContainer id="projects" className="fade-section">
         <Projects />
-      </div>
-      <div className="fade-section">
+      </SectionContainer>
+      <SectionContainer id="certifications" className="fade-section">
         <Certifications />
-      </div>
-      <div className="fade-section">
+      </SectionContainer>
+      <SectionContainer id="contact" className="fade-section">
         <Contact />
-      </div>
+      </SectionContainer>
     </div>
   );
 }

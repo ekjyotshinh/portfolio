@@ -3,13 +3,11 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  text-align: center;
+  text-align: left;
   position: relative;
-  padding: 2rem;
 }
 
 .hero-content {
-  max-width: 800px;
   width: 100%;
   z-index: 1;
   animation: fadeInUp 1.2s ease-in-out;

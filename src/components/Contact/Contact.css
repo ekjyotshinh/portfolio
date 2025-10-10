@@ -1,10 +1,9 @@
 .contact {
-  padding: 4rem 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 .contact-content {
-  max-width: 680px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
