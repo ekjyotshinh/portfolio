@@ -6,9 +6,9 @@ const Contact = () => {
     <>
       <h2 className="section-heading">Get In Touch</h2>
       <p>
-        Whether you have a project in mind or just want to connect, feel free
-        to reach out. I’m always open to exciting opportunities and
-        interesting conversations.
+        Whether you have a project in mind or just want to connect, feel free to
+        reach out. I’m always open to exciting opportunities and interesting
+        conversations.
       </p>
 
       <div className="contact-details">
@@ -23,6 +23,15 @@ const Contact = () => {
             target="_blank"
             rel="noopener noreferrer">
             linkedin.com/in/ekjyotshinh
+          </a>
+        </p>
+        <p>
+          <strong>Github:</strong>{" "}
+          <a
+            href="https://github.com/ekjyotshinh"
+            target="_blank"
+            rel="noopener noreferrer">
+            github.com/ekjyotshinh
           </a>
         </p>
       </div>
