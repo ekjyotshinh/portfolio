@@ -12,8 +12,8 @@ function Hero() {
           I'm a Full Stack Developer with over a year of experience building
           scalable web applications. I graduated in May 2025 with a Bachelor's
           in Computer Science from California State University. I’m also
-          interested in parallel programming and, exploring efficient and
-          optimized software design.
+          interested in parallel programming and exploring efficient and
+          optimized solutions for complex problems.
         </p>
         <a
           href="https://drive.google.com/file/d/1ifi4uxJcXVwBR5o7irkyWukOUk4Jl0ZC/view?usp=drive_link"
