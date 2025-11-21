@@ -1,12 +1,13 @@
 import "./Hero.css";
 import SectionContainer from "../Layout/SectionContainer";
+import { general } from "../../data/profileData";
 
 function Hero() {
   return (
     <div className="hero-bg">
       <div className="hero-content">
         <h1>
-          Hey there 👋, I'm <span className="highlight">Ekjyot</span>
+          Hey there 👋, I'm <span className="highlight">{general.name.split(" ")[0]}</span>
         </h1>
         <p>
           I'm a Full Stack Developer with over a year of experience building
@@ -16,7 +17,7 @@ function Hero() {
           optimized solutions for complex problems.
         </p>
         <a
-          href="https://drive.google.com/file/d/1ifi4uxJcXVwBR5o7irkyWukOUk4Jl0ZC/view?usp=drive_link"
+          href={general.resume}
           className="hero-btn"
           target="_blank"
           rel="noreferrer">

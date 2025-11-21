@@ -1,5 +1,6 @@
 import React from "react";
 import "./Contact.css";
+import { general } from "../../data/profileData";
 
 const Contact = () => {
   return (
@@ -14,12 +15,12 @@ const Contact = () => {
       <div className="contact-details">
         <p>
           <strong>Email:</strong>{" "}
-          <a href="mailto:ekjyotshinh@gmail.com">ekjyotshinh@gmail.com</a>
+          <a href={`mailto:${general.email}`}>{general.email}</a>
         </p>
         <p>
           <strong>LinkedIn:</strong>{" "}
           <a
-            href="https://linkedin.com/in/ekjyotshinh"
+            href={general.linkedin}
             target="_blank"
             rel="noopener noreferrer">
             linkedin.com/in/ekjyotshinh
@@ -28,7 +29,7 @@ const Contact = () => {
         <p>
           <strong>Github:</strong>{" "}
           <a
-            href="https://github.com/ekjyotshinh"
+            href={general.github}
             target="_blank"
             rel="noopener noreferrer">
             github.com/ekjyotshinh
