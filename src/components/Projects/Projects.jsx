@@ -2,14 +2,27 @@ import "./Projects.css";
 
 const projectList = [
   {
+    title: "Distributed Rate Limiter & API Gateway",
+    description:
+      "Engineered an API Gateway in Go supporting routing, JWT authentication, request validation, and centralized logging. Developed a standalone Rate Limiter using a Redis Lua-based atomic token-bucket algorithm, enforcing per-user and per-endpoint quotas across the system.",
+    tech: ["Go", "Redis", "gRPC", "Docker", "JWT"],
+    link: "https://github.com/ekjyotshinh/Rate-Limiter-API-Gateway",
+  },
+  {
+    title: "Lightweight Redis-like Key-Value Store",
+    description:
+      "Built a multithreaded in-memory key-value store with RESP protocol support, mutex-based thread safety, and key expiration. Added autosave/autoload for persistent storage, reducing cold start latency and ensuring data durability across server restarts.",
+    tech: ["Python", "Sockets", "Multithreading", "RESP"],
+    link: "https://github.com/ekjyotshinh/Lightweight-Redis-clone",
+  },
+  {
     title: "ChemTrack Mobile App",
     description:
       "Led a team of 7 to develop an inventory tracking app with QR scanning, role-based access, and push/email notifications. Built with React Native, Go, and Firestore. Deployed via TestFlight for internal use.",
     tech: ["React Native", "Go", "Firestore", "GCS", "CI/CD", "TypeScript"],
-    link: "https://github.com/ekjyotshinh/ChemTrack",
+    link: "https://github.com/ekjyotshinh/ekjyotshinh",
     demo: "https://imgur.com/a/chemtrack-demo-h9Tlx1o",
   },
-
   {
     title: "Gold Price Website – Sarafa Association Bathinda",
     description:
@@ -17,7 +30,6 @@ const projectList = [
     tech: ["React", "JavaScript", "Firebase", "GCS", "GCR"],
     live: "https://sarafaassociationbathinda.com/",
   },
-
   {
     title: "Programming Mentor RAG Chatbot",
     description:
@@ -25,7 +37,6 @@ const projectList = [
     tech: ["LangChain", "OpenAI API", "Vector DB"],
     link: "https://github.com/ekjyotshinh/Programming-Mentor-RAG-Chatbot/tree/main/rag-chatbot",
   },
-
   {
     title: "Youtube Filter Extension",
     description:
@@ -34,15 +45,6 @@ const projectList = [
     live: "https://chromewebstore.google.com/detail/youtube-filter/illdholaaiimmiikblhejpkoplibhhjo",
     link: "https://github.com/ekjyotshinh/youtube-filter-extension",
   },
-
-  {
-    title: "Redis-like Key-Value Store",
-    description:
-      "Multithreaded Python key-value store supporting RESP, key expiration, persistent storage, autosave, and autoload to reduce cold starts.",
-    tech: ["Python", "Sockets", "Multithreading"],
-    link: "https://github.com/ekjyotshinh/Lightweight-Redis-clone",
-  },
-
   {
     title: "CUDA-Accelerated Image Processing",
     description:
@@ -50,7 +52,6 @@ const projectList = [
     tech: ["C++", "CUDA"],
     link: "https://github.com/ekjyotshinh/Parallel-Programming-with-GPU/tree/main/Convolution",
   },
-
   {
     title: "Pharma Study Simulator",
     description:
@@ -58,7 +59,6 @@ const projectList = [
     tech: ["React", "Firebase", "Node.js", "JavaScript"],
     link: "https://github.com/Runtime-Terror-131/Demo",
   },
-
   {
     title: "CPU Scheduling Simulator",
     description:
@@ -66,7 +66,6 @@ const projectList = [
     tech: ["Java", "OOP", "Operating Systems"],
     link: "https://github.com/ekjyotshinh/Operating-Systems/tree/main/CPU%20Scheduling%20algo%20simulator",
   },
-
   {
     title: "Grocery List Manager",
     description:

@@ -7,11 +7,12 @@ const experiences = [
     company: "Office of Water Programs",
     date: "Feb 2024 – Present",
     details: [
-      "Engineered a secure checkout system integrating PayPal’s Braintree API, handling $15K+ in daily transactions, ensuring data integrity, compliance, and error reporting for faster issue resolution.",
-      "Developed an emailing microservice with a queuing system and deferred sending functionality, used across four client applications and internal services to ensure reliable email delivery.",
-      "Identified and fixed a security vulnerability in the login system, strengthening authentication and protecting sensitive user data.",
-      "Refactored UPS API integration to use multi-cURL for parallel requests, improving shipping rate retrieval time by 75%.",
-      "Optimized SQL procedures and REST APIs, enhancing responsiveness and reducing query response time by 40%.",
+      "Engineered a secure checkout system integrating PayPal Expanded Checkout, handling $45,000+ in daily transactions, ensuring data integrity, payment compliance and automated error reporting for faster issue resolution.",
+      "Designed and developed a full online course delivery platform with enrollment authorization flow, lesson level access control, user progress tracking, Amazon S3-based file retrieval, and Redis caching for low-latency content delivery.",
+      "Built an emailing microservice using a queue-based architecture with deferred sending and configurable retry logic, used across four client application and multiple internal services to ensure reliable email delivery.",
+      "Implemented secure JWT-based authentication, improving system security and ensuring reliable user session management.",
+      "Rewrote UPS rate-fetching logic using multi-cURL parallelism, improving shipping rate retrieval speed by 75%.",
+      "Maintain and enhance production system across PHP, Vue.js, Flask applications and internal microservices, contributing to continuous availability and feature expansion.",
     ],
   },
   {
@@ -20,7 +21,7 @@ const experiences = [
     date: "Mar 2024 – Present",
     details: [
       "Optimized load balancing in a parallel Branch & Bound algorithm for the Sequential Ordering Problem (SOP) using a custom progress-based strategy, achieving a 15% performance speedup.",
-      "Leveraged Lin-Kernighan heuristic (LKH) entries for intelligent pruning with early termination and reuse within the solver, reducing execution time by 10% and improving resource utilization.",
+      "Leveraged Lin-Kernighan heuristic (LKH) entries for intelligent pruning, with early termination and reuse of the LKH thread within the solver, reducing execution time by 10% and improving resource utilization.",
       "Developed a progress estimation metric to evaluate task progress, enabling comparative performance analysis across runs.",
     ],
   },
