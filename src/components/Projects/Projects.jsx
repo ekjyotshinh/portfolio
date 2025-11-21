@@ -2,6 +2,14 @@ import "./Projects.css";
 
 const projectList = [
   {
+    title: "ChemTrack Mobile App",
+    description:
+      "Led a team of 7 to develop an inventory tracking app with QR scanning, role-based access, and push/email notifications. Built with React Native, Go, and Firestore. Deployed via TestFlight for internal use.",
+    tech: ["React Native", "Go", "Firestore", "GCS", "CI/CD", "TypeScript"],
+    link: "https://github.com/ekjyotshinh/ekjyotshinh",
+    demo: "https://imgur.com/a/chemtrack-demo-h9Tlx1o",
+  },
+  {
     title: "Distributed Rate Limiter & API Gateway",
     description:
       "Engineered an API Gateway in Go supporting routing, JWT authentication, request validation, and centralized logging. Developed a standalone Rate Limiter using a Redis Lua-based atomic token-bucket algorithm, enforcing per-user and per-endpoint quotas across the system.",
@@ -14,14 +22,6 @@ const projectList = [
       "Built a multithreaded in-memory key-value store with RESP protocol support, mutex-based thread safety, and key expiration. Added autosave/autoload for persistent storage, reducing cold start latency and ensuring data durability across server restarts.",
     tech: ["Python", "Sockets", "Multithreading", "RESP"],
     link: "https://github.com/ekjyotshinh/Lightweight-Redis-clone",
-  },
-  {
-    title: "ChemTrack Mobile App",
-    description:
-      "Led a team of 7 to develop an inventory tracking app with QR scanning, role-based access, and push/email notifications. Built with React Native, Go, and Firestore. Deployed via TestFlight for internal use.",
-    tech: ["React Native", "Go", "Firestore", "GCS", "CI/CD", "TypeScript"],
-    link: "https://github.com/ekjyotshinh/ekjyotshinh",
-    demo: "https://imgur.com/a/chemtrack-demo-h9Tlx1o",
   },
   {
     title: "Gold Price Website – Sarafa Association Bathinda",
@@ -58,20 +58,6 @@ const projectList = [
       "Led a team of 7 to build a secure full-stack web app tracking patient progress and viral loads with real-time updates and data integrity.",
     tech: ["React", "Firebase", "Node.js", "JavaScript"],
     link: "https://github.com/Runtime-Terror-131/Demo",
-  },
-  {
-    title: "CPU Scheduling Simulator",
-    description:
-      "Simulator for Round Robin, SJF, and Priority Scheduling to analyze CPU performance. Used OOP and file I/O to manage workloads with detailed logs and metrics.",
-    tech: ["Java", "OOP", "Operating Systems"],
-    link: "https://github.com/ekjyotshinh/Operating-Systems/tree/main/CPU%20Scheduling%20algo%20simulator",
-  },
-  {
-    title: "Grocery List Manager",
-    description:
-      "Java-based grocery manager with custom list implementation supporting CRUD operations Leveraged OOP, interfaces, and Comparable for extensibility.",
-    tech: ["Java", "OOP"],
-    link: "https://github.com/ekjyotshinh/My-Java-Programs/blob/main/GroceryShinh.java",
   },
 ];
 
