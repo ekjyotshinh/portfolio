@@ -9,8 +9,9 @@
   background: var(--gradient-primary);
   background-clip: border-box;
   -webkit-background-clip: border-box;
-  /*border-image: var(--gradient-primary) 1;*/
+  border-image: var(--gradient-primary) 1;
   box-shadow: 0 0 12px rgba(0, 102, 255, 0.2);
+  border-radius: 16px;
 }
 
 .timeline-item {
