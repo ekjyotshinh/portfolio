@@ -50,6 +50,14 @@ export const projects = [
     link: "https://github.com/ekjyotshinh/Rate-Limiter-API-Gateway",
   },
   {
+    title: "F1 Race Visualization",
+    description:
+      "Built a full-stack F1 race replay visualization platform with live telemetry streaming. Features animated track views with real-time car positions, interactive playback controls and race analytics.",
+    tech: ["React", "Node.js", "FastF1", "Canvas API", "chart.js"],
+    live: "https://ekjyotshinh.github.io/F1/",
+    link: "https://github.com/ekjyotshinh/F1",
+  },
+  {
     title: "Lightweight Redis-like Key-Value Store",
     description:
       "Built a multithreaded in-memory key-value store with RESP protocol support, mutex-based thread safety, and key expiration. Added autosave/autoload for persistent storage, reducing cold start latency and ensuring data durability across server restarts.",
