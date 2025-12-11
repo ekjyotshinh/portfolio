@@ -52,7 +52,7 @@ export const projects = [
   {
     title: "F1 Race Visualization",
     description:
-      "Built a full-stack F1 race replay visualization platform with live telemetry streaming. Features animated track views with real-time car positions, interactive playback controls and race analytics.",
+      "Built a full-stack F1 race replay visualization platform with telemetry streaming for past races. Features animated track views with real-time car positions, interactive playback controls and race analytics.",
     tech: ["React", "Node.js", "FastF1", "Canvas API", "chart.js"],
     live: "https://ekjyotshinh.github.io/F1/",
     link: "https://github.com/ekjyotshinh/F1",
