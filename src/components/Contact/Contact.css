@@ -5,22 +5,43 @@
 .contact-content {
   max-width: 900px;
   margin: 0 auto;
+  padding: 2.5rem;
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur-medium);
+  -webkit-backdrop-filter: var(--blur-medium);
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.contact-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--glass-tint);
+  border-radius: inherit;
+  pointer-events: none;
 }
 
 .contact p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  margin-bottom: 1.8rem;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
   color: var(--text-secondary);
+  position: relative;
+  z-index: 1;
 }
 
 .contact-details {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-details p {
-  margin: 1rem 0;
-  font-size: 1.1rem;
+  margin: 1.25rem 0;
+  font-size: 1.15rem;
   font-weight: 500;
   color: var(--text-primary);
 }
@@ -29,11 +50,30 @@
   color: var(--accent-color);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.contact-details a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-accent);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-details a:hover,
 .contact-details a:focus-visible {
-  color: var(--accent-color);
-  text-decoration: underline;
+  color: var(--accent-secondary);
+  transform: translateX(4px);
+  display: inline-block;
+}
+
+.contact-details a:hover::after,
+.contact-details a:focus-visible::after {
+  width: 100%;
 }

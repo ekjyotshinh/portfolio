@@ -3,15 +3,33 @@
 }
 
 .cert-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
 .cert-item {
   opacity: 0;
-  transform: translateY(2.5rem);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1.75rem;
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur-medium);
+  -webkit-backdrop-filter: var(--blur-medium);
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.cert-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--glass-tint);
+  border-radius: inherit;
+  pointer-events: none;
 }
 
 .cert-item.show {
@@ -19,32 +37,67 @@
   transform: translateY(0);
 }
 
+.cert-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(0, 102, 255, 0.3);
+}
+
 .cert-item h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
   color: var(--text-primary);
+  position: relative;
+  z-index: 1;
 }
 
 .cert-item h3 a {
   color: var(--accent-color);
   text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding-bottom: 2px;
 }
 
-.cert-item h3 a:hover {
-  text-decoration: underline;
+.cert-item h3 a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-accent);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cert-item h3 a:hover,
+.cert-item h3 a:focus-visible {
+  color: var(--accent-secondary);
+}
+
+.cert-item h3 a:hover::after,
+.cert-item h3 a:focus-visible::after {
+  width: 100%;
 }
 
 .cert-item .date {
   font-size: 1rem;
   color: var(--text-secondary);
   font-style: italic;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
+  .cert-list {
+    grid-template-columns: 1fr;
+  }
+  
   .cert-item h3 {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .cert-item .date {
