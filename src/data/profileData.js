@@ -51,11 +51,10 @@ export const projects = [
   },
   {
     title: "F1 Race Visualization",
-    description:
-      "Built a full-stack F1 race replay visualization platform with telemetry streaming for past races. Features animated track views with real-time car positions, interactive playback controls and race analytics.",
-    tech: ["React", "Node.js", "FastF1", "Canvas API", "chart.js"],
+    description: "Built a full-stack F1 race replay visualization platform with telemetry streaming for past races. Frontend is a React UI that renders animated track views and interactive playback controls; a Go webserver (Gin) handles static assets and proxying; a FastAPI data server provides telemetry and race metadata. Includes real-time car positions, timeline scrubbing, and race analytics.",
+    tech: ["React", "Go (Gin)", "FastAPI", "Canvas API", "Chart.js", "WebSockets"],
     live: "https://ekjyotshinh.github.io/F1/",
-    link: "https://github.com/ekjyotshinh/F1",
+    link: "https://github.com/ekjyotshinh/F1"
   },
   {
     title: "Lightweight Redis-like Key-Value Store",
