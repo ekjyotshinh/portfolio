@@ -1,58 +1,92 @@
-import React, { useEffect, useRef } from "react";
 import "./Experience.css";
 import { experiences } from "../../data/profileData";
+import { motion } from "framer-motion";
+import { FiBriefcase, FiCalendar } from "react-icons/fi";
 
 const Experience = () => {
-  const timelineRef = useRef([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
       },
-      { threshold: 0.15 }
-    );
+    },
+  };
 
-    timelineRef.current.forEach((el) => {
-      if (el) observer.observe(el);
-    });
-
-    return () => {
-      timelineRef.current.forEach((el) => {
-        if (el) observer.unobserve(el);
-      });
-    };
-  }, []);
+  const item = {
+    hidden: { opacity: 0, x: -50 },
+    show: { opacity: 1, x: 0 },
+  };
 
   return (
-    <section className="experience" id="experience">
-      <h2 className="section-heading">Experience</h2>
-      <div className="timeline">
+    <>
+      <h2 className="section-heading">Professional Experience</h2>
+      <motion.div
+        className="timeline"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         {experiences.map((exp, index) => (
-          <div
+          <motion.div
             className="timeline-item"
             key={index}
-            ref={(el) => (timelineRef.current[index] = el)}>
-            <div className="timeline-dot" />
-            <div className="timeline-content">
-              <h3>
-                {exp.role} <br /> {exp.company}
-              </h3>
-              <span className="date">{exp.date}</span>
-              <ul>
+            variants={item}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            {/* Timeline Dot */}
+            <div className="timeline-dot-wrapper">
+              <motion.div
+                className="timeline-dot"
+                whileHover={{ scale: 1.3 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <FiBriefcase />
+              </motion.div>
+            </div>
+
+            {/* Experience Card */}
+            <motion.div
+              className="timeline-content glass"
+              whileHover={{
+                y: -4,
+                transition: { duration: 0.3 },
+              }}
+            >
+              {/* Header */}
+              <div className="experience-header">
+                <div>
+                  <h3>{exp.role}</h3>
+                  <p className="company">{exp.company}</p>
+                </div>
+                <div className="date-badge">
+                  <FiCalendar size={14} />
+                  <span>{exp.date}</span>
+                </div>
+              </div>
+
+              {/* Details */}
+              <ul className="experience-details">
                 {exp.details.map((point, i) => (
-                  <li key={i}>{point}</li>
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                  >
+                    <span className="bullet">→</span>
+                    <span>{point}</span>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </>
   );
 };
 

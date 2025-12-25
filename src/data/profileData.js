@@ -76,29 +76,7 @@ export const projects = [
       "RAG-based chatbot assisting users with programming questions using vector search and OpenAI’s models for accurate, context-aware answers.",
     tech: ["LangChain", "OpenAI API", "Vector DB"],
     link: "https://github.com/ekjyotshinh/Programming-Mentor-RAG-Chatbot/tree/main/rag-chatbot",
-  },
-  {
-    title: "Youtube Filter Extension",
-    description:
-      "Chrome extension to filter unwanted YouTube videos by keywords, channels, subscriptions, mixes, or Shorts content.",
-    tech: ["JavaScript", "HTML", "CSS", "Manifest V3"],
-    live: "https://chromewebstore.google.com/detail/youtube-filter/illdholaaiimmiikblhejpkoplibhhjo",
-    link: "https://github.com/ekjyotshinh/youtube-filter-extension",
-  },
-  {
-    title: "CUDA-Accelerated Image Processing",
-    description:
-      "Implemented a tiled 2D convolution kernel in C++/CUDA using shared and constant memory for efficient RGB filtering with a 5x5 mask. Optimized memory access and execution.",
-    tech: ["C++", "CUDA"],
-    link: "https://github.com/ekjyotshinh/Parallel-Programming-with-GPU/tree/main/Convolution",
-  },
-  {
-    title: "Pharma Study Simulator",
-    description:
-      "Led a team of 7 to build a secure full-stack web app tracking patient progress and viral loads with real-time updates and data integrity.",
-    tech: ["React", "Firebase", "Node.js", "JavaScript"],
-    link: "https://github.com/Runtime-Terror-131/Demo",
-  },
+  }
 ];
 
 export const certifications = [

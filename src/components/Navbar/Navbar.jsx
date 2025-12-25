@@ -1,17 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.svg";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import { motion, useScroll } from "framer-motion";
 
 function Navbar({ theme, toggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const { scrollYProgress } = useScroll();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "experience", "projects", "certifications", "contact"];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
+
   return (
     <nav className="navbar glass">
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="scroll-progress"
+        style={{ scaleX: scrollYProgress }}
+      />
+
       <div className="logo-container">
-        <img src={logo} alt="Logo" className="logo-img" />
+        <a href="#home" onClick={() => setIsOpen(false)}>
+          <img src={logo} alt="Logo" className="logo-img" />
+        </a>
       </div>
 
       <div className="nav-controls">
@@ -23,7 +61,8 @@ function Navbar({ theme, toggleTheme }) {
         <button
           className={`hamburger ${isOpen ? "open" : ""}`}
           onClick={toggleMenu}
-          aria-label="Toggle navigation menu">
+          aria-label="Toggle navigation menu"
+        >
           <span />
           <span />
           <span />
@@ -32,31 +71,23 @@ function Navbar({ theme, toggleTheme }) {
 
       {/* Side nav menu */}
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-        <li>
-          <a href="#home" onClick={() => setIsOpen(false)}>
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#experience" onClick={() => setIsOpen(false)}>
-            Experience
-          </a>
-        </li>
-        <li>
-          <a href="#projects" onClick={() => setIsOpen(false)}>
-            Projects
-          </a>
-        </li>
-        <li>
-          <a href="#certifications" onClick={() => setIsOpen(false)}>
-            Certifications
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={() => setIsOpen(false)}>
-            Contact
-          </a>
-        </li>
+        {[
+          { id: "home", label: "Home" },
+          { id: "experience", label: "Experience" },
+          { id: "projects", label: "Projects" },
+          { id: "certifications", label: "Certifications" },
+          { id: "contact", label: "Contact" },
+        ].map((item) => (
+          <li key={item.id}>
+            <a
+              href={`#${item.id}`}
+              onClick={() => setIsOpen(false)}
+              className={activeSection === item.id ? "active" : ""}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
         <li className="theme-toggle-desktop">
           <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         </li>
