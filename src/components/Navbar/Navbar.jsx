@@ -88,9 +88,10 @@ function Navbar({ theme, toggleTheme }) {
             </a>
           </li>
         ))}
+        {!isOpen && 
         <li className="theme-toggle-desktop">
           <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-        </li>
+        </li>}
       </ul>
 
       {/* Overlay to close menu when clicking outside */}
