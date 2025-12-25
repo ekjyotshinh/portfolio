@@ -1,16 +1,23 @@
 import "./Contact.css";
 import { general } from "../../data/profileData";
 import { motion } from "framer-motion";
-import { FiMail, FiGithub, FiLinkedin, FiCopy, FiCheck } from "react-icons/fi";
+import { FiMail, FiGithub, FiLinkedin, FiCopy, FiCheck, FiSend } from "react-icons/fi";
 import { useState } from "react";
 
 const Contact = () => {
+  const [message, setMessage] = useState("");
+  const [subject, setSubject] = useState("");
   const [copied, setCopied] = useState(false);
 
   const copyEmail = () => {
     navigator.clipboard.writeText(general.email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleSendEmail = () => {
+    const mailtoLink = `mailto:${general.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    window.location.href = mailtoLink;
   };
 
   const container = {
@@ -50,6 +57,46 @@ const Contact = () => {
         </div>
       </motion.div>
 
+      {/* Message Composer */}
+      <motion.div
+        className="message-composer glass"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <h3>Send a message</h3>
+        <div className="composer-form">
+          <input
+            type="text"
+            placeholder="Subject"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+            className="subject-input"
+          />
+          <textarea
+            placeholder="Write your message here..."
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="message-input"
+            rows="6"
+          />
+          <div className="send-options">
+            <div className="platform-buttons">
+              <button
+                className="platform-btn email-btn"
+                onClick={handleSendEmail}
+                disabled={!message.trim()}
+                aria-label="Send via Email"
+              >
+                <FiMail />
+                <span>Email</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+      {/* Contact Cards */}
       <motion.div
         className="contact-grid"
         variants={container}
@@ -110,7 +157,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="contact-btn"
             >
-              Visit Profile →
+              Connect with me →
             </a>
           </div>
         </motion.div>
@@ -142,7 +189,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="contact-btn"
             >
-              View Repositories →
+              View my work →
             </a>
           </div>
         </motion.div>

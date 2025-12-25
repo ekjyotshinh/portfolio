@@ -46,6 +46,157 @@
   }
 }
 
+/* Message Composer */
+.message-composer {
+  max-width: 900px;
+  margin: 0 auto var(--spacing-3xl);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-xl);
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.message-composer:hover {
+  box-shadow: var(--shadow-2xl);
+  border-color: var(--accent-primary);
+}
+
+.message-composer h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-xl) 0;
+  letter-spacing: -0.02em;
+}
+
+.composer-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.subject-input,
+.message-input {
+  width: 90%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--tech-bg);
+  border: 2px solid var(--tech-border);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  transition: all var(--duration-normal) var(--ease-smooth);
+  resize: vertical;
+}
+
+.subject-input:focus,
+.message-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+.subject-input::placeholder,
+.message-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.message-input {
+  min-height: 150px;
+  line-height: 1.6;
+}
+
+.send-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--glass-border);
+}
+
+.send-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.platform-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.platform-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-smooth);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.platform-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.platform-btn:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow-sm);
+}
+
+.platform-btn:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.platform-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.email-btn {
+  background: linear-gradient(135deg, hsl(15, 85%, 60%), hsl(30, 90%, 55%));
+}
+
+.email-btn:not(:disabled):hover {
+  background: linear-gradient(135deg, hsl(15, 90%, 65%), hsl(30, 95%, 60%));
+}
+
+.linkedin-btn {
+  background: linear-gradient(135deg, hsl(200, 90%, 50%), hsl(215, 100%, 55%));
+}
+
+.linkedin-btn:not(:disabled):hover {
+  background: linear-gradient(135deg, hsl(200, 95%, 55%), hsl(215, 100%, 60%));
+}
+
+.github-btn {
+  background: linear-gradient(135deg, hsl(220, 20%, 30%), hsl(215, 25%, 20%));
+}
+
+.github-btn:not(:disabled):hover {
+  background: linear-gradient(135deg, hsl(220, 20%, 35%), hsl(215, 25%, 25%));
+}
+
+body.dark-mode .github-btn {
+  background: linear-gradient(135deg, hsl(220, 15%, 85%), hsl(215, 20%, 75%));
+  color: hsl(220, 20%, 20%);
+}
+
+body.dark-mode .github-btn:not(:disabled):hover {
+  background: linear-gradient(135deg, hsl(220, 15%, 90%), hsl(215, 20%, 80%));
+}
+
+
 /* Contact Cards Grid */
 .contact-grid {
   display: grid;
@@ -194,6 +345,24 @@ body.dark-mode .github-icon {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .message-composer {
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .message-composer h3 {
+    font-size: 1.5rem;
+  }
+
+  .platform-buttons {
+    flex-direction: column;
+  }
+
+  .platform-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
@@ -219,6 +388,34 @@ body.dark-mode .github-icon {
 }
 
 @media (max-width: 480px) {
+  .message-composer {
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .message-composer h3 {
+    font-size: 1.3rem;
+  }
+
+  .subject-input,
+  .message-input {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.95rem;
+  }
+
+  .message-input {
+    min-height: 120px;
+  }
+
+  .send-label {
+    font-size: 0.95rem;
+  }
+
+  .platform-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 0.95rem;
+  }
+
   .contact-intro p {
     font-size: 1.05rem;
   }
