@@ -145,24 +145,6 @@ function Hero() {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.button
-          className="scroll-indicator"
-          onClick={scrollToNextSection}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{
-            opacity: { delay: 1.5, duration: 0.6 },
-            y: {
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-          }}
-          aria-label="Scroll to next section"
-        >
-        </motion.button>
       </div>
     </>
   );
