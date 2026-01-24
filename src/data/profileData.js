@@ -50,13 +50,6 @@ export const projects = [
     link: "https://github.com/ekjyotshinh/Rate-Limiter-API-Gateway",
   },
   {
-    title: "F1 Race Visualization",
-    description: "Built a full-stack F1 race replay visualization platform with telemetry streaming for past races. Frontend is a React UI that renders animated track views and interactive playback controls; a Go webserver (Gin) handles static assets and proxying; a FastAPI data server provides telemetry and race metadata. Includes real-time car positions, timeline scrubbing, and race analytics.",
-    tech: ["React", "Go (Gin)", "FastAPI", "Chart.js"],
-    //live: "https://ekjyotshinh.github.io/F1/",
-    link: "https://github.com/ekjyotshinh/F1"
-  },
-  {
     title: "Lightweight Redis-like Key-Value Store",
     description:
       "Built a multithreaded in-memory key-value store with RESP protocol support, mutex-based thread safety, and key expiration. Added autosave/autoload for persistent storage, reducing cold start latency and ensuring data durability across server restarts.",
@@ -76,7 +69,14 @@ export const projects = [
       "RAG-based chatbot assisting users with programming questions using vector search and OpenAI’s models for accurate, context-aware answers.",
     tech: ["LangChain", "OpenAI API", "Vector DB"],
     link: "https://github.com/ekjyotshinh/Programming-Mentor-RAG-Chatbot/tree/main/rag-chatbot",
-  }
+  },  
+  {
+    title: "F1 Race Visualization",
+    description: "Built a full-stack F1 race replay visualization platform with telemetry streaming for past races. Frontend is a React UI that renders animated track views and interactive playback controls; a Go webserver (Gin) handles static assets and proxying; a FastAPI data server provides telemetry and race metadata. Includes real-time car positions, timeline scrubbing, and race analytics.",
+    tech: ["React", "Go (Gin)", "FastAPI", "Chart.js"],
+    //live: "https://ekjyotshinh.github.io/F1/",
+    link: "https://github.com/ekjyotshinh/F1"
+  },
 ];
 
 export const certifications = [
