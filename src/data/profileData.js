@@ -83,25 +83,31 @@ export const certifications = [
   {
     name: "System Design",
     issuer: "AlgoExpert",
-    date: "June 2024",
+    date: "June 2025",
     link: "https://certificate.algoexpert.io/SystemsExpert%20Certificate%20SE-ffba438778",
+  },
+  {
+    name: "Data Structures & Algorithms",
+    issuer: "AlgoExpert",
+    date: "January 2026",
+    link: "https://certificate.algoexpert.io/AE-6ab6dd99fb",
   },
   {
     name: "Machine Learning Foundations",
     issuer: "AWS Educate",
-    date: "July 2024",
+    date: "July 2025",
     link: "https://www.credly.com/badges/f7ef7e05-b8ad-4c6c-befa-b23acf1e4119",
   },
   {
     name: "Intro to Generative AI",
     issuer: "Udacity",
-    date: "August 2024",
+    date: "August 2025",
     link: "https://www.udacity.com/certificate/e/886f9f44-56a4-11f0-b20a-231fa82c88bd",
   },
   {
     name: "Intro to Cloud Computing",
     issuer: "AWS Educate",
-    date: "August 2024",
+    date: "August 2025",
     link: "https://www.credly.com/badges/37a56fb7-856b-4b04-a804-f583f727154d/public_url",
   },
 ];
