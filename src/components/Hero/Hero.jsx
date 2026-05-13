@@ -1,8 +1,11 @@
+import { lazy, Suspense } from "react";
 import "./Hero.css";
 import { general } from "../../data/profileData";
-import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import { FiArrowDown } from "react-icons/fi";
+
+const TypeAnimation = lazy(() =>
+  import("react-type-animation").then((mod) => ({ default: mod.TypeAnimation }))
+);
 
 function Hero() {
   const scrollToNextSection = () => {
@@ -77,22 +80,24 @@ function Hero() {
 
             {/* Typing Animation for Role */}
             <div className="hero-role">
-              <TypeAnimation
-                sequence={[
-                  "Full Stack Developer",
-                  2000,
-                  "Problem Solver",
-                  2000,
-                  "Software Engineer",
-                  2000,
-                  "Tech Enthusiast",
-                  2000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-                className="typing-text"
-              />
+              <Suspense fallback={<span className="typing-text">Full Stack Developer</span>}>
+                <TypeAnimation
+                  sequence={[
+                    "Full Stack Developer",
+                    2000,
+                    "Problem Solver",
+                    2000,
+                    "Software Engineer",
+                    2000,
+                    "Tech Enthusiast",
+                    2000,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                  className="typing-text"
+                />
+              </Suspense>
             </div>
 
             {/* Description */}

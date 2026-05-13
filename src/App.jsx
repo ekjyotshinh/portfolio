@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
-import Projects from "./components/Projects/Projects";
-import Contact from "./components/Contact/Contact";
-import Experience from "./components/Experience/Experience";
-import Certifications from "./components/Certifications/Certifications";
 import SectionContainer from "./components/Layout/SectionContainer";
 import BottomNav from "./components/BottomNav/BottomNav";
+
+// Lazy-load below-the-fold sections for faster initial paint
+const Experience = lazy(() => import("./components/Experience/Experience"));
+const Projects = lazy(() => import("./components/Projects/Projects"));
+const Certifications = lazy(() => import("./components/Certifications/Certifications"));
+const Contact = lazy(() => import("./components/Contact/Contact"));
 
 function App() {
   const [theme, setTheme] = useState(
@@ -32,7 +34,6 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
-    const sections = document.querySelectorAll(".fade-section");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -44,8 +45,25 @@ function App() {
       { threshold: 0.15 }
     );
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    // Observe any existing sections
+    const observeAll = () => {
+      document.querySelectorAll(".fade-section").forEach((section) => {
+        observer.observe(section);
+      });
+    };
+    observeAll();
+
+    // Watch for lazy-loaded sections appearing in the DOM
+    const mutationObserver = new MutationObserver(observeAll);
+    mutationObserver.observe(document.getElementById("root"), {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, []);
 
   const toggleTheme = () => {
@@ -58,18 +76,20 @@ function App() {
       <SectionContainer id="home">
         <Hero />
       </SectionContainer>
-      <SectionContainer id="experience" className="fade-section">
-        <Experience />
-      </SectionContainer>
-      <SectionContainer id="projects" className="fade-section">
-        <Projects />
-      </SectionContainer>
-      <SectionContainer id="certifications" className="fade-section">
-        <Certifications />
-      </SectionContainer>
-      <SectionContainer id="contact" className="fade-section">
-        <Contact />
-      </SectionContainer>
+      <Suspense fallback={null}>
+        <SectionContainer id="experience" className="fade-section">
+          <Experience />
+        </SectionContainer>
+        <SectionContainer id="projects" className="fade-section">
+          <Projects />
+        </SectionContainer>
+        <SectionContainer id="certifications" className="fade-section">
+          <Certifications />
+        </SectionContainer>
+        <SectionContainer id="contact" className="fade-section">
+          <Contact />
+        </SectionContainer>
+      </Suspense>
       <BottomNav />
     </div>
   );
