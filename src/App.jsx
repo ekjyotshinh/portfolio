@@ -7,6 +7,7 @@ import Contact from "./components/Contact/Contact";
 import Experience from "./components/Experience/Experience";
 import Certifications from "./components/Certifications/Certifications";
 import SectionContainer from "./components/Layout/SectionContainer";
+import BottomNav from "./components/BottomNav/BottomNav";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -69,6 +70,7 @@ function App() {
       <SectionContainer id="contact" className="fade-section">
         <Contact />
       </SectionContainer>
+      <BottomNav />
     </div>
   );
 }

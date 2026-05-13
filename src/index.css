@@ -199,6 +199,13 @@ body {
   position: relative;
 }
 
+/* Add padding for fixed bottom nav on mobile */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 body::before {
   content: '';
   position: fixed;
