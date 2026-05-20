@@ -32,18 +32,15 @@ function Projects() {
         {projectList.map((project, index) => (
           <motion.div
             key={index}
-            className={`project-card${index === 0 ? ' featured' : ''}`}
+            className="project-card glass"
             variants={item}
             whileHover={{
-              y: -8,
-              transition: { duration: 0.3, ease: "easeOut" },
+              y: -6,
+              transition: { duration: 0.3 },
             }}
             tabIndex={0}
           >
             <div className="project-content">
-              <span className="project-number">
-                {String(index + 1).padStart(2, '0')}
-              </span>
               <h3>{project.title}</h3>
               <p className="project-description">{project.description}</p>
               

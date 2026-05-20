@@ -40,38 +40,64 @@ function Navbar({ theme, toggleTheme }) {
   }, [isOpen]);
 
   return (
-    <nav className="navbar glass">
-      {/* Scroll Progress Bar */}
-      <motion.div
-        className="scroll-progress"
-        style={{ scaleX: clampedScrollY }}
-      />
+    <>
+      <nav className={`navbar glass ${isOpen ? "menu-open" : ""}`}>
+        {/* Scroll Progress Bar */}
+        <motion.div
+          className="scroll-progress"
+          style={{ scaleX: clampedScrollY }}
+        />
 
-      <div className="logo-container">
-        <a href="#home" onClick={() => setIsOpen(false)}>
-          <img src={logo} alt="Logo" className="logo-img" />
-        </a>
-      </div>
-
-      <div className="nav-controls">
-        <div className="theme-toggle-mobile">
-          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+        <div className="logo-container">
+          <a href="#home" onClick={() => setIsOpen(false)}>
+            <img src={logo} alt="Logo" className="logo-img" />
+          </a>
         </div>
 
-        {/* Hamburger button visible on small screens */}
-        <button
-          className={`hamburger ${isOpen ? "open" : ""}`}
-          onClick={toggleMenu}
-          aria-label="Toggle navigation menu"
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-      </div>
+        <div className="nav-controls">
+          <div className="theme-toggle-mobile">
+            <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+          </div>
 
-      {/* Side nav menu */}
-      <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+          {/* Hamburger button visible on small screens (hidden via visibility when open to preserve layout width) */}
+          <button
+            className={`hamburger ${isOpen ? "open" : ""}`}
+            onClick={toggleMenu}
+            aria-label="Toggle navigation menu"
+            style={{ visibility: isOpen ? "hidden" : "visible" }}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+
+        {/* Desktop nav menu */}
+        <ul className="nav-links">
+          {[
+            { id: "home", label: "Home" },
+            { id: "experience", label: "Experience" },
+            { id: "projects", label: "Projects" },
+            { id: "certifications", label: "Certifications" },
+            { id: "contact", label: "Contact" },
+          ].map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                className={activeSection === item.id ? "active" : ""}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+          <li className="theme-toggle-desktop">
+            <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+          </li>
+        </ul>
+      </nav>
+
+      {/* Mobile Drawer (moved outside navbar containing block to support viewport-relative fixed positioning) */}
+      <ul className={`nav-links-mobile ${isOpen ? "open" : ""}`}>
         {[
           { id: "home", label: "Home" },
           { id: "experience", label: "Experience" },
@@ -89,15 +115,24 @@ function Navbar({ theme, toggleTheme }) {
             </a>
           </li>
         ))}
-        {!isOpen && 
-        <li className="theme-toggle-desktop">
-          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-        </li>}
       </ul>
+
+      {/* Dedicated close button rendered outside navbar containing block to support viewport-relative fixed positioning */}
+      {isOpen && (
+        <button
+          className="hamburger open drawer-close-btn"
+          onClick={toggleMenu}
+          aria-label="Close navigation menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      )}
 
       {/* Overlay to close menu when clicking outside */}
       {isOpen && <div className="overlay" onClick={toggleMenu} />}
-    </nav>
+    </>
   );
 }
 

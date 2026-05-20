@@ -25,6 +25,8 @@
   margin-right: auto;
 }
 
+
+
 .navbar::before {
   content: '';
   position: absolute;
@@ -95,6 +97,10 @@
   align-items: center;
   position: relative;
   z-index: 1;
+}
+
+.nav-links-mobile {
+  display: none;
 }
 
 .nav-links li a {
@@ -243,7 +249,7 @@
     display: block;
   }
 
-  .nav-links.open {
+  .nav-links-mobile.open {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -260,6 +266,8 @@
     border-left: 1px solid var(--glass-border);
     animation: slideIn 0.3s var(--ease-smooth) forwards;
     z-index: 1000;
+    list-style: none;
+    margin: 0;
   }
 
   @keyframes slideIn {
@@ -282,26 +290,49 @@
     }
   }
 
-  .nav-links.open li {
+  .nav-links-mobile.open li {
     width: 100%;
   }
 
-  .nav-links.open li a {
+  .nav-links-mobile.open li a {
     font-size: 1.1rem;
     padding: var(--spacing-md) var(--spacing-lg);
     width: 100%;
     text-align: left;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    position: relative;
+    transition: all var(--duration-normal) var(--ease-smooth);
+    display: block;
+  }
+
+  .nav-links-mobile.open li a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--tech-bg);
+    border-radius: var(--radius-md);
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-smooth);
+    z-index: -1;
+  }
+
+  .nav-links-mobile.open li a:hover {
+    color: var(--accent-primary);
+  }
+
+  .nav-links-mobile.open li a:hover::before {
+    opacity: 1;
   }
 
   /* Reset active link border-image in mobile drawer for cleaner look */
-  .nav-links.open li a.active {
+  .nav-links-mobile.open li a.active {
     border-bottom: 2px solid var(--accent-primary);
     border-image: none;
-  }
-
-  .nav-links.open .theme-toggle-desktop {
-    display: block;
-    margin-top: var(--spacing-lg);
+    color: var(--accent-primary);
+    background: var(--tech-bg);
   }
 }
 
@@ -334,6 +365,24 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Drawer Close Button — Fixed Viewport Position
+   ═══════════════════════════════════════════ */
+.drawer-close-btn {
+  position: fixed;
+  top: 31px;
+  right: 28px;
+  z-index: 1010;
+  display: flex;
+}
+
+@media (max-width: 320px) {
+  .drawer-close-btn {
+    top: 29px;
+    right: 16px;
   }
 }
 

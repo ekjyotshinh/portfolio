@@ -3,21 +3,10 @@
    ═══════════════════════════════════════════ */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--spacing-xl);
   padding: 0;
   margin-bottom: var(--spacing-3xl);
-}
-
-/* Featured Project Takes Full Width on Larger Screens */
-@media (min-width: 768px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .project-card.featured {
-    grid-column: 1 / -1;
-  }
 }
 
 /* ═══════════════════════════════════════════
@@ -25,50 +14,56 @@
    ═══════════════════════════════════════════ */
 .project-card {
   padding: var(--spacing-xl);
-  transition: all var(--duration-slow) var(--ease-smooth);
+  transition: all var(--duration-normal) var(--ease-smooth);
   outline: none;
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 280px;
+  min-height: 240px;
   background: var(--glass-bg);
   backdrop-filter: var(--blur-lg);
   -webkit-backdrop-filter: var(--blur-lg);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
   cursor: pointer;
 }
 
-/* Glass Tint Overlay */
+/* Gradient top-border accent strip */
 .project-card::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: var(--glass-tint);
-  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-accent);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  z-index: 1;
+  opacity: 0.8;
   transition: opacity var(--duration-normal) var(--ease-smooth);
-  opacity: 0.5;
 }
 
-/* Animated Gradient Border Effect on Hover */
+/* Glass shimmer sweep on hover */
 .project-card::after {
   content: '';
   position: absolute;
-  inset: -2px;
-  background: conic-gradient(
-    from 0deg,
-    var(--accent-primary),
-    var(--accent-tertiary),
-    var(--accent-secondary),
-    var(--accent-primary)
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.15) 45%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.15) 55%,
+    transparent 60%
   );
-  border-radius: var(--radius-xl);
-  opacity: 0;
-  z-index: -1;
-  transition: opacity var(--duration-slow) var(--ease-smooth);
-  animation: rotate-gradient 4s linear 4s;
+  background-size: 250% 100%;
+  background-position: 200% 0;
+  transition: background-position var(--duration-slowest) var(--ease-smooth);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .project-card:hover::before {
@@ -76,11 +71,11 @@
 }
 
 .project-card:hover::after {
-  opacity: 0.2;
+  background-position: -50% 0;
 }
 
 .project-card:hover {
-  box-shadow: var(--shadow-2xl);
+  box-shadow: var(--shadow-xl);
   border-color: var(--accent-primary);
 }
 
@@ -92,43 +87,7 @@
 /* ═══════════════════════════════════════════
    Featured Badge
    ═══════════════════════════════════════════ */
-.featured-badge {
-  position: absolute;
-  top: var(--spacing-md);
-  right: var(--spacing-md);
-  background: var(--gradient-primary);
-  color: white;
-  padding: var(--spacing-xs) var(--spacing-md);
-  border-radius: var(--radius-full);
-  font-size: 0.875rem;
-  font-weight: 700;
-  box-shadow: var(--shadow-md), var(--shadow-glow-sm);
-  z-index: 2;
-  letter-spacing: 0.5px;
-}
-
-/* ═══════════════════════════════════════════
-   Project Number Indicator
-   ═══════════════════════════════════════════ */
-.project-number {
-  position: absolute;
-  top: var(--spacing-md);
-  right: var(--spacing-lg);
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--accent-primary);
-  opacity: 0.1;
-  line-height: 1;
-  z-index: 1;
-  pointer-events: none;
-  transition: opacity var(--duration-slow) var(--ease-smooth);
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
-  letter-spacing: -0.03em;
-}
-
-.project-card:hover .project-number {
-  opacity: 0.2;
-}
+/* Featured badge and project number indicator removed for visual consistency */
 
 /* ═══════════════════════════════════════════
    Project Content
@@ -272,46 +231,7 @@
 /* ═══════════════════════════════════════════
    Featured Project Styles
    ═══════════════════════════════════════════ */
-.project-card.featured {
-  background: var(--glass-bg-heavy);
-  border-width: 2px;
-  min-height: 320px;
-}
-
-.project-card.featured::before {
-  opacity: 0.7;
-}
-
-.project-card.featured .project-description {
-  max-width: 900px;
-}
-
-@media (min-width: 768px) {
-  .project-card.featured {
-    padding: var(--spacing-2xl);
-  }
-
-  .project-card.featured h3 {
-    font-size: 1.75rem;
-  }
-
-  .project-card.featured .project-description {
-    font-size: 1.15rem;
-  }
-
-  .project-card.featured .tech-list {
-    gap: var(--spacing-md);
-  }
-
-  .project-card.featured .tech-list li {
-    padding: var(--spacing-sm) var(--spacing-lg);
-    font-size: 0.95rem;
-  }
-
-  .project-card.featured .project-number {
-    font-size: 4rem;
-  }
-}
+/* Featured project specific layout styles removed to maintain grid uniformity */
 
 /* ═══════════════════════════════════════════
    Responsive Design — 768px
@@ -324,12 +244,7 @@
 
   .project-card {
     padding: var(--spacing-lg);
-    min-height: 240px;
-  }
-
-  .featured-badge {
-    font-size: 0.8rem;
-    padding: 4px var(--spacing-sm);
+    min-height: 220px;
   }
 }
 
@@ -362,11 +277,6 @@
   .project-link {
     width: 100%;
   }
-
-  .project-number {
-    font-size: 2.5rem;
-    right: var(--spacing-md);
-  }
 }
 
 /* ═══════════════════════════════════════════
@@ -379,8 +289,7 @@
 
   .project-card {
     padding: var(--spacing-md);
-    min-height: 200px;
-    border-radius: var(--radius-lg);
+    min-height: 180px;
   }
 
   .project-card h3 {
@@ -407,16 +316,6 @@
     font-size: 0.875rem;
     padding: var(--spacing-xs) var(--spacing-xs);
   }
-
-  .project-number {
-    font-size: 2rem;
-    right: var(--spacing-sm);
-    top: var(--spacing-sm);
-  }
-
-  .project-card.featured {
-    min-height: 220px;
-  }
 }
 
 /* ═══════════════════════════════════════════
@@ -427,11 +326,7 @@ body.dark-mode .project-card {
 }
 
 body.dark-mode .project-card:hover {
-  box-shadow: var(--shadow-2xl), 0 0 40px var(--accent-glow);
-}
-
-body.dark-mode .featured-badge {
-  box-shadow: var(--shadow-lg), var(--shadow-glow-sm);
+  box-shadow: var(--shadow-xl), 0 0 30px var(--accent-glow);
 }
 
 body.dark-mode .tech-list li {
@@ -442,6 +337,19 @@ body.dark-mode .tech-list li:hover {
   box-shadow: var(--shadow-md), inset 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 
+body.dark-mode .project-card::after {
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.06) 45%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.06) 55%,
+    transparent 60%
+  );
+  background-size: 250% 100%;
+  background-position: 200% 0;
+}
+
 body.dark-mode .project-card:hover::after {
-  opacity: 0.3;
+  background-position: -50% 0;
 }
