@@ -10,6 +10,7 @@ const Experience = lazy(() => import("./components/Experience/Experience"));
 const Projects = lazy(() => import("./components/Projects/Projects"));
 const Certifications = lazy(() => import("./components/Certifications/Certifications"));
 const Contact = lazy(() => import("./components/Contact/Contact"));
+const Footer = lazy(() => import("./components/Footer/Footer"));
 
 function App() {
   const [theme, setTheme] = useState(
@@ -89,6 +90,7 @@ function App() {
         <SectionContainer id="contact" className="fade-section">
           <Contact />
         </SectionContainer>
+        <Footer />
       </Suspense>
       <BottomNav />
     </div>

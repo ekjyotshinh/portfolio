@@ -1,3 +1,11 @@
+/* ═══════════════════════════════════════════
+   Timeline Pulse Animation
+   ═══════════════════════════════════════════ */
+@keyframes timeline-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.55; }
+}
+
 /* Timeline Container */
 .timeline {
   position: relative;
@@ -17,6 +25,7 @@
   background: var(--gradient-primary);
   border-radius: var(--radius-full);
   opacity: 0.3;
+  animation: timeline-pulse 3s var(--ease-smooth) infinite;
 }
 
 /* Timeline Item */
@@ -77,18 +86,32 @@
   height: 24px;
 }
 
-/* Timeline Content Card */
+/* ═══════════════════════════════════════════
+   Timeline Content Card
+   ═══════════════════════════════════════════ */
 .timeline-content {
   flex: 1;
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
   transition: all var(--duration-normal) var(--ease-smooth);
   position: relative;
+  overflow: hidden;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--gradient-accent);
 }
 
 .timeline-content:hover {
   box-shadow: var(--shadow-xl);
   border-color: var(--accent-primary);
+  background: var(--glass-bg-heavy);
 }
 
 /* Experience Header */
@@ -134,7 +157,9 @@
   -webkit-backdrop-filter: var(--blur-sm);
 }
 
-/* Experience Details List */
+/* ═══════════════════════════════════════════
+   Experience Details List
+   ═══════════════════════════════════════════ */
 .experience-details {
   list-style: none;
   padding: 0;
@@ -151,6 +176,7 @@
   color: var(--text-secondary);
   line-height: 1.7;
   font-size: 1.05rem;
+  transition: color var(--duration-normal) var(--ease-smooth);
 }
 
 .experience-details .bullet {
@@ -159,6 +185,8 @@
   font-size: 1.2rem;
   flex-shrink: 0;
   margin-top: 2px;
+  transition: color var(--duration-normal) var(--ease-smooth),
+              transform var(--duration-normal) var(--ease-spring);
 }
 
 .experience-details li span:last-child {
@@ -170,7 +198,14 @@
   color: var(--text-primary);
 }
 
-/* Responsive Design */
+.experience-details li:hover .bullet {
+  color: var(--accent-secondary);
+  transform: translateX(3px);
+}
+
+/* ═══════════════════════════════════════════
+   Responsive Design — 768px
+   ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
   .timeline::before {
     left: 20px;
@@ -223,6 +258,9 @@
   }
 }
 
+/* ═══════════════════════════════════════════
+   Responsive Design — 480px
+   ═══════════════════════════════════════════ */
 @media (max-width: 480px) {
   .timeline::before {
     left: 15px;
@@ -255,7 +293,79 @@
   }
 }
 
-/* Dark Mode Specific */
+/* ═══════════════════════════════════════════
+   Responsive Design — 320px (ultra-compact)
+   ═══════════════════════════════════════════ */
+@media (max-width: 320px) {
+  .timeline {
+    padding: var(--spacing-md) 0;
+  }
+
+  .timeline::before {
+    left: 12px;
+    width: 2px;
+  }
+
+  .timeline-item {
+    padding-left: 38px;
+    padding-bottom: var(--spacing-xl);
+    gap: var(--spacing-sm);
+  }
+
+  .timeline-dot {
+    width: 24px;
+    height: 24px;
+  }
+
+  .timeline-dot svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-content {
+    padding: var(--spacing-md);
+  }
+
+  .timeline-content::before {
+    width: 3px;
+  }
+
+  .experience-header {
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .timeline-content h3 {
+    font-size: 1rem;
+  }
+
+  .company {
+    font-size: 0.85rem;
+  }
+
+  .date-badge {
+    font-size: 0.75rem;
+    padding: 3px var(--spacing-xs);
+  }
+
+  .experience-details {
+    gap: var(--spacing-sm);
+  }
+
+  .experience-details li {
+    font-size: 0.85rem;
+    gap: var(--spacing-xs);
+    line-height: 1.6;
+  }
+
+  .experience-details .bullet {
+    font-size: 0.9rem;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Dark Mode Specific
+   ═══════════════════════════════════════════ */
 body.dark-mode .timeline::before {
   opacity: 0.4;
 }

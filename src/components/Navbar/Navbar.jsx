@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.svg";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 function Navbar({ theme, toggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const { scrollYProgress } = useScroll();
+  const clampedScrollY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -43,7 +44,7 @@ function Navbar({ theme, toggleTheme }) {
       {/* Scroll Progress Bar */}
       <motion.div
         className="scroll-progress"
-        style={{ scaleX: scrollYProgress }}
+        style={{ scaleX: clampedScrollY }}
       />
 
       <div className="logo-container">

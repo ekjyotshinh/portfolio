@@ -1,25 +1,9 @@
 import "./Contact.css";
 import { general } from "../../data/profileData";
 import { motion } from "framer-motion";
-import { FiMail, FiGithub, FiLinkedin, FiCopy, FiCheck, FiSend } from "react-icons/fi";
-import { useState } from "react";
+import { FiLinkedin, FiGithub, FiFileText, FiArrowUpRight } from "react-icons/fi";
 
 const Contact = () => {
-  const [message, setMessage] = useState("");
-  const [subject, setSubject] = useState("");
-  const [copied, setCopied] = useState(false);
-
-  const copyEmail = () => {
-    navigator.clipboard.writeText(general.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  const handleSendEmail = () => {
-    const mailtoLink = `mailto:${general.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-    window.location.href = mailtoLink;
-  };
-
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -35,18 +19,35 @@ const Contact = () => {
     show: { opacity: 1, y: 0 },
   };
 
+  const actions = [
+    {
+      label: "LinkedIn",
+      icon: <FiLinkedin />,
+      href: general.linkedin,
+      external: true,
+    },
+    {
+      label: "GitHub",
+      icon: <FiGithub />,
+      href: general.github,
+      external: true,
+    },
+  ];
+
   return (
     <>
-      <h2 className="section-heading">Let's Connect</h2>
-      
+      {/* Bold CTA Heading */}
       <motion.div
-        className="contact-intro"
-        initial={{ opacity: 0, y: 20 }}
+        className="contact-hero"
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.7 }}
       >
-        <p>
+        <h2 className="contact-heading">
+          <span className="gradient-text">Let's Build Something Together</span>
+        </h2>
+        <p className="contact-subtitle">
           Whether you have a project in mind or just want to connect, feel free
           to reach out. I'm always open to exciting opportunities and interesting
           conversations.
@@ -57,143 +58,32 @@ const Contact = () => {
         </div>
       </motion.div>
 
-      {/* Message Composer
+      {/* Action Cards */}
       <motion.div
-        className="message-composer glass"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <h3>Send a message</h3>
-        <div className="composer-form">
-          <input
-            type="text"
-            placeholder="Subject"
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            className="subject-input"
-          />
-          <textarea
-            placeholder="Write your message here..."
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            className="message-input"
-            rows="6"
-          />
-          <div className="send-options">
-            <div className="platform-buttons">
-              <button
-                className="platform-btn email-btn"
-                onClick={handleSendEmail}
-                disabled={!message.trim()}
-                aria-label="Send via Email"
-              >
-                <FiMail />
-                <span>Email</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-       */}
-      {/* Contact Cards */}
-      <motion.div
-        className="contact-grid"
+        className="contact-actions"
         variants={container}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
       >
-        {/* Email Card 
-        <motion.div
-          className="contact-card glass"
-          variants={item}
-          whileHover={{
-            y: -6,
-            transition: { duration: 0.3 },
-          }}
-        >
-          <div className="contact-icon email-icon">
-            <FiMail />
-          </div>
-          <div className="contact-content">
-            <h3>Email</h3>
-            <a href={`mailto:${general.email}`}>{general.email}</a>
-            <button
-              className="copy-btn"
-              onClick={copyEmail}
-              aria-label="Copy email to clipboard"
-            >
-              {copied ? <FiCheck /> : <FiCopy />}
-              <span>{copied ? "Copied!" : "Copy"}</span>
-            </button>
-          </div>
-        </motion.div>
-        */}
-        {/* LinkedIn Card */}
-        <motion.div
-          className="contact-card glass"
-          variants={item}
-          whileHover={{
-            y: -6,
-            transition: { duration: 0.3 },
-          }}
-        >
-          <div className="contact-icon linkedin-icon">
-            <FiLinkedin />
-          </div>
-          <div className="contact-content">
-            <h3>LinkedIn</h3>
-            <a
-              href={general.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              linkedin.com/in/ekjyotshinh
-            </a>
-            <a
-              href={general.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-btn"
-            >
-              Connect with me →
-            </a>
-          </div>
-        </motion.div>
-
-        {/* GitHub Card */}
-        <motion.div
-          className="contact-card glass"
-          variants={item}
-          whileHover={{
-            y: -6,
-            transition: { duration: 0.3 },
-          }}
-        >
-          <div className="contact-icon github-icon">
-            <FiGithub />
-          </div>
-          <div className="contact-content">
-            <h3>GitHub</h3>
-            <a
-              href={general.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              github.com/ekjyotshinh
-            </a>
-            <a
-              href={general.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-btn"
-            >
-              View my work →
-            </a>
-          </div>
-        </motion.div>
+        {actions.map((action, index) => (
+          <motion.a
+            key={index}
+            href={action.href}
+            target={action.external ? "_blank" : undefined}
+            rel={action.external ? "noopener noreferrer" : undefined}
+            className="action-card glass"
+            variants={item}
+            whileHover={{
+              y: -6,
+              transition: { duration: 0.3 },
+            }}
+          >
+            <div className="action-icon">{action.icon}</div>
+            <span className="action-label">{action.label}</span>
+            <FiArrowUpRight className="action-arrow" />
+          </motion.a>
+        ))}
       </motion.div>
     </>
   );

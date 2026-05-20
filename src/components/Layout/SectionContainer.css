@@ -1,7 +1,18 @@
+/* ═══════════════════════════════════════════
+   Section Container
+   ═══════════════════════════════════════════ */
 .section {
   width: 100%;
-  padding: 4rem 2rem;
+  padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 4vw, 2rem);
   box-sizing: border-box;
+  /* Subtle separator between sections */
+  border-bottom: 1px solid var(--glass-border-subtle);
+  overflow-x: hidden;
+}
+
+/* Remove border on last section to avoid double-border with footer */
+.section:last-of-type {
+  border-bottom: none;
 }
 
 .section-inner {

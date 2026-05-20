@@ -1,3 +1,6 @@
+/* ═══════════════════════════════════════════
+   Theme Toggle Button
+   ═══════════════════════════════════════════ */
 .theme-toggle {
   background: none;
   border: none;
@@ -5,4 +8,34 @@
   cursor: pointer;
   padding: 0;
   color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  transition: all var(--duration-normal) var(--ease-smooth);
+  box-shadow: none;
+}
+
+/* Circular glass background on hover */
+.theme-toggle:hover {
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur-sm);
+  -webkit-backdrop-filter: var(--blur-sm);
+  box-shadow: var(--shadow-sm);
+  transform: none;
+}
+
+/* Smooth rotation on click */
+.theme-toggle:active {
+  transform: rotate(180deg);
+  transition: transform var(--duration-slow) var(--ease-spring);
+}
+
+/* Override default button focus outline to match the circular shape */
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-full);
 }

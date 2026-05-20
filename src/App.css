@@ -11,8 +11,8 @@
 .fade-section {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity var(--duration-slower) var(--ease-smooth),
-              transform var(--duration-slower) var(--ease-smooth);
+  transition: opacity var(--duration-slowest) var(--ease-smooth),
+              transform var(--duration-slowest) var(--ease-smooth);
 }
 
 .fade-section.in-view {
@@ -24,6 +24,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Remove default link styles */

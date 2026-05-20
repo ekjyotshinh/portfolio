@@ -1,15 +1,34 @@
-/* Contact Intro */
-.contact-intro {
-  max-width: 700px;
-  margin: 0 auto var(--spacing-3xl);
+/* ═══════════════════════════════════════════
+   Contact Section — Bold CTA
+   ═══════════════════════════════════════════ */
+
+/* Hero-style CTA */
+.contact-hero {
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-3xl);
 }
 
-.contact-intro p {
-  font-size: 1.2rem;
+.contact-heading {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 var(--spacing-xl) 0;
+  letter-spacing: -0.03em;
+}
+
+.contact-heading .gradient-text {
+  display: inline;
+}
+
+.contact-subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
   line-height: 1.7;
   color: var(--text-secondary);
-  margin-bottom: var(--spacing-lg);
+  margin: 0 0 var(--spacing-xl) 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Availability Badge */
@@ -24,6 +43,7 @@
   padding: var(--spacing-sm) var(--spacing-lg);
   border-radius: var(--radius-full);
   font-weight: 600;
+  font-size: 0.95rem;
   color: var(--success);
   box-shadow: var(--shadow-md);
 }
@@ -34,434 +54,157 @@
   background: var(--success);
   border-radius: var(--radius-full);
   box-shadow: 0 0 10px var(--success);
-  animation: pulse 2s ease-in-out infinite;
+  animation: contact-pulse 2s ease-in-out infinite;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+@keyframes contact-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
-/* Message Composer */
-.message-composer {
-  max-width: 900px;
-  margin: 0 auto var(--spacing-3xl);
-  padding: var(--spacing-2xl);
-  border-radius: var(--radius-xl);
-  transition: all var(--duration-normal) var(--ease-smooth);
-}
-
-.message-composer:hover {
-  box-shadow: var(--shadow-2xl);
-  border-color: var(--accent-primary);
-}
-
-.message-composer h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 var(--spacing-xl) 0;
-  letter-spacing: -0.02em;
-}
-
-.composer-form {
+/* ═══════════════════════════════════════════
+   Action Cards
+   ═══════════════════════════════════════════ */
+.contact-actions {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
-}
-
-.subject-input,
-.message-input {
-  width: 90%;
-  padding: var(--spacing-md) var(--spacing-lg);
-  background: var(--tech-bg);
-  border: 2px solid var(--tech-border);
-  border-radius: var(--radius-md);
-  font-size: 1rem;
-  font-family: inherit;
-  color: var(--text-primary);
-  transition: all var(--duration-normal) var(--ease-smooth);
-  resize: vertical;
-}
-
-.subject-input:focus,
-.message-input:focus {
-  outline: none;
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 4px var(--accent-glow);
-}
-
-.subject-input::placeholder,
-.message-input::placeholder {
-  color: var(--text-tertiary);
-}
-
-.message-input {
-  min-height: 150px;
-  line-height: 1.6;
-}
-
-.send-options {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-  padding-top: var(--spacing-md);
-  border-top: 1px solid var(--glass-border);
-}
-
-.send-label {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin: 0;
-}
-
-.platform-buttons {
-  display: flex;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
-}
-
-.platform-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-md) var(--spacing-xl);
-  border-radius: var(--radius-md);
-  font-size: 1rem;
-  font-weight: 600;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: all var(--duration-normal) var(--ease-smooth);
-  box-shadow: var(--shadow-md);
-  position: relative;
-  overflow: hidden;
-}
-
-.platform-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none !important;
-}
-
-.platform-btn:not(:disabled):hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg), var(--shadow-glow-sm);
-}
-
-.platform-btn:not(:disabled):active {
-  transform: translateY(0);
-}
-
-.platform-btn svg {
-  width: 20px;
-  height: 20px;
-}
-
-.email-btn {
-  background: linear-gradient(135deg, hsl(15, 85%, 60%), hsl(30, 90%, 55%));
-}
-
-.email-btn:not(:disabled):hover {
-  background: linear-gradient(135deg, hsl(15, 90%, 65%), hsl(30, 95%, 60%));
-}
-
-.linkedin-btn {
-  background: linear-gradient(135deg, hsl(200, 90%, 50%), hsl(215, 100%, 55%));
-}
-
-.linkedin-btn:not(:disabled):hover {
-  background: linear-gradient(135deg, hsl(200, 95%, 55%), hsl(215, 100%, 60%));
-}
-
-.github-btn {
-  background: linear-gradient(135deg, hsl(220, 20%, 30%), hsl(215, 25%, 20%));
-}
-
-.github-btn:not(:disabled):hover {
-  background: linear-gradient(135deg, hsl(220, 20%, 35%), hsl(215, 25%, 25%));
-}
-
-body.dark-mode .github-btn {
-  background: linear-gradient(135deg, hsl(220, 15%, 85%), hsl(215, 20%, 75%));
-  color: hsl(220, 20%, 20%);
-}
-
-body.dark-mode .github-btn:not(:disabled):hover {
-  background: linear-gradient(135deg, hsl(220, 15%, 90%), hsl(215, 20%, 80%));
-}
-
-
-/* Contact Cards Grid */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
   gap: var(--spacing-xl);
-  max-width: 1000px;
+  flex-wrap: wrap;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-/* Contact Card */
-.contact-card {
-  padding: var(--spacing-2xl);
-  border-radius: var(--radius-xl);
+.action-card {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  text-decoration: none;
+  color: var(--text-primary);
   transition: all var(--duration-normal) var(--ease-smooth);
+  cursor: pointer;
+  min-width: 200px;
+  justify-content: center;
   position: relative;
-  min-height: 240px;
 }
 
-.contact-card:hover {
-  box-shadow: var(--shadow-2xl);
+.action-card:hover {
   border-color: var(--accent-primary);
+  box-shadow: var(--shadow-xl), var(--shadow-glow-sm);
 }
 
-/* Contact Icon */
-.contact-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-lg);
+.action-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: var(--shadow-lg), var(--shadow-glow-sm);
-  transition: all var(--duration-normal) var(--ease-spring);
+  flex-shrink: 0;
+  transition: transform var(--duration-normal) var(--ease-spring);
 }
 
-.contact-card:hover .contact-icon {
+.action-card:hover .action-icon {
   transform: scale(1.1) rotate(5deg);
 }
 
-.contact-icon svg {
-  width: 32px;
-  height: 32px;
+.action-icon svg {
+  width: 22px;
+  height: 22px;
 }
 
-.email-icon {
-  background: linear-gradient(135deg, hsl(15, 85%, 60%), hsl(30, 90%, 55%));
-}
-
-.linkedin-icon {
-  background: linear-gradient(135deg, hsl(200, 90%, 50%), hsl(215, 100%, 55%));
-}
-
-.github-icon {
-  background: linear-gradient(135deg, hsl(220, 20%, 30%), hsl(215, 25%, 20%));
-}
-
-body.dark-mode .github-icon {
-  background: linear-gradient(135deg, hsl(220, 15%, 85%), hsl(215, 20%, 75%));
-}
-
-/* Contact Content */
-.contact-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.contact-card h3 {
-  font-size: 1.5rem;
-  color: var(--text-primary);
+.action-label {
+  font-size: 1.1rem;
   font-weight: 700;
-  margin: 0;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
   letter-spacing: -0.01em;
 }
 
-.contact-card a {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  margin-bottom: var(--spacing-md);
-  word-break: break-word;
-  transition: color var(--duration-normal) var(--ease-smooth);
-}
-
-.contact-card a:hover {
-  color: var(--accent-primary);
-}
-
-/* Copy Button */
-.copy-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  background: var(--tech-bg);
-  border: 1px solid var(--tech-border);
-  color: var(--accent-primary);
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--radius-md);
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
+.action-arrow {
+  width: 18px;
+  height: 18px;
+  color: var(--text-tertiary);
   transition: all var(--duration-normal) var(--ease-smooth);
-  align-self: flex-start;
+  flex-shrink: 0;
 }
 
-.copy-btn:hover {
-  background: var(--accent-primary);
-  color: white;
-  transform: translateY(0);
-  box-shadow: var(--shadow-md);
-  border-color: var(--accent-primary);
+.action-card:hover .action-arrow {
+  color: var(--accent-primary);
+  transform: translate(2px, -2px);
 }
 
-.copy-btn svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* Contact Button */
-.contact-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  background: var(--gradient-primary);
-  color: white !important;
-  padding: var(--spacing-sm) var(--spacing-lg);
-  border-radius: var(--radius-md);
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all var(--duration-normal) var(--ease-smooth);
-  align-self: flex-start;
-  box-shadow: var(--shadow-md), var(--shadow-glow-sm);
-  margin-top: auto;
-}
-
-.contact-btn:hover {
-  transform: translateX(4px);
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
-  color: white !important;
-}
-
-/* Responsive Design */
+/* ═══════════════════════════════════════════
+   Responsive Design
+   ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .message-composer {
-    padding: var(--spacing-xl);
+  .contact-hero {
     margin-bottom: var(--spacing-2xl);
   }
 
-  .message-composer h3 {
-    font-size: 1.5rem;
-  }
-
-  .platform-buttons {
+  .contact-actions {
     flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
   }
 
-  .platform-btn {
+  .action-card {
     width: 100%;
-    justify-content: center;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-  }
-
-  .contact-card {
-    padding: var(--spacing-xl);
-  }
-
-  .contact-icon {
-    width: 56px;
-    height: 56px;
-  }
-
-  .contact-icon svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  .contact-card h3 {
-    font-size: 1.3rem;
+    max-width: 400px;
+    min-width: unset;
+    padding: var(--spacing-md) var(--spacing-lg);
   }
 }
 
 @media (max-width: 480px) {
-  .message-composer {
-    padding: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .message-composer h3 {
-    font-size: 1.3rem;
-  }
-
-  .subject-input,
-  .message-input {
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: 0.95rem;
-  }
-
-  .message-input {
-    min-height: 120px;
-  }
-
-  .send-label {
-    font-size: 0.95rem;
-  }
-
-  .platform-btn {
-    padding: var(--spacing-sm) var(--spacing-lg);
-    font-size: 0.95rem;
-  }
-
-  .contact-intro p {
-    font-size: 1.05rem;
+  .contact-subtitle {
+    font-size: 1rem;
   }
 
   .availability-badge {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     padding: var(--spacing-xs) var(--spacing-md);
   }
 
-  .contact-card {
-    padding: var(--spacing-lg);
-    min-height: 200px;
+  .action-card {
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
   }
 
-  .contact-icon {
-    width: 48px;
-    height: 48px;
+  .action-icon {
+    width: 40px;
+    height: 40px;
   }
 
-  .contact-icon svg {
-    width: 24px;
-    height: 24px;
+  .action-icon svg {
+    width: 20px;
+    height: 20px;
   }
 
-  .contact-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .contact-card a {
-    font-size: 0.95rem;
+  .action-label {
+    font-size: 1rem;
   }
 }
 
-/* Dark Mode Adjustments */
-body.dark-mode .contact-card:hover {
-  box-shadow: var(--shadow-2xl), 0 0 40px var(--accent-glow);
+@media (max-width: 320px) {
+  .contact-heading {
+    font-size: 1.75rem;
+  }
+
+  .action-card {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
 }
 
-body.dark-mode .contact-icon {
-  box-shadow: var(--shadow-lg), var(--shadow-glow-sm);
+/* ═══════════════════════════════════════════
+   Dark Mode Adjustments
+   ═══════════════════════════════════════════ */
+body.dark-mode .action-card:hover {
+  box-shadow: var(--shadow-xl), 0 0 30px var(--accent-glow);
 }
 
-body.dark-mode .contact-btn {
+body.dark-mode .action-icon {
   box-shadow: var(--shadow-md), var(--shadow-glow-sm);
-}
-
-body.dark-mode .contact-btn:hover {
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
 }
