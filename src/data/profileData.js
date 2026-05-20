@@ -114,7 +114,6 @@ export const certifications = [
 
 export const general = {
   name: "Ekjyot Shinh",
-  email: "ekjyotshinh@gmail.com",
   linkedin: "https://linkedin.com/in/ekjyotshinh",
   github: "https://github.com/ekjyotshinh",
   resume:

@@ -57,7 +57,7 @@ const Contact = () => {
         </div>
       </motion.div>
 
-      {/* Message Composer */}
+      {/* Message Composer
       <motion.div
         className="message-composer glass"
         initial={{ opacity: 0, y: 20 }}
@@ -96,6 +96,7 @@ const Contact = () => {
           </div>
         </div>
       </motion.div>
+       */}
       {/* Contact Cards */}
       <motion.div
         className="contact-grid"
@@ -104,7 +105,7 @@ const Contact = () => {
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
       >
-        {/* Email Card */}
+        {/* Email Card 
         <motion.div
           className="contact-card glass"
           variants={item}
@@ -129,7 +130,7 @@ const Contact = () => {
             </button>
           </div>
         </motion.div>
-
+        */}
         {/* LinkedIn Card */}
         <motion.div
           className="contact-card glass"
