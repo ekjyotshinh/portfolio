@@ -217,22 +217,28 @@ function Projects() {
                 </button>
 
                 <div className="drawer-content">
-                  <h3 className="drawer-title">{activeProject.title}</h3>
-                  <p className="drawer-description">{activeProject.description}</p>
+                  <h3 className="details-title">{activeProject.title}</h3>
+                  <p className="details-description">{activeProject.description}</p>
                   
-                  <h4 className="drawer-section-title">Tech Stack</h4>
-                  <ul className="drawer-tech-list">
+                  <h4 className="details-section-title">Tech Stack</h4>
+                  <ul className="details-tech-list">
                     {activeProject.tech.map((t, i) => (
-                      <li key={i}>{t}</li>
+                      <motion.li
+                        key={i}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {t}
+                      </motion.li>
                     ))}
                   </ul>
 
-                  <h4 className="drawer-section-title">Links</h4>
-                  <div className="drawer-links">
+                  <h4 className="details-section-title">Links</h4>
+                  <div className="details-links">
                     {activeProject.live && (
                       <a
                         href={activeProject.live}
-                        className="drawer-link-btn"
+                        className="details-link-btn"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -243,7 +249,7 @@ function Projects() {
                     {activeProject.link && (
                       <a
                         href={activeProject.link}
-                        className="drawer-link-btn"
+                        className="details-link-btn"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -254,7 +260,7 @@ function Projects() {
                     {activeProject.demo && (
                       <a
                         href={activeProject.demo}
-                        className="drawer-link-btn"
+                        className="details-link-btn"
                         target="_blank"
                         rel="noreferrer"
                       >
