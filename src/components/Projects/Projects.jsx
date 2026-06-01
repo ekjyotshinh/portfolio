@@ -9,17 +9,8 @@ function Projects() {
   const [activeProject, setActiveProject] = useState(projectList[0] || null);
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
-  // Lock body scroll only when bottom sheet is open
-  useEffect(() => {
-    if (mobileDrawerOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [mobileDrawerOpen]);
+
+
 
   // Escape key support to close drawer
   useEffect(() => {

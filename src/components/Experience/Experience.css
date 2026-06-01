@@ -373,3 +373,45 @@ body.dark-mode .timeline-content:hover {
   background: rgba(255, 255, 255, 0.02);
   box-shadow: none;
 }
+
+/* ═══════════════════════════════════════════
+   Experience Toggle Button (Mobile)
+   ═══════════════════════════════════════════ */
+.experience-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  background: var(--tech-bg);
+  border: 1px solid var(--tech-border);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  margin-top: var(--spacing-md);
+  transition: all var(--duration-normal) var(--ease-smooth);
+  width: auto;
+  box-shadow: none;
+  backdrop-filter: var(--blur-sm);
+  -webkit-backdrop-filter: var(--blur-sm);
+}
+
+.experience-toggle-btn:hover {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  transform: translateY(-1px);
+}
+
+body.dark-mode .experience-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.experience-toggle-btn svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--duration-normal) var(--ease-smooth);
+}
+
