@@ -1,9 +1,11 @@
+import { useState } from "react";
 import "./Projects.css";
 import { projects as projectList } from "../../data/profileData";
 import { motion } from "framer-motion";
-import { FiGithub, FiExternalLink, FiPlayCircle } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiPlayCircle, FiChevronDown } from "react-icons/fi";
 
 function Projects() {
+  const [expandedIndex, setExpandedIndex] = useState(null);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -32,16 +34,28 @@ function Projects() {
         {projectList.map((project, index) => (
           <motion.div
             key={index}
-            className="project-card"
+            className={`project-card ${expandedIndex === index ? "is-expanded" : ""}`}
             variants={item}
             whileHover={{
-              y: -6,
+              y: -4,
               transition: { duration: 0.3 },
             }}
             tabIndex={0}
+            onMouseEnter={() => setExpandedIndex(index)}
+            onMouseLeave={() => setExpandedIndex(null)}
+            onFocus={() => setExpandedIndex(index)}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget)) {
+                setExpandedIndex(null);
+              }
+            }}
           >
-            <div className="project-content">
+            <div className="project-header">
               <h3>{project.title}</h3>
+              <FiChevronDown className="expand-indicator" />
+            </div>
+
+            <div className="project-details">
               <p className="project-description">{project.description}</p>
               
               <ul className="tech-list">
@@ -57,42 +71,42 @@ function Projects() {
                   </motion.li>
                 ))}
               </ul>
-            </div>
 
-            <div className="project-links">
-              {project.live && (
-                <a
-                  href={project.live}
-                  className="project-link"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FiExternalLink />
-                  <span>Live Website</span>
-                </a>
-              )}
-              {project.link && (
-                <a
-                  href={project.link}
-                  className="project-link"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FiGithub />
-                  <span>Source Code</span>
-                </a>
-              )}
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  className="project-link"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FiPlayCircle />
-                  <span>View Demo</span>
-                </a>
-              )}
+              <div className="project-links">
+                {project.live && (
+                  <a
+                    href={project.live}
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FiExternalLink />
+                    <span>Live Website</span>
+                  </a>
+                )}
+                {project.link && (
+                  <a
+                    href={project.link}
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FiGithub />
+                    <span>Source Code</span>
+                  </a>
+                )}
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FiPlayCircle />
+                    <span>View Demo</span>
+                  </a>
+                )}
+              </div>
             </div>
           </motion.div>
         ))}

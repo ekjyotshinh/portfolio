@@ -2,11 +2,14 @@
    Projects Grid — Bento Layout
    ═══════════════════════════════════════════ */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
   padding: 0;
   margin-bottom: var(--spacing-3xl);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ═══════════════════════════════════════════
@@ -19,13 +22,18 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 240px;
+  min-height: auto;
   background: transparent;
   border-radius: var(--radius-lg);
   border: 1px solid transparent;
+  border-bottom: 1px solid var(--glass-border-subtle);
   box-shadow: none;
   overflow: hidden;
   cursor: pointer;
+}
+
+.project-card:last-child {
+  border-bottom-color: transparent;
 }
 
 /* Gradient top-border accent strip */
@@ -46,10 +54,11 @@
   display: none;
 }
 
-.project-card:hover {
+.project-card.is-expanded {
   background: rgba(0, 0, 0, 0.015);
   box-shadow: none;
-  border-color: var(--glass-border-subtle);
+  border-color: transparent;
+  border-bottom-color: transparent;
 }
 
 .project-card:focus-visible {
@@ -65,17 +74,15 @@
 /* ═══════════════════════════════════════════
    Project Content
    ═══════════════════════════════════════════ */
-.project-content {
+.project-header {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-grow: 1;
-  position: relative;
-  z-index: 1;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .project-card h3 {
-  margin-bottom: var(--spacing-md);
+  margin: 0;
   font-size: clamp(1.25rem, 2vw, 1.5rem);
   color: var(--accent-primary);
   font-weight: 700;
@@ -87,6 +94,38 @@
 
 .project-card:hover h3 {
   color: var(--accent-secondary);
+}
+
+.expand-indicator {
+  font-size: 1.5rem;
+  color: var(--text-tertiary);
+  transition: transform var(--duration-normal) var(--ease-smooth),
+              color var(--duration-normal) var(--ease-smooth);
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height var(--duration-slow) var(--ease-smooth),
+              opacity var(--duration-normal) var(--ease-smooth),
+              padding-top var(--duration-normal) var(--ease-smooth);
+  padding-top: 0;
+}
+
+.project-card.is-expanded .project-details {
+  max-height: 500px;
+  opacity: 1;
+  padding-top: var(--spacing-lg);
+}
+
+.project-card.is-expanded .expand-indicator {
+  transform: rotate(180deg);
+  color: var(--accent-primary);
 }
 
 .project-description {
@@ -211,13 +250,11 @@
    ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
   .projects-grid {
-    grid-template-columns: 1fr;
     gap: var(--spacing-lg);
   }
 
   .project-card {
     padding: var(--spacing-lg);
-    min-height: 220px;
   }
 }
 
@@ -262,7 +299,6 @@
 
   .project-card {
     padding: var(--spacing-md);
-    min-height: 180px;
   }
 
   .project-card h3 {
@@ -297,12 +333,18 @@
 body.dark-mode .project-card {
   box-shadow: none;
   border-color: transparent;
+  border-bottom: 1px solid var(--glass-border-subtle);
 }
 
-body.dark-mode .project-card:hover {
+body.dark-mode .project-card:last-child {
+  border-bottom-color: transparent;
+}
+
+body.dark-mode .project-card.is-expanded {
   background: rgba(255, 255, 255, 0.025);
   box-shadow: none;
-  border-color: var(--glass-border-subtle);
+  border-color: transparent;
+  border-bottom-color: transparent;
 }
 
 body.dark-mode .tech-list li {
