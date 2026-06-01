@@ -39,7 +39,7 @@ export const projects = [
     description:
       "Led a team of 7 to develop an inventory tracking app with QR scanning, role-based access, and push/email notifications. Built with React Native, Go, and Firestore. Deployed via TestFlight for internal use.",
     tech: ["React Native", "Go", "Firestore", "GCS", "CI/CD", "TypeScript"],
-    link: "https://github.com/ekjyotshinh/ekjyotshinh",
+    link: "https://github.com/ekjyotshinh/ChemTrack",
     demo: "https://imgur.com/a/chemtrack-demo-h9Tlx1o",
   },
   {
