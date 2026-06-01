@@ -108,18 +108,8 @@
 }
 
 .project-details {
-  max-height: 0;
-  opacity: 0;
   overflow: hidden;
-  transition: max-height 0.6s var(--ease-smooth),
-              opacity 0.5s var(--ease-smooth),
-              padding-top 0.5s var(--ease-smooth);
-  padding-top: 0;
-}
-
-.project-card.is-expanded .project-details {
-  max-height: 500px;
-  opacity: 1;
+  width: 100%;
   padding-top: var(--spacing-lg);
 }
 
