@@ -7,33 +7,54 @@ import { motion, useScroll, useTransform } from "framer-motion";
 function Navbar({ theme, toggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const { scrollYProgress } = useScroll();
-  const clampedScrollY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const { scrollY, scrollYProgress } = useScroll();
+  const clampedScrollY = useTransform(() => {
+    if (scrollY.get() === 0) return 0;
+    return scrollYProgress.get();
+  });
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
-    const sections = ["home", "experience", "projects", "certifications", "contact"];
-    const observerOptions = {
-      root: null,
-      rootMargin: "-45% 0px -45% 0px", // Trigger when section occupies the viewport middle
-      threshold: 0,
+    const handleScroll = () => {
+      const sections = ["home", "experience", "projects", "certifications", "contact"];
+      
+      // 1. Bottom of the page fallback (forces active contact link)
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
+        setActiveSection("contact");
+        return;
+      }
+
+      // 2. Top of the page fallback (forces active home link)
+      if (window.scrollY < 80) {
+        setActiveSection("home");
+        return;
+      }
+
+      // 3. Dynamic scroll position tracking
+      const scrollPosition = window.scrollY + window.innerHeight * 0.45; // target the middle area of viewport
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(id);
+            break;
+          }
+        }
+      }
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    }, observerOptions);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Run once initially (and after a small delay to allow lazy layouts to finish settling)
+    handleScroll();
+    const timeoutId = setTimeout(handleScroll, 500);
 
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   useEffect(() => {

@@ -16,6 +16,7 @@
   border-bottom: 1px solid var(--glass-border);
   box-shadow: var(--shadow-lg);
   transition: all var(--duration-normal) var(--ease-smooth);
+  overflow: hidden;
 
   /* Floating pill style */
   margin: 12px 16px 0;
@@ -44,12 +45,10 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 2px;
   background: var(--gradient-primary);
   transform-origin: 0%;
   z-index: 10;
-  box-shadow: var(--shadow-glow-sm);
-  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 
 /* ═══════════════════════════════════════════
@@ -140,13 +139,6 @@
   color: var(--accent-primary);
   background: var(--tech-bg);
   border-radius: var(--radius-md);
-  border-bottom: 2px solid transparent;
-  border-image: var(--gradient-primary) 1;
-  border-image-slice: 1;
-  /* Clip the border-image to only show at the bottom */
-  border-top: none;
-  border-left: none;
-  border-right: none;
   transition: background var(--duration-normal) var(--ease-smooth),
               color var(--duration-normal) var(--ease-smooth);
 }
@@ -327,10 +319,7 @@
     opacity: 1;
   }
 
-  /* Reset active link border-image in mobile drawer for cleaner look */
   .nav-links-mobile.open li a.active {
-    border-bottom: 2px solid var(--accent-primary);
-    border-image: none;
     color: var(--accent-primary);
     background: var(--tech-bg);
   }
@@ -393,9 +382,7 @@ body.dark-mode .navbar {
   box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
-body.dark-mode .scroll-progress {
-  box-shadow: var(--shadow-glow-sm);
-}
+
 
 body.dark-mode .overlay {
   background: rgba(0, 0, 0, 0.7);

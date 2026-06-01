@@ -21,8 +21,4 @@
   width: 100%;
 }
 
-/* Optimize rendering of off-screen sections (exclude hero section to avoid above-the-fold paint overhead) */
-.section:not(#home) {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 600px;
-}
+
