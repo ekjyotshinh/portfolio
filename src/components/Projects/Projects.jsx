@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./Projects.css";
 import { projects as projectList } from "../../data/profileData";
 import { motion } from "framer-motion";
@@ -6,6 +6,40 @@ import { FiGithub, FiExternalLink, FiPlayCircle, FiChevronDown } from "react-ico
 
 function Projects() {
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const cardRefs = useRef([]);
+  const expandedIndexRef = useRef(expandedIndex);
+
+  useEffect(() => {
+    expandedIndexRef.current = expandedIndex;
+  }, [expandedIndex]);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-25% 0px -25% 0px", // triggers when card is in the center 50% of screen
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const index = parseInt(entry.target.getAttribute("data-index"), 10);
+        if (entry.isIntersecting) {
+          setExpandedIndex(index);
+        } else if (expandedIndexRef.current === index) {
+          setExpandedIndex(null);
+        }
+      });
+    }, observerOptions);
+
+    const currentRefs = cardRefs.current;
+    currentRefs.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -34,6 +68,8 @@ function Projects() {
         {projectList.map((project, index) => (
           <motion.div
             key={index}
+            ref={(el) => (cardRefs.current[index] = el)}
+            data-index={index}
             className={`project-card ${expandedIndex === index ? "is-expanded" : ""}`}
             variants={item}
             whileHover={{
