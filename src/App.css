@@ -39,3 +39,32 @@ a {
   width: 100%;
   min-height: 100vh;
 }
+
+/* Interactive Cursor Spotlight Background */
+.cursor-spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    hsla(var(--primary-hue), 100%, 60%, 0.035) 0%,
+    transparent 80%
+  );
+  transition: opacity 0.5s ease;
+}
+
+body.dark-mode .cursor-spotlight {
+  background: radial-gradient(
+    650px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    hsla(var(--primary-hue), 100%, 65%, 0.08) 0%,
+    transparent 80%
+  );
+}
+
+/* Disable spotlight on touch devices to conserve power */
+@media (hover: none) {
+  .cursor-spotlight {
+    display: none;
+  }
+}

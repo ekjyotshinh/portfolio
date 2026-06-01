@@ -4,9 +4,8 @@ import logo from "../../assets/logo.svg";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-function Navbar({ theme, toggleTheme }) {
+function Navbar({ activeSection, theme, toggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
   const { scrollY, scrollYProgress } = useScroll();
   const clampedScrollY = useTransform(() => {
     if (scrollY.get() === 0) return 0;
@@ -14,48 +13,6 @@ function Navbar({ theme, toggleTheme }) {
   });
 
   const toggleMenu = () => setIsOpen(!isOpen);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "experience", "projects", "certifications", "contact"];
-      
-      // 1. Bottom of the page fallback (forces active contact link)
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
-        setActiveSection("contact");
-        return;
-      }
-
-      // 2. Top of the page fallback (forces active home link)
-      if (window.scrollY < 80) {
-        setActiveSection("home");
-        return;
-      }
-
-      // 3. Dynamic scroll position tracking
-      const scrollPosition = window.scrollY + window.innerHeight * 0.45; // target the middle area of viewport
-      for (const id of sections) {
-        const el = document.getElementById(id);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(id);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    // Run once initially (and after a small delay to allow lazy layouts to finish settling)
-    handleScroll();
-    const timeoutId = setTimeout(handleScroll, 500);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      clearTimeout(timeoutId);
-    };
-  }, []);
 
   useEffect(() => {
     if (isOpen) {

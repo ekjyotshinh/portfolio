@@ -1,46 +1,42 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import "./Projects.css";
 import { projects as projectList } from "../../data/profileData";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiGithub, FiExternalLink, FiPlayCircle, FiChevronDown } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiPlayCircle, FiChevronRight, FiX } from "react-icons/fi";
 
 function Projects() {
-  const [expandedIndex, setExpandedIndex] = useState(null);
-  const [clickedIndex, setClickedIndex] = useState(null);
-  const cardRefs = useRef([]);
-  const expandedIndexRef = useRef(expandedIndex);
+  const [activeProject, setActiveProject] = useState(projectList[0] || null);
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
+  // Lock body scroll only when bottom sheet is open
   useEffect(() => {
-    expandedIndexRef.current = expandedIndex;
-  }, [expandedIndex]);
-
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "-25% 0px -25% 0px", // triggers when card is in the center 50% of screen
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const index = parseInt(entry.target.getAttribute("data-index"), 10);
-        if (entry.isIntersecting) {
-          setExpandedIndex(index);
-        } else if (expandedIndexRef.current === index) {
-          setExpandedIndex(null);
-        }
-      });
-    }, observerOptions);
-
-    const currentRefs = cardRefs.current;
-    currentRefs.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
+    if (mobileDrawerOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
     return () => {
-      observer.disconnect();
+      document.body.style.overflow = "unset";
     };
+  }, [mobileDrawerOpen]);
+
+  // Escape key support to close drawer
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setMobileDrawerOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
+
+  const handleCardClick = (project) => {
+    setActiveProject(project);
+    setMobileDrawerOpen(true);
+  };
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -52,136 +48,229 @@ function Projects() {
   };
 
   const item = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
   };
 
   return (
-    <>
+    <div className="projects-section-container">
       <h2 className="section-heading">Featured Projects</h2>
-      <motion.div
-        className="projects-grid"
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        {projectList.map((project, index) => {
-          const isExpanded = index === (clickedIndex !== null ? clickedIndex : expandedIndex);
-          return (
-            <motion.div
-              key={index}
-              ref={(el) => (cardRefs.current[index] = el)}
-              data-index={index}
-              className={`project-card ${isExpanded ? "is-expanded" : ""}`}
-              variants={item}
-              whileHover={{
-                y: -4,
-                transition: { duration: 0.3 },
-              }}
-              tabIndex={0}
-              onMouseEnter={() => setExpandedIndex(index)}
-              onMouseLeave={() => setExpandedIndex(null)}
-              onFocus={() => setExpandedIndex(index)}
-              onBlur={(e) => {
-                if (!e.currentTarget.contains(e.relatedTarget)) {
-                  setExpandedIndex(null);
-                }
-              }}
-              onClick={() => {
-                if (clickedIndex === index) {
-                  setClickedIndex(null);
-                } else {
-                  setClickedIndex(index);
-                }
-              }}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  if (clickedIndex === index) {
-                    setClickedIndex(null);
-                  } else {
-                    setClickedIndex(index);
+
+      <div className="projects-split-layout">
+        {/* Left Column: Projects List */}
+        <motion.div
+          className="projects-list-column"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {projectList.map((project) => {
+            const isActive = activeProject?.title === project.title;
+            return (
+              <motion.div
+                key={project.title}
+                className={`project-card-compact ${isActive ? "active" : ""}`}
+                variants={item}
+                whileHover={{
+                  x: 4,
+                  transition: { duration: 0.2 },
+                }}
+                tabIndex={0}
+                onClick={() => handleCardClick(project)}
+                onMouseEnter={() => {
+                  // Only auto-update the active project on hover on desktop screens
+                  if (window.innerWidth > 768) {
+                    setActiveProject(project);
                   }
-                }
-              }}
-            >
-              <div className="project-header">
-                <h3>{project.title}</h3>
-                <FiChevronDown className="expand-indicator" />
-              </div>
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    handleCardClick(project);
+                  }
+                }}
+              >
+                <div className="project-card-compact-header">
+                  <h3>{project.title}</h3>
+                  <FiChevronRight className={`indicator-arrow ${isActive ? "active" : ""}`} />
+                </div>
+                <p className="project-card-compact-preview">
+                  {project.description.slice(0, 85)}...
+                </p>
+                <ul className="project-card-compact-tech">
+                  {project.tech.slice(0, 3).map((t, i) => (
+                    <li key={i}>{t}</li>
+                  ))}
+                  {project.tech.length > 3 && (
+                    <li className="tech-more">+{project.tech.length - 3}</li>
+                  )}
+                </ul>
+              </motion.div>
+            );
+          })}
+        </motion.div>
 
-              <AnimatePresence initial={false}>
-                {isExpanded && (
-                  <motion.div
-                    className="project-details"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                  >
-                    <p className="project-description">{project.description}</p>
-                    
-                    <ul className="tech-list">
-                      {project.tech.map((t, i) => (
-                        <motion.li
-                          key={i}
-                          whileHover={{
-                            scale: 1.05,
-                            transition: { duration: 0.2 },
-                          }}
-                        >
-                          {t}
-                        </motion.li>
-                      ))}
-                    </ul>
+        {/* Right Column: Sticky Project Details (Desktop only, hidden on mobile via CSS) */}
+        <div className="project-details-column">
+          <div className="sticky-details-panel glass-strong">
+            <AnimatePresence mode="wait">
+              {activeProject ? (
+                <motion.div
+                  key={activeProject.title}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.3 }}
+                  className="details-panel-content"
+                >
+                  <h3 className="details-title">{activeProject.title}</h3>
+                  <p className="details-description">{activeProject.description}</p>
+                  
+                  <h4 className="details-section-title">Tech Stack</h4>
+                  <ul className="details-tech-list">
+                    {activeProject.tech.map((t, i) => (
+                      <motion.li
+                        key={i}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {t}
+                      </motion.li>
+                    ))}
+                  </ul>
 
-                    <div className="project-links">
-                      {project.live && (
-                        <a
-                          href={project.live}
-                          className="project-link"
-                          target="_blank"
-                          rel="noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <FiExternalLink />
-                          <span>Live Website</span>
-                        </a>
-                      )}
-                      {project.link && (
-                        <a
-                          href={project.link}
-                          className="project-link"
-                          target="_blank"
-                          rel="noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <FiGithub />
-                          <span>Source Code</span>
-                        </a>
-                      )}
-                      {project.demo && (
-                        <a
-                          href={project.demo}
-                          className="project-link"
-                          target="_blank"
-                          rel="noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <FiPlayCircle />
-                          <span>View Demo</span>
-                        </a>
-                      )}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          );
-        })}
-      </motion.div>
-    </>
+                  <h4 className="details-section-title">Links</h4>
+                  <div className="details-links">
+                    {activeProject.live && (
+                      <a
+                        href={activeProject.live}
+                        className="details-link-btn"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FiExternalLink />
+                        <span>Live Website</span>
+                      </a>
+                    )}
+                    {activeProject.link && (
+                      <a
+                        href={activeProject.link}
+                        className="details-link-btn"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FiGithub />
+                        <span>Source Code</span>
+                      </a>
+                    )}
+                    {activeProject.demo && (
+                      <a
+                        href={activeProject.demo}
+                        className="details-link-btn"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FiPlayCircle />
+                        <span>View Demo</span>
+                      </a>
+                    )}
+                  </div>
+                </motion.div>
+              ) : (
+                <div className="details-placeholder">
+                  <p>Hover or click a project to view details.</p>
+                </div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Bottom Sheet Drawer */}
+      {typeof document !== "undefined" && createPortal(
+        <AnimatePresence>
+          {mobileDrawerOpen && activeProject && (
+            <div className="drawer-overlay-container">
+              <motion.div
+                className="drawer-backdrop"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setMobileDrawerOpen(false)}
+              />
+              <motion.div
+                className="project-drawer"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "100%" }}
+                transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              >
+                <button
+                  className="drawer-close-btn"
+                  onClick={() => setMobileDrawerOpen(false)}
+                  aria-label="Close details"
+                >
+                  <span />
+                  <span />
+                  <span />
+                </button>
+
+                <div className="drawer-content">
+                  <h3 className="drawer-title">{activeProject.title}</h3>
+                  <p className="drawer-description">{activeProject.description}</p>
+                  
+                  <h4 className="drawer-section-title">Tech Stack</h4>
+                  <ul className="drawer-tech-list">
+                    {activeProject.tech.map((t, i) => (
+                      <li key={i}>{t}</li>
+                    ))}
+                  </ul>
+
+                  <h4 className="drawer-section-title">Links</h4>
+                  <div className="drawer-links">
+                    {activeProject.live && (
+                      <a
+                        href={activeProject.live}
+                        className="drawer-link-btn"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FiExternalLink />
+                        <span>Live Website</span>
+                      </a>
+                    )}
+                    {activeProject.link && (
+                      <a
+                        href={activeProject.link}
+                        className="drawer-link-btn"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FiGithub />
+                        <span>Source Code</span>
+                      </a>
+                    )}
+                    {activeProject.demo && (
+                      <a
+                        href={activeProject.demo}
+                        className="drawer-link-btn"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FiPlayCircle />
+                        <span>View Demo</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
+    </div>
   );
 }
 

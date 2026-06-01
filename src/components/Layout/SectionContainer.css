@@ -7,7 +7,6 @@
   box-sizing: border-box;
   /* Subtle separator between sections */
   border-bottom: 1px solid var(--glass-border-subtle);
-  overflow-x: hidden;
 }
 
 /* Remove border on last section to avoid double-border with footer */
