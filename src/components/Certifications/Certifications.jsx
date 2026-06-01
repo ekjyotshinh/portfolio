@@ -44,7 +44,7 @@ const Certifications = () => {
             href={cert.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="cert-card glass"
+            className="cert-card"
             key={index}
             variants={item}
             whileHover={{

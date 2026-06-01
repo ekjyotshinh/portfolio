@@ -24,55 +24,33 @@
   cursor: pointer;
   min-height: 200px;
   overflow: hidden;
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
 }
 
 /* Gradient top-border accent strip */
 .cert-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-accent);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  z-index: 1;
-  opacity: 0.8;
-  transition: opacity var(--duration-normal) var(--ease-smooth);
+  display: none;
 }
 
 /* Glass shimmer sweep on hover */
 .cert-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    105deg,
-    transparent 40%,
-    rgba(255, 255, 255, 0.15) 45%,
-    rgba(255, 255, 255, 0.25) 50%,
-    rgba(255, 255, 255, 0.15) 55%,
-    transparent 60%
-  );
-  background-size: 250% 100%;
-  background-position: 200% 0;
-  transition: background-position var(--duration-slowest) var(--ease-smooth);
-  pointer-events: none;
-  z-index: 1;
+  display: none;
 }
 
 .cert-card:hover::before {
-  opacity: 1;
+  display: none;
 }
 
 .cert-card:hover::after {
-  background-position: -50% 0;
+  display: none;
 }
 
 .cert-card:hover {
-  box-shadow: var(--shadow-xl);
-  border-color: var(--accent-primary);
+  background: rgba(0, 0, 0, 0.015);
+  box-shadow: none;
+  border-color: var(--glass-border-subtle);
 }
 
 /* ═══════════════════════════════════════════
@@ -275,28 +253,25 @@
 /* ═══════════════════════════════════════════
    Dark Mode Adjustments
    ═══════════════════════════════════════════ */
+body.dark-mode .cert-card {
+  box-shadow: none;
+  border-color: transparent;
+}
+
 body.dark-mode .cert-card:hover {
-  box-shadow: var(--shadow-xl), 0 0 30px var(--accent-glow);
+  background: rgba(255, 255, 255, 0.025);
+  box-shadow: none;
+  border-color: var(--glass-border-subtle);
 }
 
 body.dark-mode .cert-icon {
   box-shadow: var(--shadow-md), var(--shadow-glow-sm);
 }
 
-/* Subtler shimmer in dark mode */
 body.dark-mode .cert-card::after {
-  background: linear-gradient(
-    105deg,
-    transparent 40%,
-    rgba(255, 255, 255, 0.06) 45%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(255, 255, 255, 0.06) 55%,
-    transparent 60%
-  );
-  background-size: 250% 100%;
-  background-position: 200% 0;
+  display: none;
 }
 
 body.dark-mode .cert-card:hover::after {
-  background-position: -50% 0;
+  display: none;
 }

@@ -96,22 +96,17 @@
   transition: all var(--duration-normal) var(--ease-smooth);
   position: relative;
   overflow: hidden;
+  background: transparent;
+  border-left: 3px solid var(--glass-border-subtle);
 }
 
 .timeline-content::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 4px;
-  background: var(--gradient-accent);
+  display: none;
 }
 
 .timeline-content:hover {
-  box-shadow: var(--shadow-xl);
-  border-color: var(--accent-primary);
-  background: var(--glass-bg-heavy);
+  background: rgba(0, 0, 0, 0.015);
+  border-left-color: var(--accent-primary);
 }
 
 /* Experience Header */
@@ -375,5 +370,6 @@ body.dark-mode .timeline-dot {
 }
 
 body.dark-mode .timeline-content:hover {
-  box-shadow: var(--shadow-xl), 0 0 30px var(--accent-glow);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: none;
 }

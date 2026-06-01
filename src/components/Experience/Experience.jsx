@@ -49,7 +49,7 @@ const Experience = () => {
 
             {/* Experience Card */}
             <motion.div
-              className="timeline-content glass"
+              className="timeline-content"
               whileHover={{
                 y: -4,
                 transition: { duration: 0.3 },

@@ -72,7 +72,7 @@ const Contact = () => {
             href={action.href}
             target={action.external ? "_blank" : undefined}
             rel={action.external ? "noopener noreferrer" : undefined}
-            className="action-card glass"
+            className="action-card"
             variants={item}
             whileHover={{
               y: -6,

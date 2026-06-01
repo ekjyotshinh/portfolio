@@ -32,7 +32,7 @@ function Projects() {
         {projectList.map((project, index) => (
           <motion.div
             key={index}
-            className="project-card glass"
+            className="project-card"
             variants={item}
             whileHover={{
               y: -6,

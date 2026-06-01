@@ -20,63 +20,36 @@
   display: flex;
   flex-direction: column;
   min-height: 240px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--blur-lg);
-  -webkit-backdrop-filter: var(--blur-lg);
+  background: transparent;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-lg);
+  border: 1px solid transparent;
+  box-shadow: none;
   overflow: hidden;
   cursor: pointer;
 }
 
 /* Gradient top-border accent strip */
 .project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-accent);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  z-index: 1;
-  opacity: 0.8;
-  transition: opacity var(--duration-normal) var(--ease-smooth);
+  display: none;
 }
 
 /* Glass shimmer sweep on hover */
 .project-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    105deg,
-    transparent 40%,
-    rgba(255, 255, 255, 0.15) 45%,
-    rgba(255, 255, 255, 0.25) 50%,
-    rgba(255, 255, 255, 0.15) 55%,
-    transparent 60%
-  );
-  background-size: 250% 100%;
-  background-position: 200% 0;
-  transition: background-position var(--duration-slowest) var(--ease-smooth);
-  pointer-events: none;
-  z-index: 1;
+  display: none;
 }
 
 .project-card:hover::before {
-  opacity: 1;
+  display: none;
 }
 
 .project-card:hover::after {
-  background-position: -50% 0;
+  display: none;
 }
 
 .project-card:hover {
-  box-shadow: var(--shadow-xl);
-  border-color: var(--accent-primary);
+  background: rgba(0, 0, 0, 0.015);
+  box-shadow: none;
+  border-color: var(--glass-border-subtle);
 }
 
 .project-card:focus-visible {
@@ -322,11 +295,14 @@
    Dark Mode Specific Adjustments
    ═══════════════════════════════════════════ */
 body.dark-mode .project-card {
-  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  box-shadow: none;
+  border-color: transparent;
 }
 
 body.dark-mode .project-card:hover {
-  box-shadow: var(--shadow-xl), 0 0 30px var(--accent-glow);
+  background: rgba(255, 255, 255, 0.025);
+  box-shadow: none;
+  border-color: var(--glass-border-subtle);
 }
 
 body.dark-mode .tech-list li {
@@ -338,18 +314,9 @@ body.dark-mode .tech-list li:hover {
 }
 
 body.dark-mode .project-card::after {
-  background: linear-gradient(
-    105deg,
-    transparent 40%,
-    rgba(255, 255, 255, 0.06) 45%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(255, 255, 255, 0.06) 55%,
-    transparent 60%
-  );
-  background-size: 250% 100%;
-  background-position: 200% 0;
+  display: none;
 }
 
 body.dark-mode .project-card:hover::after {
-  background-position: -50% 0;
+  display: none;
 }

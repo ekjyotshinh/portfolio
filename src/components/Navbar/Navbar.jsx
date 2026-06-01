@@ -13,25 +13,30 @@ function Navbar({ theme, toggleTheme }) {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "experience", "projects", "certifications", "contact"];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
+    const sections = ["home", "experience", "projects", "certifications", "contact"];
+    const observerOptions = {
+      root: null,
+      rootMargin: "-45% 0px -45% 0px", // Trigger when section occupies the viewport middle
+      threshold: 0,
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -50,7 +55,7 @@ function Navbar({ theme, toggleTheme }) {
 
         <div className="logo-container">
           <a href="#home" onClick={() => setIsOpen(false)}>
-            <img src={logo} alt="Logo" className="logo-img" />
+            <img src={logo} alt="Logo" className="logo-img" width="32" height="40" />
           </a>
         </div>
 
