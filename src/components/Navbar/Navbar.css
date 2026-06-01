@@ -360,7 +360,7 @@
 /* ═══════════════════════════════════════════
    Drawer Close Button — Fixed Viewport Position
    ═══════════════════════════════════════════ */
-.drawer-close-btn {
+.nav-drawer-close-btn {
   position: fixed;
   top: 31px;
   right: 28px;
@@ -369,7 +369,7 @@
 }
 
 @media (max-width: 320px) {
-  .drawer-close-btn {
+  .nav-drawer-close-btn {
     top: 29px;
     right: 16px;
   }

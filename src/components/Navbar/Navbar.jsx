@@ -103,7 +103,7 @@ function Navbar({ activeSection, theme, toggleTheme }) {
       {/* Dedicated close button rendered outside navbar containing block to support viewport-relative fixed positioning */}
       {isOpen && (
         <button
-          className="hamburger open drawer-close-btn"
+          className="hamburger open nav-drawer-close-btn"
           onClick={toggleMenu}
           aria-label="Close navigation menu"
         >
