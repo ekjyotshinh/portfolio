@@ -9,6 +9,7 @@ import Projects from "./components/Projects/Projects";
 import Certifications from "./components/Certifications/Certifications";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import SideNav from "./components/SideNav/SideNav";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -130,6 +131,7 @@ function App() {
     <div className="App">
       <div className="cursor-spotlight" />
       <Navbar theme={theme} toggleTheme={toggleTheme} activeSection={activeSection} />
+      <SideNav activeSection={activeSection} />
       <SectionContainer id="home">
         <Hero />
       </SectionContainer>

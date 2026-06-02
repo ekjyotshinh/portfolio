@@ -9,6 +9,13 @@
   border-bottom: 1px solid var(--glass-border-subtle);
 }
 
+@media (min-width: 992px) {
+  .section {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
 /* Remove border on last section to avoid double-border with footer */
 .section:last-of-type {
   border-bottom: none;

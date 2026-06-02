@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import "./Hero.css";
 import { general } from "../../data/profileData";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedinIn, FaFileAlt } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const TypeAnimation = lazy(() =>
   import("react-type-animation").then((mod) => ({ default: mod.TypeAnimation }))
@@ -89,30 +89,7 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.6 }}
             >
-              <a
-                href={general.resume}
-                className="hero-btn hero-btn-primary"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span>View Resume</span>
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 1L8 11M8 11L12 7M8 11L4 7M1 15L15 15"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </a>
-              <a href="#contact" className="hero-btn hero-btn-secondary">
+              <a href="#contact" className="hero-btn hero-btn-primary">
                 <span>Get In Touch</span>
               </a>
             </motion.div>
@@ -142,15 +119,7 @@ function Hero() {
               >
                 <FaLinkedinIn />
               </a>
-              <a
-                href={general.resume}
-                className="hero-social-link"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Resume"
-              >
-                <FaFileAlt />
-              </a>
+
             </motion.div>
           </motion.div>
         </div>

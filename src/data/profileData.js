@@ -116,6 +116,4 @@ export const general = {
   name: "Ekjyot Shinh",
   linkedin: "https://linkedin.com/in/ekjyotshinh",
   github: "https://github.com/ekjyotshinh",
-  resume:
-    "https://drive.google.com/file/d/1ifi4uxJcXVwBR5o7irkyWukOUk4Jl0ZC/view?usp=drive_link",
 };
