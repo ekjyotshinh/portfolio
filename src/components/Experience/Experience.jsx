@@ -42,14 +42,12 @@ const Experience = () => {
 
               {/* Experience Card */}
               <div className="timeline-content">
-                {/* Header */}
                 <div className="experience-header">
                   <div>
                     <h3>{exp.role}</h3>
                     <p className="company">{exp.company}</p>
                   </div>
-                  <div className="date-badge">
-                    <FiCalendar size={14} />
+                  <div className="experience-date">
                     <span>{exp.date}</span>
                   </div>
                 </div>

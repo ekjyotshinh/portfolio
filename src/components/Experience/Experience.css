@@ -108,24 +108,12 @@
   font-weight: 600;
   margin: 0;
 }
-
-/* Date Badge */
-.date-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  background: var(--tech-bg);
-  border: 1px solid var(--tech-border);
-  padding: var(--spacing-xs) var(--spacing-md);
-  border-radius: var(--radius-full);
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--tech-text);
+.experience-date {
+  font-size: 0.95rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
   white-space: nowrap;
-  backdrop-filter: var(--blur-sm);
-  -webkit-backdrop-filter: var(--blur-sm);
 }
-
 /* ═══════════════════════════════════════════
    Experience Details List
    ═══════════════════════════════════════════ */
@@ -357,7 +345,7 @@ body.dark-mode .timeline-dot {
   font-size: 0.85rem;
   font-weight: 600;
   padding: 8px 16px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md);
   cursor: pointer;
   margin-top: var(--spacing-md);
   transition: all var(--duration-normal) var(--ease-smooth);

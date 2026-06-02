@@ -26,9 +26,7 @@ function Hero() {
           <p className="hero-description animate-hero-desc">
             I'm a Full Stack Developer with 2+ years of experience building
             scalable applications. I graduated in May 2025 with a Bachelor's
-            in Computer Science from California State University. I'm also
-            interested in parallel programming and exploring efficient and
-            optimized solutions for complex problems.
+            in Computer Science from California State University.
           </p>
 
           {/* Social Links */}
@@ -53,27 +51,6 @@ function Hero() {
             </a>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <button
-          className="scroll-indicator"
-          onClick={scrollToNextSection}
-          aria-label="Scroll to next section"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M7 13l5 5 5-5" />
-            <path d="M7 6l5 5 5-5" />
-          </svg>
-        </button>
       </div>
     </>
   );

@@ -57,19 +57,31 @@
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--spacing-xs) 0;
 }
 
 .skill-tag {
-  background: var(--tech-bg);
-  border: 1px solid var(--tech-border);
-  color: var(--tech-text);
-  padding: 4px 10px;
-  border-radius: var(--radius-md);
-  font-size: 0.8rem;
-  font-weight: 600;
-  transition: all var(--duration-normal) var(--ease-spring);
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
   cursor: default;
+  display: inline-flex;
+  align-items: center;
+}
+
+.skill-tag::after {
+  content: "•";
+  margin: 0 var(--spacing-sm);
+  color: var(--text-tertiary);
+  font-size: 0.7rem;
+}
+
+.skill-tag:last-child::after {
+  content: "";
+  margin: 0;
 }
 
 /* ═══════════════════════════════════════════

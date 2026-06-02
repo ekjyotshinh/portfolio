@@ -30,10 +30,7 @@ const Contact = () => {
           to reach out. I'm always open to exciting opportunities and interesting
           conversations.
         </p>
-        <div className="availability-badge">
-          <span className="status-indicator"></span>
-          <span>Open to opportunities</span>
-        </div>
+
       </div>
 
       {/* Action Cards */}

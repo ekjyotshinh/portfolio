@@ -39,7 +39,7 @@
   background: hsla(145, 80%, 42%, 0.1);
   border: 1px solid hsla(145, 80%, 42%, 0.2);
   padding: var(--spacing-xs) var(--spacing-md);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   font-weight: 600;
   font-size: 0.95rem;
   color: var(--success);
