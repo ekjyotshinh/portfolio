@@ -82,17 +82,6 @@ function Hero() {
               optimized solutions for complex problems.
             </motion.p>
 
-            {/* CTA Buttons */}
-            <motion.div
-              className="hero-buttons"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.6 }}
-            >
-              <a href="#contact" className="hero-btn hero-btn-primary">
-                <span>Get In Touch</span>
-              </a>
-            </motion.div>
 
             {/* Social Links */}
             <motion.div

@@ -113,15 +113,6 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
-      document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -129,7 +120,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="cursor-spotlight" />
+
       <Navbar theme={theme} toggleTheme={toggleTheme} activeSection={activeSection} />
       <SideNav activeSection={activeSection} />
       <SectionContainer id="home">

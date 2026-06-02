@@ -133,6 +133,12 @@ body.dark-mode .project-card-compact.active {
   min-height: 400px;
   display: flex;
   flex-direction: column;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE / Edge */
+}
+
+.sticky-details-panel::-webkit-scrollbar {
+  display: none;                /* Chrome / Safari */
 }
 
 .details-panel-content {
