@@ -128,14 +128,14 @@
   color: var(--accent-primary);
 }
 
-.nav-links li a:hover::before {
-  opacity: 1;
-  background: linear-gradient(
-    135deg,
-    hsla(210, 100%, 52%, 0.12) 0%,
-    hsla(280, 85%, 60%, 0.08) 100%
-  );
-}
+  .nav-links li a:hover::before {
+    opacity: 1;
+    background: linear-gradient(
+      135deg,
+      rgba(143, 63, 255, 0.08) 0%,
+      rgba(95, 159, 255, 0.04) 100%
+    );
+  }
 
 /* ═══════════════════════════════════════════
    Active Link — Gradient text + glowing underline
@@ -163,7 +163,7 @@
   height: 2px;
   border-radius: var(--radius-full);
   background: var(--gradient-primary);
-  box-shadow: 0 0 8px hsla(210, 100%, 52%, 0.6);
+  box-shadow: 0 0 6px var(--accent-glow);
   animation: nav-bar-in 0.25s var(--ease-smooth) forwards;
 }
 
@@ -353,8 +353,8 @@
     opacity: 1;
     background: linear-gradient(
       135deg,
-      hsla(210, 100%, 52%, 0.08) 0%,
-      hsla(280, 85%, 60%, 0.04) 100%
+      rgba(143, 63, 255, 0.06) 0%,
+      rgba(95, 159, 255, 0.03) 100%
     );
   }
 
@@ -362,8 +362,8 @@
     color: var(--accent-primary);
     background: linear-gradient(
       135deg,
-      hsla(210, 100%, 52%, 0.12) 0%,
-      hsla(280, 85%, 60%, 0.06) 100%
+      rgba(143, 63, 255, 0.08) 0%,
+      rgba(95, 159, 255, 0.04) 100%
     );
     border-radius: var(--radius-md);
     border-left: none;
@@ -381,7 +381,7 @@
     height: 2px;
     border-radius: var(--radius-full);
     background: var(--gradient-primary);
-    box-shadow: 0 0 8px hsla(210, 100%, 52%, 0.6);
+    box-shadow: 0 0 6px var(--accent-glow);
     animation: nav-bar-in 0.25s var(--ease-smooth) forwards;
   }
 }

@@ -1,11 +1,6 @@
-import { lazy, Suspense } from "react";
 import "./Hero.css";
 import { general } from "../../data/profileData";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-
-const TypeAnimation = lazy(() =>
-  import("react-type-animation").then((mod) => ({ default: mod.TypeAnimation }))
-);
 
 function Hero() {
   const scrollToNextSection = () => {
@@ -15,50 +10,21 @@ function Hero() {
   return (
     <>
       <div className="hero-bg">
-        {/* Animated Background Shapes */}
-        <div className="hero-shapes">
-          <div className="shape shape-1" />
-          <div className="shape shape-2" />
-          <div className="shape shape-3" />
-        </div>
-
         <div className="hero-content animate-hero-content">
           <p className="hero-greeting animate-hero-greeting">
             Hey there 👋, I'm
           </p>
 
           {/* Animated Name with Gradient */}
-          <h1>
-            <span className="hero-name gradient-text">
+          <h2>
+            <span className="hero-name">
               {general.name}
             </span>
-          </h1>
-
-          {/* Typing Animation for Role */}
-          <div className="hero-role">
-            <Suspense fallback={<span className="typing-text">Full Stack Developer</span>}>
-              <TypeAnimation
-                sequence={[
-                  "Full Stack Developer",
-                  2000,
-                  "Software Engineer",
-                  2000,
-                  "Problem Solver",
-                  2000,
-                  "Tech Enthusiast",
-                  2000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-                className="typing-text"
-              />
-            </Suspense>
-          </div>
+          </h2>
 
           {/* Description */}
           <p className="hero-description animate-hero-desc">
-            I'm a Full Stack Developer with 2+ year of experience building
+            I'm a Full Stack Developer with 2+ years of experience building
             scalable applications. I graduated in May 2025 with a Bachelor's
             in Computer Science from California State University. I'm also
             interested in parallel programming and exploring efficient and

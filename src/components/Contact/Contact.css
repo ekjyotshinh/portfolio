@@ -75,8 +75,8 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
-  padding: var(--spacing-lg) var(--spacing-xl);
-  border-radius: var(--radius-xl);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
   text-decoration: none;
   color: var(--text-primary);
   transition: all var(--duration-normal) var(--ease-smooth);
@@ -85,13 +85,12 @@
   justify-content: center;
   position: relative;
   background: transparent;
-  border: 1px solid transparent;
-  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .action-card:hover {
-  background: rgba(0, 0, 0, 0.015);
-  border-color: var(--glass-border-subtle);
+  background: rgba(0, 0, 0, 0.02);
   box-shadow: none;
 }
 
@@ -203,14 +202,12 @@
    Dark Mode Adjustments
    ═══════════════════════════════════════════ */
 body.dark-mode .action-card {
-  box-shadow: none;
-  border-color: transparent;
+  border-color: var(--glass-border);
 }
 
 body.dark-mode .action-card:hover {
-  background: rgba(255, 255, 255, 0.025);
-  border-color: var(--glass-border-subtle);
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.02);
+  border-color: var(--glass-border);
 }
 
 body.dark-mode .action-icon {

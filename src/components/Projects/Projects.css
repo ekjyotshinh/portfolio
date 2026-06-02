@@ -20,11 +20,11 @@
 }
 
 .project-card-compact {
-  padding: var(--spacing-lg) var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
   background: transparent;
-  border-radius: var(--radius-lg);
-  border: 1px solid transparent;
-  border-bottom: 1px solid var(--glass-border-subtle);
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--glass-border);
   cursor: pointer;
   text-align: left;
   transition: all var(--duration-normal) var(--ease-smooth);
@@ -36,18 +36,17 @@
 
 .project-card-compact:hover,
 .project-card-compact.active {
-  background: rgba(0, 0, 0, 0.015);
-  border-color: var(--glass-border-subtle);
-  border-bottom-color: var(--glass-border-subtle);
+  background: transparent;
+  border-bottom-color: var(--accent-primary);
 }
 
 body.dark-mode .project-card-compact:hover,
 body.dark-mode .project-card-compact.active {
-  background: rgba(255, 255, 255, 0.015);
+  background: transparent;
 }
 
 .project-card-compact.active {
-  border-left: 3px solid var(--accent-primary);
+  padding-left: var(--spacing-md);
 }
 
 .project-card-compact-header {
@@ -126,15 +125,15 @@ body.dark-mode .project-card-compact.active {
   top: 120px;
   max-height: calc(100vh - 160px);
   overflow-y: auto;
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--glass-border-subtle);
+  padding: 0;
   text-align: left;
   min-height: 400px;
   display: flex;
   flex-direction: column;
   scrollbar-width: none;        /* Firefox */
   -ms-overflow-style: none;     /* IE / Edge */
+  background: transparent;
+  border: none;
 }
 
 .sticky-details-panel::-webkit-scrollbar {

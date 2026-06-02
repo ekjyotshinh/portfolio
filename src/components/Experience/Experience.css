@@ -60,25 +60,10 @@
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: var(--shadow-lg), var(--shadow-glow-sm);
-  cursor: pointer;
-  transition: all var(--duration-normal) var(--ease-smooth);
+  box-shadow: var(--shadow-md);
+  cursor: default;
+  transition: none;
   position: relative;
-}
-
-.timeline-dot::before {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: inherit;
-  background: var(--gradient-accent);
-  opacity: 0;
-  z-index: -1;
-  transition: opacity var(--duration-normal) var(--ease-smooth);
-}
-
-.timeline-dot:hover::before {
-  opacity: 0.3;
 }
 
 .timeline-dot svg {
@@ -91,22 +76,11 @@
    ═══════════════════════════════════════════ */
 .timeline-content {
   flex: 1;
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
-  transition: all var(--duration-normal) var(--ease-smooth);
+  padding: var(--spacing-sm) 0;
   position: relative;
   overflow: hidden;
   background: transparent;
-  border-left: 3px solid var(--glass-border-subtle);
-}
-
-.timeline-content::before {
-  display: none;
-}
-
-.timeline-content:hover {
-  background: rgba(0, 0, 0, 0.015);
-  border-left-color: var(--accent-primary);
+  border: none;
 }
 
 /* Experience Header */
@@ -366,12 +340,7 @@ body.dark-mode .timeline::before {
 }
 
 body.dark-mode .timeline-dot {
-  box-shadow: var(--shadow-md), var(--shadow-glow-sm);
-}
-
-body.dark-mode .timeline-content:hover {
-  background: rgba(255, 255, 255, 0.02);
-  box-shadow: none;
+  box-shadow: var(--shadow-md);
 }
 
 /* ═══════════════════════════════════════════

@@ -13,8 +13,7 @@
    Certification Card
    ═══════════════════════════════════════════ */
 .cert-card {
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -22,10 +21,11 @@
   transition: all var(--duration-normal) var(--ease-smooth);
   text-decoration: none;
   cursor: pointer;
-  min-height: 200px;
+  min-height: 180px;
   overflow: hidden;
   background: transparent;
-  border: 1px solid transparent;
+  border: none;
+  border-bottom: 1px solid var(--glass-border);
   box-shadow: none;
 }
 
@@ -48,9 +48,8 @@
 }
 
 .cert-card:hover {
-  background: rgba(0, 0, 0, 0.015);
+  background: rgba(0, 0, 0, 0.02);
   box-shadow: none;
-  border-color: var(--glass-border-subtle);
 }
 
 /* ═══════════════════════════════════════════
@@ -254,14 +253,11 @@
    Dark Mode Adjustments
    ═══════════════════════════════════════════ */
 body.dark-mode .cert-card {
-  box-shadow: none;
-  border-color: transparent;
+  border-color: var(--glass-border);
 }
 
 body.dark-mode .cert-card:hover {
-  background: rgba(255, 255, 255, 0.025);
-  box-shadow: none;
-  border-color: var(--glass-border-subtle);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 body.dark-mode .cert-icon {
@@ -281,23 +277,27 @@ body.dark-mode .cert-card:hover::after {
    ═══════════════════════════════════════════ */
 .featured-card.honor-card {
   background: transparent;
-  border: 1px solid transparent;
-  border-left: 3px solid hsl(42, 100%, 50%); /* Gold accent border */
+  border: none;
+  border-bottom: 1px solid var(--glass-border);
   box-shadow: none;
-  transition: all var(--duration-normal) var(--ease-smooth);
+  cursor: default;
+  transition: none;
+  padding: var(--spacing-lg) 0;
 }
 
 .featured-card.honor-card:hover {
-  background: rgba(0, 0, 0, 0.015);
-  border-color: var(--glass-border-subtle);
-  border-left-color: hsl(42, 100%, 50%);
-  transform: translateY(-2px);
+  background: transparent;
+  transform: none;
   box-shadow: none;
+}
+
+.featured-card.honor-card:hover .cert-icon {
+  transform: none;
 }
 
 .honor-icon {
   background: linear-gradient(135deg, hsl(42, 100%, 50%) 0%, hsl(28, 100%, 50%) 100%) !important;
-  box-shadow: var(--shadow-md), 0 4px 12px rgba(245, 158, 11, 0.4) !important;
+  box-shadow: var(--shadow-md) !important;
 }
 
 .honor-badge {
@@ -320,13 +320,11 @@ body.dark-mode .honor-badge {
 
 body.dark-mode .featured-card.honor-card {
   background: transparent;
-  border-color: transparent;
-  border-left-color: hsl(42, 100%, 50%);
+  border: none;
+  border-bottom: 1px solid var(--glass-border);
 }
 
 body.dark-mode .featured-card.honor-card:hover {
-  background: rgba(255, 255, 255, 0.015);
-  border-color: var(--glass-border-subtle);
-  border-left-color: hsl(42, 100%, 50%);
+  background: transparent;
 }
 

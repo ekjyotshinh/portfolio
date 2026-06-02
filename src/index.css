@@ -17,98 +17,74 @@ html {
   color-scheme: light dark;
 
   /* ═══════════════════════════════════════════
-     Premium Color Palette - HSL based
+     Natural, Organic Palette - Styled around the logo gradient
      ═══════════════════════════════════════════ */
-  --primary-hue: 220;
-  --accent-hue: 200;
-  
   /* Light Mode Colors */
-  --background: linear-gradient(
-    135deg,
-    hsl(220, 60%, 98%) 0%,
-    hsl(210, 70%, 96%) 25%,
-    hsl(200, 60%, 97%) 50%,
-    hsl(215, 65%, 95%) 75%,
-    hsl(225, 55%, 98%) 100%
-  );
-  --background-solid: hsl(220, 60%, 97%);
+  --background: #fbfbfa;
+  --background-solid: #fbfbfa;
   
-  --text-primary: hsl(220, 30%, 12%);
-  --text-secondary: hsl(220, 15%, 35%);
-  --text-tertiary: hsl(220, 10%, 50%);
+  --text-primary: #1c1c1e;
+  --text-secondary: #5c5c5e;
+  --text-tertiary: #8e8e93;
   
-  /* Vibrant Accent Colors */
-  --accent-primary: hsl(210, 100%, 52%);
-  --accent-secondary: hsl(200, 100%, 45%);
-  --accent-tertiary: hsl(190, 95%, 50%);
-  --accent-glow: hsla(210, 100%, 52%, 0.3);
+  /* Logo-inspired Accents */
+  --accent-primary: #6c3ce9;     /* Legible Royal Indigo */
+  --accent-secondary: #4988f5;   /* Legible Sky Blue */
+  --accent-tertiary: #8f3fff;    /* Logo Purple Stop */
+  --accent-glow: rgba(108, 60, 233, 0.08);
   
   /* Success/Warning/Error */
-  --success: hsl(145, 80%, 42%);
-  --warning: hsl(38, 95%, 55%);
-  --error: hsl(350, 85%, 55%);
+  --success: #3f5241;
+  --warning: #b08a55;
+  --error: #9e4747;
   
   /* ═══════════════════════════════════════════
-     Enhanced Glass System
+     Organic Separation System (Fine lines, no neon)
      ═══════════════════════════════════════════ */
-  --glass-bg: rgba(255, 255, 255, 0.75);
-  --glass-bg-light: rgba(255, 255, 255, 0.55);
-  --glass-bg-heavy: rgba(255, 255, 255, 0.9);
-  --glass-border: rgba(255, 255, 255, 0.85);
-  --glass-border-subtle: rgba(255, 255, 255, 0.4);
-  --glass-tint: hsla(210, 100%, 52%, 0.04);
-  --glass-shadow: rgba(0, 0, 0, 0.05);
+  --glass-bg: #ffffff;
+  --glass-bg-light: rgba(255, 255, 255, 0.6);
+  --glass-bg-heavy: #ffffff;
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-border-subtle: rgba(0, 0, 0, 0.03);
+  --glass-tint: transparent;
+  --glass-shadow: rgba(0, 0, 0, 0.03);
   
   /* Blur Levels */
-  --blur-xs: blur(4px);
-  --blur-sm: blur(8px);
-  --blur-md: blur(16px);
-  --blur-lg: blur(24px);
-  --blur-xl: blur(32px);
+  --blur-xs: blur(2px);
+  --blur-sm: blur(4px);
+  --blur-md: blur(8px);
+  --blur-lg: blur(12px);
+  --blur-xl: blur(16px);
   
   /* ═══════════════════════════════════════════
-     Advanced Shadow System
+     Organic Soft Shadows
      ═══════════════════════════════════════════ */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.07);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.09);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.09), 0 4px 8px rgba(0, 0, 0, 0.11);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.14);
-  --shadow-2xl: 0 24px 64px rgba(0, 0, 0, 0.15), 0 12px 24px rgba(0, 0, 0, 0.17);
-  --shadow-glow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow);
-  --shadow-glow-sm: 0 0 10px var(--accent-glow), 0 0 20px var(--accent-glow);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 16px 36px rgba(0, 0, 0, 0.06);
+  --shadow-2xl: 0 24px 48px rgba(0, 0, 0, 0.08);
+  --shadow-glow: none;
+  --shadow-glow-sm: none;
   
   /* ═══════════════════════════════════════════
-     Premium Gradients
+     Muted Logo Gradients
      ═══════════════════════════════════════════ */
-  --gradient-primary: linear-gradient(135deg, hsl(210, 100%, 52%) 0%, hsl(220, 95%, 48%) 100%);
-  --gradient-accent: linear-gradient(135deg, hsl(190, 100%, 50%) 0%, hsl(210, 100%, 52%) 100%);
-  --gradient-vibrant: linear-gradient(135deg, hsl(280, 85%, 60%) 0%, hsl(210, 100%, 52%) 50%, hsl(190, 95%, 50%) 100%);
-  --gradient-glass: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 255, 255, 0.65) 100%
-  );
-  --gradient-text: linear-gradient(135deg, hsl(210, 100%, 52%) 0%, hsl(280, 85%, 60%) 50%, hsl(190, 95%, 50%) 100%);
-  --gradient-section: linear-gradient(
-    180deg,
-    transparent 0%,
-    hsla(210, 100%, 52%, 0.02) 50%,
-    transparent 100%
-  );
+  --gradient-primary: linear-gradient(135deg, #8f3fff 0%, #5f9fff 100%);
+  --gradient-accent: linear-gradient(135deg, #5f9fff 0%, #8f3fff 100%);
+  --gradient-vibrant: linear-gradient(135deg, #8f3fff 0%, #5f9fff 100%);
+  --gradient-glass: #ffffff;
+  --gradient-text: none;
+  --gradient-section: transparent;
   
-  /* Mesh Gradient Background */
-  --mesh-bg: 
-    radial-gradient(at 0% 0%, hsla(210, 100%, 60%, 0.08) 0px, transparent 50%),
-    radial-gradient(at 50% 0%, hsla(190, 100%, 60%, 0.08) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, hsla(280, 100%, 65%, 0.08) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsla(200, 100%, 60%, 0.08) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, hsla(220, 100%, 60%, 0.08) 0px, transparent 50%);
+  /* Mesh Gradient Background - Disabled for natural look */
+  --mesh-bg: none;
   
   /* Tech Tag Colors */
-  --tech-bg: hsla(210, 100%, 52%, 0.1);
-  --tech-border: hsla(210, 100%, 52%, 0.25);
-  --tech-text: hsl(210, 100%, 40%);
+  --tech-bg: rgba(143, 63, 255, 0.04);
+  --tech-border: rgba(143, 63, 255, 0.08);
+  --tech-text: #6c3ce9;
   
   /* ═══════════════════════════════════════════
      Spacing System
@@ -121,36 +97,36 @@ html {
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
   --spacing-4xl: 6rem;
-  --section-gap: clamp(4rem, 8vw, 8rem);
+  --section-gap: clamp(4rem, 6vw, 7rem);
   
   /* ═══════════════════════════════════════════
      Border Radius System
      ═══════════════════════════════════════════ */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-2xl: 32px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
   --radius-full: 9999px;
   
   /* ═══════════════════════════════════════════
      Animation Timing
      ═══════════════════════════════════════════ */
   --duration-fast: 150ms;
-  --duration-normal: 250ms;
-  --duration-slow: 350ms;
-  --duration-slower: 500ms;
-  --duration-slowest: 800ms;
+  --duration-normal: 220ms;
+  --duration-slow: 300ms;
+  --duration-slower: 450ms;
+  --duration-slowest: 600ms;
   
-  --ease-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-spring: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in: cubic-bezier(0.3, 0, 1, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-bounce: cubic-bezier(0.25, 1, 0.5, 1);
   
   /* Card Hover */
-  --card-hover-scale: 1.02;
-  --card-hover-lift: -6px;
+  --card-hover-scale: 1.01;
+  --card-hover-lift: -3px;
   
   color: var(--text-primary);
   background: var(--background);
@@ -165,69 +141,48 @@ html {
    Dark Mode Theme
    ═══════════════════════════════════════════ */
 body.dark-mode {
-  --background: linear-gradient(
-    135deg,
-    hsl(220, 40%, 7%) 0%,
-    hsl(215, 35%, 9%) 25%,
-    hsl(225, 38%, 8%) 50%,
-    hsl(210, 40%, 7%) 75%,
-    hsl(220, 35%, 8%) 100%
-  );
-  --background-solid: hsl(220, 40%, 8%);
+  --background: #121213;
+  --background-solid: #121213;
   
-  --text-primary: hsla(0, 0%, 100%, 0.95);
-  --text-secondary: hsla(0, 0%, 100%, 0.7);
-  --text-tertiary: hsla(0, 0%, 100%, 0.5);
+  --text-primary: #f5f5f7;
+  --text-secondary: #a1a1a6;
+  --text-tertiary: #68686e;
   
-  --accent-primary: hsl(210, 100%, 60%);
-  --accent-secondary: hsl(200, 100%, 55%);
-  --accent-tertiary: hsl(190, 95%, 60%);
-  --accent-glow: hsla(210, 100%, 60%, 0.4);
+  --accent-primary: #ad8cfc;     /* Soft Indigo/Purple */
+  --accent-secondary: #85b3ff;   /* Soft Sky Blue */
+  --accent-tertiary: #5f9fff;    /* Logo Blue Stop */
+  --accent-glow: rgba(173, 140, 252, 0.12);
   
   /* Dark Glass System */
-  --glass-bg: rgba(15, 20, 30, 0.75);
-  --glass-bg-light: rgba(15, 20, 30, 0.55);
-  --glass-bg-heavy: rgba(15, 20, 30, 0.9);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-border-subtle: rgba(255, 255, 255, 0.06);
-  --glass-tint: hsla(210, 100%, 60%, 0.06);
-  --glass-shadow: rgba(0, 0, 0, 0.3);
+  --glass-bg: #1c1c1e;
+  --glass-bg-light: rgba(28, 28, 30, 0.7);
+  --glass-bg-heavy: #1c1c1e;
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-subtle: rgba(255, 255, 255, 0.04);
+  --glass-tint: transparent;
+  --glass-shadow: rgba(0, 0, 0, 0.2);
   
   /* Dark Mode Shadows */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.45);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45), 0 2px 4px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.55), 0 4px 8px rgba(0, 0, 0, 0.65);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.65), 0 8px 16px rgba(0, 0, 0, 0.75);
-  --shadow-2xl: 0 24px 64px rgba(0, 0, 0, 0.75), 0 12px 24px rgba(0, 0, 0, 0.85);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.25);
+  --shadow-xl: 0 16px 36px rgba(0, 0, 0, 0.3);
+  --shadow-2xl: 0 24px 48px rgba(0, 0, 0, 0.35);
   
   /* Dark Gradients */
-  --gradient-primary: linear-gradient(135deg, hsl(210, 100%, 60%) 0%, hsl(220, 95%, 55%) 100%);
-  --gradient-accent: linear-gradient(135deg, hsl(190, 100%, 60%) 0%, hsl(210, 100%, 60%) 100%);
-  --gradient-vibrant: linear-gradient(135deg, hsl(280, 85%, 65%) 0%, hsl(210, 100%, 60%) 50%, hsl(190, 95%, 60%) 100%);
-  --gradient-glass: linear-gradient(
-    135deg,
-    rgba(15, 20, 30, 0.95) 0%,
-    rgba(15, 20, 30, 0.65) 100%
-  );
-  --gradient-section: linear-gradient(
-    180deg,
-    transparent 0%,
-    hsla(210, 100%, 60%, 0.03) 50%,
-    transparent 100%
-  );
+  --gradient-primary: linear-gradient(135deg, #8f3fff 0%, #5f9fff 100%);
+  --gradient-accent: linear-gradient(135deg, #5f9fff 0%, #8f3fff 100%);
+  --gradient-vibrant: linear-gradient(135deg, #8f3fff 0%, #5f9fff 100%);
+  --gradient-glass: #1c1c1e;
+  --gradient-section: transparent;
   
-  /* Dark Mesh Gradient */
-  --mesh-bg: 
-    radial-gradient(at 0% 0%, hsla(210, 100%, 45%, 0.12) 0px, transparent 50%),
-    radial-gradient(at 50% 0%, hsla(190, 100%, 45%, 0.12) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, hsla(280, 100%, 50%, 0.12) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsla(200, 100%, 45%, 0.12) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, hsla(220, 100%, 45%, 0.12) 0px, transparent 50%);
+  /* Dark Mesh Gradient - Disabled */
+  --mesh-bg: none;
   
-  --tech-bg: hsla(210, 100%, 60%, 0.15);
-  --tech-border: hsla(210, 100%, 60%, 0.35);
-  --tech-text: hsl(210, 100%, 70%);
+  --tech-bg: rgba(143, 63, 255, 0.12);
+  --tech-border: rgba(143, 63, 255, 0.2);
+  --tech-text: #ad8cfc;
 }
 
 /* ═══════════════════════════════════════════
@@ -265,23 +220,23 @@ body::before {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  font-family: 'Lora', 'Georgia', serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1.1;
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  line-height: 1.2;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
 }
 
 /* ═══════════════════════════════════════════
@@ -327,8 +282,8 @@ button {
 
 button:hover {
   border-color: var(--accent-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg), var(--shadow-glow-sm);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 button:active {
@@ -379,17 +334,7 @@ button:focus-visible {
    Gradient Text Utility
    ═══════════════════════════════════════════ */
 .gradient-text {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-shift 6s ease infinite;
-  background-size: 200% 200%;
-}
-
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  color: var(--accent-primary);
 }
 
 /* ═══════════════════════════════════════════
