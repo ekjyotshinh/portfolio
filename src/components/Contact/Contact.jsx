@@ -1,18 +1,19 @@
 import "./Contact.css";
 import { general } from "../../data/profileData";
-import { FiLinkedin, FiGithub, FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const Contact = () => {
   const actions = [
     {
       label: "LinkedIn",
-      icon: <FiLinkedin />,
+      icon: <FaLinkedinIn />,
       href: general.linkedin,
       external: true,
     },
     {
       label: "GitHub",
-      icon: <FiGithub />,
+      icon: <FaGithub />,
       href: general.github,
       external: true,
     },
@@ -20,17 +21,18 @@ const Contact = () => {
 
   return (
     <>
+      <h2 className="section-heading">Contact</h2>
+      
       {/* Bold CTA Heading */}
       <div className="contact-hero">
-        <h2 className="contact-heading">
-          <span className="gradient-text">Let's Build Something Together</span>
-        </h2>
+        <h3 className="contact-cta-title">
+          Let's Build Something Together
+        </h3>
         <p className="contact-subtitle">
           Whether you have a project in mind or just want to connect, feel free
           to reach out. I'm always open to exciting opportunities and interesting
           conversations.
         </p>
-
       </div>
 
       {/* Action Cards */}

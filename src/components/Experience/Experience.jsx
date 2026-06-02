@@ -23,7 +23,7 @@ const Experience = () => {
 
   return (
     <>
-      <h2 className="section-heading">Professional Experience</h2>
+      <h2 className="section-heading">Experience</h2>
       <div className="timeline">
         {experiences.map((exp, index) => {
           const hasMore = exp.details.length > 2;
@@ -33,13 +33,6 @@ const Experience = () => {
 
           return (
             <div className="timeline-item" key={index}>
-              {/* Timeline Dot */}
-              <div className="timeline-dot-wrapper">
-                <div className="timeline-dot">
-                  <FiBriefcase />
-                </div>
-              </div>
-
               {/* Experience Card */}
               <div className="timeline-content">
                 <div className="experience-header">

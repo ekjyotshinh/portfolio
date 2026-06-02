@@ -563,3 +563,18 @@ html {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ═══════════════════════════════════════════
+   Active Section Highlights
+   ═══════════════════════════════════════════ */
+.active-section .section-heading {
+  color: var(--accent-primary);
+  transition: color var(--duration-normal) var(--ease-smooth);
+}
+
+.active-section .section-heading::after {
+  background: var(--accent-primary);
+  width: 100px;
+  transition: width var(--duration-normal) var(--ease-smooth),
+              background var(--duration-normal) var(--ease-smooth);
+}

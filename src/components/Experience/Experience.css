@@ -11,64 +11,22 @@
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
-  padding: var(--spacing-xl) 0;
-}
-
-/* Center Line */
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 30px;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--gradient-primary);
-  border-radius: var(--radius-full);
-  opacity: 0.3;
-  animation: timeline-pulse 3s var(--ease-smooth) infinite;
+  padding: var(--spacing-md) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
 }
 
 /* Timeline Item */
 .timeline-item {
   position: relative;
-  padding-left: 80px;
-  padding-bottom: var(--spacing-3xl);
-  display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-lg);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--glass-border-subtle);
 }
 
 .timeline-item:last-child {
   padding-bottom: 0;
-}
-
-/* Timeline Dot Wrapper */
-.timeline-dot-wrapper {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 2;
-}
-
-/* Timeline Dot */
-.timeline-dot {
-  width: 60px;
-  height: 60px;
-  background: var(--gradient-primary);
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: var(--shadow-md);
-  cursor: default;
-  transition: none;
-  position: relative;
-}
-
-.timeline-dot svg {
-  width: 24px;
-  height: 24px;
+  border-bottom: none;
 }
 
 /* ═══════════════════════════════════════════
@@ -95,7 +53,7 @@
 
 .timeline-content h3 {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
-  color: var(--accent-primary);
+  color: var(--text-primary);
   margin: 0 0 var(--spacing-xs) 0;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -164,32 +122,17 @@
    Responsive Design — 768px
    ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .timeline::before {
-    left: 20px;
-  }
-
   .timeline-item {
-    padding-left: 60px;
-    padding-bottom: var(--spacing-2xl);
-  }
-
-  .timeline-dot {
-    width: 40px;
-    height: 40px;
-  }
-
-  .timeline-dot svg {
-    width: 18px;
-    height: 18px;
+    padding-bottom: var(--spacing-lg);
   }
 
   .timeline-content {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-sm) 0;
   }
 
   .experience-header {
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
   }
 
   .timeline-content h3 {
@@ -219,24 +162,6 @@
    Responsive Design — 480px
    ═══════════════════════════════════════════ */
 @media (max-width: 480px) {
-  .timeline::before {
-    left: 15px;
-  }
-
-  .timeline-item {
-    padding-left: 50px;
-  }
-
-  .timeline-dot {
-    width: 30px;
-    height: 30px;
-  }
-
-  .timeline-dot svg {
-    width: 14px;
-    height: 14px;
-  }
-
   .timeline-content h3 {
     font-size: 1.1rem;
   }
@@ -258,33 +183,12 @@
     padding: var(--spacing-md) 0;
   }
 
-  .timeline::before {
-    left: 12px;
-    width: 2px;
-  }
-
   .timeline-item {
-    padding-left: 38px;
-    padding-bottom: var(--spacing-xl);
-    gap: var(--spacing-sm);
-  }
-
-  .timeline-dot {
-    width: 24px;
-    height: 24px;
-  }
-
-  .timeline-dot svg {
-    width: 12px;
-    height: 12px;
+    padding-bottom: var(--spacing-md);
   }
 
   .timeline-content {
-    padding: var(--spacing-md);
-  }
-
-  .timeline-content::before {
-    width: 3px;
+    padding: var(--spacing-xs) 0;
   }
 
   .experience-header {

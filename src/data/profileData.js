@@ -1,6 +1,6 @@
 export const experiences = [
   {
-    role: "Software Developer (Full-Stack)",
+    role: "Full Stack Software Engineer",
     company: "Office of Water Programs",
     date: "Feb 2024 – Present",
     details: [
@@ -13,7 +13,7 @@ export const experiences = [
     ],
   },
   {
-    role: "Research Assistant (Algorithmic Research)",
+    role: "Research Assistant",
     company: "California State University, Sacramento",
     date: "Mar 2024 – Present",
     details: [

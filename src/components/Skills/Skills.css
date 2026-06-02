@@ -1,54 +1,54 @@
 .skills-layout {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--spacing-2xl);
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
   max-width: 1100px;
   margin: 0 auto;
-  align-items: stretch;
+  align-items: start;
+}
+
+.column-heading {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-xl) 0;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: var(--spacing-sm);
+  text-align: left;
 }
 
 /* ═══════════════════════════════════════════
-   Left Side: Skills Categories Grid
+   Left Side: Skills Categories
    ═══════════════════════════════════════════ */
-.skills-grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--spacing-md);
+.skills-categories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
 }
 
 .skills-category-card {
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-sm) 0;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   text-align: left;
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border-subtle);
 }
-
-
 
 .category-header {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  border-bottom: 1px solid var(--glass-border-subtle);
-  padding-bottom: var(--spacing-sm);
 }
 
-.category-icon {
-  font-size: 1.25rem;
-  color: var(--accent-primary);
-  display: flex;
-  align-items: center;
-}
-
-.category-header h3 {
+.category-header h4 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-primary);
+  letter-spacing: 0.02em;
 }
 
 .skills-list {
@@ -85,187 +85,141 @@
 }
 
 /* ═══════════════════════════════════════════
-   Right Side: GitHub Dashboard
+   Right Side: Credentials (Certifications & Honors)
    ═══════════════════════════════════════════ */
-.github-stats-container {
-  padding: var(--spacing-md) 0;
+.credentials-container {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
-  text-align: left;
-  height: 100%;
-  background: transparent;
-  border: none;
+  gap: var(--spacing-2xl);
 }
 
-
-
-.github-header {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  border-bottom: 1px solid var(--glass-border-subtle);
-  padding-bottom: var(--spacing-md);
-}
-
-.github-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: var(--radius-full);
-  border: 2px solid var(--glass-border);
-  box-shadow: var(--shadow-sm);
-}
-
-.github-header h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: var(--text-primary);
-  font-weight: 700;
-}
-
-.github-profile-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent-primary);
-  margin-top: 2px;
-}
-
-.github-profile-link:hover {
-  color: var(--accent-secondary);
-}
-
-.github-profile-link svg {
-  font-size: 0.75rem;
-}
-
-/* Custom Analytics Dashboard Content */
-.github-dashboard-content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xl);
-}
-
-.github-metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-md);
-}
-
-.metric-box {
-  padding: var(--spacing-sm) 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 4px;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--glass-border);
-}
-
-
-
-.metric-icon {
-  font-size: 1.25rem;
-  color: var(--accent-primary);
-}
-
-.metric-value {
-  font-size: 1.4rem;
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.metric-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-tertiary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.github-languages-section {
+.credentials-section-group {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
+  text-align: left;
 }
 
-.github-languages-section h4 {
-  margin: 0;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.languages-chart {
+.credentials-list {
   display: flex;
-  height: 10px;
-  border-radius: var(--radius-full);
-  overflow: hidden;
-  background-color: var(--glass-border-subtle);
+  flex-direction: column;
+  gap: var(--spacing-xs);
 }
 
-.lang-chart-segment {
-  height: 100%;
-  transition: transform var(--duration-normal) var(--ease-smooth);
-}
-
-.languages-legend {
-  list-style: none;
-  padding: 0;
-  margin: var(--spacing-xs) 0 0 0;
+.credential-item {
+  padding: var(--spacing-sm) var(--spacing-md);
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-md);
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  text-align: left;
+  border-bottom: 1px solid var(--glass-border-subtle);
+  text-decoration: none;
+  background: transparent;
+  transition: background-color var(--duration-normal) var(--ease-smooth);
 }
 
-.lang-legend-item {
+.credential-item:last-child {
+  border-bottom: none;
+}
+
+.credential-main {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
-  font-weight: 500;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs) var(--spacing-sm);
 }
 
-.legend-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  display: inline-block;
+.credential-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
-.legend-name {
+.credential-sep {
+  color: var(--text-tertiary);
+  font-weight: 300;
+}
+
+.credential-issuer {
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--text-secondary);
 }
 
-.legend-percentage {
+.credential-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 2px 0 0 0;
+  line-height: 1.5;
+}
+
+.credential-date {
+  font-size: 0.85rem;
   color: var(--text-tertiary);
-  font-weight: 600;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.credential-link-icon {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  margin-left: auto;
+  opacity: 0.6;
+  transition: opacity var(--duration-normal) var(--ease-smooth),
+              transform var(--duration-normal) var(--ease-smooth);
+}
+
+/* Hover effects for clickable credentials */
+.cert-link {
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+.cert-link:hover {
+  background-color: rgba(0, 0, 0, 0.015);
+}
+
+body.dark-mode .cert-link:hover {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+.cert-link:hover .credential-link-icon {
+  opacity: 1;
+  transform: translate(1px, -1px);
+  color: var(--accent-primary);
 }
 
 /* ═══════════════════════════════════════════
-   Responsive layouts
+   Responsive Layouts
    ═══════════════════════════════════════════ */
 @media (max-width: 992px) {
   .skills-layout {
     grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-2xl);
   }
 }
 
 @media (max-width: 480px) {
-  .skills-grid-container {
-    grid-template-columns: 1fr;
+  .skills-list {
+    gap: var(--spacing-xs) 0;
   }
   
-  .github-stats-container {
-    padding: var(--spacing-md);
+  .credential-item {
+    padding: var(--spacing-sm) 0;
+  }
+  
+  .credential-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  
+  .credential-sep {
+    display: none;
+  }
+  
+  .credential-link-icon {
+    margin-left: 0;
+    margin-top: 4px;
   }
 }

@@ -73,7 +73,6 @@ function Navbar({ activeSection, theme, toggleTheme }) {
             { id: "experience", label: "Experience" },
             { id: "projects", label: "Projects" },
             { id: "skills", label: "Skills" },
-            { id: "certifications", label: "Certifications" },
             { id: "contact", label: "Contact" },
           ].map((item) => (
             <li key={item.id}>
@@ -98,7 +97,6 @@ function Navbar({ activeSection, theme, toggleTheme }) {
           { id: "experience", label: "Experience" },
           { id: "projects", label: "Projects" },
           { id: "skills", label: "Skills" },
-          { id: "certifications", label: "Certifications" },
           { id: "contact", label: "Contact" },
         ].map((item) => (
           <li key={item.id}>

@@ -6,7 +6,6 @@ import SectionContainer from "./components/Layout/SectionContainer";
 import BottomNav from "./components/BottomNav/BottomNav";
 import Experience from "./components/Experience/Experience";
 import Projects from "./components/Projects/Projects";
-import Certifications from "./components/Certifications/Certifications";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import SideNav from "./components/SideNav/SideNav";
@@ -37,7 +36,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "experience", "projects", "skills", "certifications", "contact"];
+      const sections = ["home", "experience", "projects", "skills", "contact"];
       const scrollPosition = window.scrollY + 200; // Offset for navbar height/trigger threshold
 
       let currentSection = "home";
@@ -124,22 +123,19 @@ function App() {
 
       <Navbar theme={theme} toggleTheme={toggleTheme} activeSection={activeSection} />
       <SideNav activeSection={activeSection} />
-      <SectionContainer id="home">
+      <SectionContainer id="home" className={activeSection === "home" ? "active-section" : ""}>
         <Hero />
       </SectionContainer>
-      <SectionContainer id="experience" className="fade-section">
+      <SectionContainer id="experience" className={`fade-section ${activeSection === "experience" ? "active-section" : ""}`}>
         <Experience />
       </SectionContainer>
-      <SectionContainer id="projects" className="fade-section">
+      <SectionContainer id="projects" className={`fade-section ${activeSection === "projects" ? "active-section" : ""}`}>
         <Projects />
       </SectionContainer>
-      <SectionContainer id="skills" className="fade-section">
+      <SectionContainer id="skills" className={`fade-section ${activeSection === "skills" ? "active-section" : ""}`}>
         <Skills theme={theme} />
       </SectionContainer>
-      <SectionContainer id="certifications" className="fade-section">
-        <Certifications />
-      </SectionContainer>
-      <SectionContainer id="contact" className="fade-section">
+      <SectionContainer id="contact" className={`fade-section ${activeSection === "contact" ? "active-section" : ""}`}>
         <Contact />
       </SectionContainer>
       <Footer />

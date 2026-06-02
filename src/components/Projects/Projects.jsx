@@ -26,7 +26,7 @@ function Projects() {
 
   return (
     <div className="projects-section-container">
-      <h2 className="section-heading">Featured Projects</h2>
+      <h2 className="section-heading">Projects</h2>
 
       <div className="projects-split-layout">
         {/* Left Column: Projects List */}
