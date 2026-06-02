@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Experience.css";
 import { experiences } from "../../data/profileData";
-import { motion, AnimatePresence } from "framer-motion";
 import { FiBriefcase, FiCalendar, FiChevronDown } from "react-icons/fi";
 
 const Experience = () => {
@@ -22,31 +21,10 @@ const Experience = () => {
     }));
   };
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, x: -50 },
-    show: { opacity: 1, x: 0 },
-  };
-
   return (
     <>
       <h2 className="section-heading">Professional Experience</h2>
-      <motion.div
-        className="timeline"
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
-      >
+      <div className="timeline">
         {experiences.map((exp, index) => {
           const hasMore = exp.details.length > 2;
           const initialDetails = exp.details.slice(0, 2);
@@ -54,31 +32,16 @@ const Experience = () => {
           const isExpanded = !!expandedItems[index];
 
           return (
-            <motion.div
-              className="timeline-item"
-              key={index}
-              variants={item}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
+            <div className="timeline-item" key={index}>
               {/* Timeline Dot */}
               <div className="timeline-dot-wrapper">
-                <motion.div
-                  className="timeline-dot"
-                  whileHover={{ scale: 1.3 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
+                <div className="timeline-dot">
                   <FiBriefcase />
-                </motion.div>
+                </div>
               </div>
 
               {/* Experience Card */}
-              <motion.div
-                className="timeline-content"
-                whileHover={{
-                  y: -4,
-                  transition: { duration: 0.3 },
-                }}
-              >
+              <div className="timeline-content">
                 {/* Header */}
                 <div className="experience-header">
                   <div>
@@ -94,46 +57,27 @@ const Experience = () => {
                 {/* Details */}
                 <ul className="experience-details">
                   {initialDetails.map((point, i) => (
-                    <motion.li
-                      key={i}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1, duration: 0.5 }}
-                    >
+                    <li key={i}>
                       <span className="bullet">→</span>
                       <span>{point}</span>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
 
                 {/* Collapsible extra details */}
                 {hasMore && (
-                  <AnimatePresence initial={false}>
-                    {(!isMobile || isExpanded) && (
-                      <motion.div
-                        initial={isMobile ? { height: 0, opacity: 0 } : false}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        style={{ overflow: "hidden" }}
-                      >
-                        <ul className="experience-details extra-details" style={{ marginTop: "var(--spacing-md)" }}>
-                          {extraDetails.map((point, i) => (
-                            <motion.li
-                              key={i + 2}
-                              initial={{ opacity: 0, x: -20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: i * 0.05, duration: 0.4 }}
-                            >
-                              <span className="bullet">→</span>
-                              <span>{point}</span>
-                            </motion.li>
-                          ))}
-                        </ul>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  <div className={`collapsible-details ${(!isMobile || isExpanded) ? "expanded" : ""}`}>
+                    <div className="collapsible-inner">
+                      <ul className="experience-details extra-details">
+                        {extraDetails.map((point, i) => (
+                          <li key={i + 2}>
+                            <span className="bullet">→</span>
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 )}
 
                 {/* Show More Button */}
@@ -147,11 +91,11 @@ const Experience = () => {
                     <FiChevronDown style={{ transform: isExpanded ? "rotate(180deg)" : "none", transition: "transform 0.3s ease" }} />
                   </button>
                 )}
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           );
         })}
-      </motion.div>
+      </div>
     </>
   );
 };

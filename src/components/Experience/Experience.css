@@ -415,3 +415,22 @@ body.dark-mode .experience-toggle-btn:hover {
   transition: transform var(--duration-normal) var(--ease-smooth);
 }
 
+/* Collapsible Grid Details */
+.collapsible-details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s var(--ease-smooth), opacity 0.3s ease;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.collapsible-details.expanded {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: var(--spacing-md);
+}
+
+.collapsible-inner {
+  min-height: 0;
+}
+

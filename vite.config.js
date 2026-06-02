@@ -10,7 +10,6 @@ export default defineConfig({
       output: {
         // Split heavy dependencies into separate chunks for parallel loading
         manualChunks: {
-          'framer-motion': ['framer-motion'],
           'react-vendor': ['react', 'react-dom'],
         },
       },

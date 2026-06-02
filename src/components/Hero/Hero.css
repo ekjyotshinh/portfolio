@@ -434,3 +434,42 @@ body.dark-mode .scroll-indicator:hover {
 body.dark-mode .hero-social-link:hover {
   box-shadow: var(--shadow-lg), var(--shadow-glow-sm);
 }
+
+/* ═══════════════════════════════════════════
+   Entrance Animations
+   ═══════════════════════════════════════════ */
+.animate-hero-content {
+  animation: heroFadeInUp 0.8s var(--ease-smooth) both;
+}
+
+.animate-hero-greeting {
+  animation: heroFadeIn 0.6s var(--ease-smooth) 0.2s both;
+}
+
+.animate-hero-desc {
+  animation: heroFadeIn 0.8s var(--ease-smooth) 0.6s both;
+}
+
+.animate-hero-socials {
+  animation: heroFadeInUp 0.6s var(--ease-smooth) 1.2s both;
+}
+
+@keyframes heroFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

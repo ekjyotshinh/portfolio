@@ -1,7 +1,6 @@
 import { lazy, Suspense } from "react";
 import "./Hero.css";
 import { general } from "../../data/profileData";
-import { motion } from "framer-motion";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const TypeAnimation = lazy(() =>
@@ -23,94 +22,70 @@ function Hero() {
           <div className="shape shape-3" />
         </div>
 
-        <div className="hero-content">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            {/* Greeting with subtle animation */}
-            <motion.p
-              className="hero-greeting"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
+        <div className="hero-content animate-hero-content">
+          <p className="hero-greeting animate-hero-greeting">
+            Hey there 👋, I'm
+          </p>
+
+          {/* Animated Name with Gradient */}
+          <h1>
+            <span className="hero-name gradient-text">
+              {general.name}
+            </span>
+          </h1>
+
+          {/* Typing Animation for Role */}
+          <div className="hero-role">
+            <Suspense fallback={<span className="typing-text">Full Stack Developer</span>}>
+              <TypeAnimation
+                sequence={[
+                  "Full Stack Developer",
+                  2000,
+                  "Software Engineer",
+                  2000,
+                  "Problem Solver",
+                  2000,
+                  "Tech Enthusiast",
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                className="typing-text"
+              />
+            </Suspense>
+          </div>
+
+          {/* Description */}
+          <p className="hero-description animate-hero-desc">
+            I'm a Full Stack Developer with 2+ year of experience building
+            scalable applications. I graduated in May 2025 with a Bachelor's
+            in Computer Science from California State University. I'm also
+            interested in parallel programming and exploring efficient and
+            optimized solutions for complex problems.
+          </p>
+
+          {/* Social Links */}
+          <div className="hero-socials animate-hero-socials">
+            <a
+              href={general.github}
+              className="hero-social-link"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
             >
-              Hey there 👋, I'm
-            </motion.p>
-
-            {/* Animated Name with Gradient */}
-            <h1>
-              <span className="hero-name gradient-text">
-                {general.name}
-              </span>
-            </h1>
-
-            {/* Typing Animation for Role */}
-            <div className="hero-role">
-              <Suspense fallback={<span className="typing-text">Full Stack Developer</span>}>
-                <TypeAnimation
-                  sequence={[
-                    "Full Stack Developer",
-                    2000,
-                    "Software Engineer",
-                    2000,
-                    "Problem Solver",
-                    2000,
-                    "Tech Enthusiast",
-                    2000,
-                  ]}
-                  wrapper="span"
-                  speed={50}
-                  repeat={Infinity}
-                  className="typing-text"
-                />
-              </Suspense>
-            </div>
-
-            {/* Description */}
-            <motion.p
-              className="hero-description"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
+              <FaGithub />
+            </a>
+            <a
+              href={general.linkedin}
+              className="hero-social-link"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
             >
-              I'm a Full Stack Developer with 2+ year of experience building
-              scalable applications. I graduated in May 2025 with a Bachelor's
-              in Computer Science from California State University. I'm also
-              interested in parallel programming and exploring efficient and
-              optimized solutions for complex problems.
-            </motion.p>
-
-
-            {/* Social Links */}
-            <motion.div
-              className="hero-socials"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-            >
-              <a
-                href={general.github}
-                className="hero-social-link"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub"
-              >
-                <FaGithub />
-              </a>
-              <a
-                href={general.linkedin}
-                className="hero-social-link"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedinIn />
-              </a>
-
-            </motion.div>
-          </motion.div>
+              <FaLinkedinIn />
+            </a>
+          </div>
         </div>
 
         {/* Scroll Indicator */}

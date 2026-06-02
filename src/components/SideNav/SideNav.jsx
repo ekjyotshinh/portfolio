@@ -1,5 +1,4 @@
 import "./SideNav.css";
-import { motion } from "framer-motion";
 
 const sections = [
   { id: "home", label: "Home" },
@@ -18,12 +17,7 @@ export default function SideNav({ activeSection }) {
   };
 
   return (
-    <motion.div
-      className="side-nav-container"
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: 1, duration: 0.8 }}
-    >
+    <div className="side-nav-container">
       <div className="side-nav-line-top" />
       <div className="side-nav-items">
         {sections.map((section) => (
@@ -42,6 +36,6 @@ export default function SideNav({ activeSection }) {
         ))}
       </div>
       <div className="side-nav-line-bottom" />
-    </motion.div>
+    </div>
   );
 }

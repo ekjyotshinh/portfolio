@@ -243,6 +243,8 @@ body.dark-mode .project-card-compact.active {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .project-drawer {
@@ -262,6 +264,8 @@ body.dark-mode .project-card-compact.active {
   flex-direction: column;
   overflow: hidden;
   z-index: 10000;
+  transform: translateY(100%);
+  transition: transform 0.4s var(--ease-spring);
 }
 
 body.dark-mode .project-drawer {
@@ -374,5 +378,21 @@ body.dark-mode .project-drawer {
     z-index: 9999;
     flex-direction: column;
     justify-content: flex-end;
+    pointer-events: none;
+    transition: visibility 0.4s;
+    visibility: hidden;
+  }
+
+  .drawer-overlay-container.open {
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .drawer-overlay-container.open .drawer-backdrop {
+    opacity: 1;
+  }
+
+  .drawer-overlay-container.open .project-drawer {
+    transform: translateY(0);
   }
 }

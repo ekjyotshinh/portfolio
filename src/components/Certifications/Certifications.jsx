@@ -1,24 +1,8 @@
 import "./Certifications.css";
 import { certifications } from "../../data/profileData";
-import { motion } from "framer-motion";
 import { FiAward, FiExternalLink } from "react-icons/fi";
 
 const Certifications = () => {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, scale: 0.9 },
-    show: { opacity: 1, scale: 1 },
-  };
-
   // Badge colors for different issuers
   const getBadgeColor = (issuer) => {
     const colors = {
@@ -32,25 +16,14 @@ const Certifications = () => {
   return (
     <>
       <h2 className="section-heading">Certifications</h2>
-      <motion.div
-        className="cert-grid"
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
-      >
+      <div className="cert-grid">
         {certifications.map((cert, index) => (
-          <motion.a
+          <a
             href={cert.link}
             target="_blank"
             rel="noopener noreferrer"
             className="cert-card"
             key={index}
-            variants={item}
-            whileHover={{
-              y: -6,
-              transition: { duration: 0.3 },
-            }}
           >
             {/* Icon */}
             <div className="cert-icon">
@@ -75,9 +48,9 @@ const Certifications = () => {
             <div className="cert-link-icon">
               <FiExternalLink />
             </div>
-          </motion.a>
+          </a>
         ))}
-      </motion.div>
+      </div>
     </>
   );
 };

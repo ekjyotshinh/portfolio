@@ -2,17 +2,28 @@ import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.svg";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
-import { motion, useScroll, useTransform } from "framer-motion";
 
 function Navbar({ activeSection, theme, toggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
-  const { scrollY, scrollYProgress } = useScroll();
-  const clampedScrollY = useTransform(() => {
-    if (scrollY.get() === 0) return 0;
-    return scrollYProgress.get();
-  });
+  const [scrollWidth, setScrollWidth] = useState(0);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScroll <= 0) {
+        setScrollWidth(0);
+        return;
+      }
+      const percentage = (window.scrollY / totalScroll) * 100;
+      setScrollWidth(percentage);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -26,9 +37,9 @@ function Navbar({ activeSection, theme, toggleTheme }) {
     <>
       <nav className={`navbar glass ${isOpen ? "menu-open" : ""}`}>
         {/* Scroll Progress Bar */}
-        <motion.div
+        <div
           className="scroll-progress"
-          style={{ scaleX: clampedScrollY }}
+          style={{ width: `${scrollWidth}%` }}
         />
 
         <div className="logo-container">
