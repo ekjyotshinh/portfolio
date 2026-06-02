@@ -1,6 +1,6 @@
 import "./Certifications.css";
-import { certifications } from "../../data/profileData";
-import { FiAward, FiExternalLink } from "react-icons/fi";
+import { certifications, achievements } from "../../data/profileData";
+import { FiAward, FiExternalLink, FiTrendingUp } from "react-icons/fi";
 
 const Certifications = () => {
   // Badge colors for different issuers
@@ -13,45 +13,66 @@ const Certifications = () => {
     return colors[issuer] || "hsl(210, 100%, 55%)";
   };
 
+  const credentials = [
+    ...certifications.map((cert) => ({ ...cert, isHonor: false })),
+    ...achievements.map((ach) => ({ ...ach, isHonor: true })),
+  ];
+
   return (
-    <>
-      <h2 className="section-heading">Certifications</h2>
+    <div className="credentials-section">
+      <h2 className="section-heading">Certifications & Honors</h2>
+
       <div className="cert-grid">
-        {certifications.map((cert, index) => (
-          <a
-            href={cert.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cert-card"
-            key={index}
-          >
-            {/* Icon */}
-            <div className="cert-icon">
-              <FiAward />
-            </div>
-
-            {/* Content */}
-            <div className="cert-content">
-              <h3>{cert.name}</h3>
-              <div
-                className="cert-issuer-badge"
-                style={{
-                  "--badge-color": getBadgeColor(cert.issuer),
-                }}
-              >
-                {cert.issuer}
+        {credentials.map((cred, index) => {
+          if (cred.isHonor) {
+            return (
+              <div className="cert-card honor-card featured-card" key={index}>
+                <div className="cert-icon honor-icon">
+                  <FiTrendingUp />
+                </div>
+                <div className="cert-content">
+                  <h3>{cred.title}</h3>
+                  <div className="cert-issuer-badge honor-badge">
+                    {cred.organization}
+                  </div>
+                  <p className="honor-desc">{cred.description}</p>
+                  {cred.date && <p className="cert-date">{cred.date}</p>}
+                </div>
               </div>
-              <p className="cert-date">{cert.date}</p>
-            </div>
+            );
+          }
 
-            {/* External Link Icon */}
-            <div className="cert-link-icon">
-              <FiExternalLink />
-            </div>
-          </a>
-        ))}
+          return (
+            <a
+              href={cred.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cert-card"
+              key={index}
+            >
+              <div className="cert-icon">
+                <FiAward />
+              </div>
+              <div className="cert-content">
+                <h3>{cred.name}</h3>
+                <div
+                  className="cert-issuer-badge"
+                  style={{
+                    "--badge-color": getBadgeColor(cred.issuer),
+                  }}
+                >
+                  {cred.issuer}
+                </div>
+                {cred.date && <p className="cert-date">{cred.date}</p>}
+              </div>
+              <div className="cert-link-icon">
+                <FiExternalLink />
+              </div>
+            </a>
+          );
+        })}
       </div>
-    </>
+    </div>
   );
 };
 

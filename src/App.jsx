@@ -10,6 +10,7 @@ import Certifications from "./components/Certifications/Certifications";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import SideNav from "./components/SideNav/SideNav";
+import Skills from "./components/Skills/Skills";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -36,7 +37,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "experience", "projects", "certifications", "contact"];
+      const sections = ["home", "experience", "projects", "skills", "certifications", "contact"];
       const scrollPosition = window.scrollY + 200; // Offset for navbar height/trigger threshold
 
       let currentSection = "home";
@@ -131,6 +132,9 @@ function App() {
       </SectionContainer>
       <SectionContainer id="projects" className="fade-section">
         <Projects />
+      </SectionContainer>
+      <SectionContainer id="skills" className="fade-section">
+        <Skills theme={theme} />
       </SectionContainer>
       <SectionContainer id="certifications" className="fade-section">
         <Certifications />

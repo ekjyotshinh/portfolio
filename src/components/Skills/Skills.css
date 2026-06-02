@@ -1,0 +1,299 @@
+.skills-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--spacing-2xl);
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* ═══════════════════════════════════════════
+   Left Side: Skills Categories Grid
+   ═══════════════════════════════════════════ */
+.skills-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.skills-category-card {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  text-align: left;
+  transition: all var(--duration-normal) var(--ease-smooth);
+  background: transparent;
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  border-bottom: 1px solid var(--glass-border-subtle);
+}
+
+.skills-category-card:hover {
+  background: rgba(0, 0, 0, 0.015);
+  border-color: var(--glass-border-subtle);
+  border-bottom-color: var(--glass-border-subtle);
+  transform: translateY(-2px);
+}
+
+body.dark-mode .skills-category-card:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  border-bottom: 1px solid var(--glass-border-subtle);
+  padding-bottom: var(--spacing-sm);
+}
+
+.category-icon {
+  font-size: 1.25rem;
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+}
+
+.category-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  background: var(--tech-bg);
+  border: 1px solid var(--tech-border);
+  color: var(--tech-text);
+  padding: 4px 10px;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all var(--duration-normal) var(--ease-spring);
+  cursor: default;
+}
+
+.skill-tag:hover {
+  background: var(--accent-primary);
+  color: #fff;
+  border-color: transparent;
+  transform: scale(1.08) translateY(-1px);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+/* ═══════════════════════════════════════════
+   Right Side: GitHub Dashboard
+   ═══════════════════════════════════════════ */
+.github-stats-container {
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  text-align: left;
+  height: 100%;
+  background: transparent;
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  border-left: 3px solid var(--glass-border-subtle);
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.github-stats-container:hover {
+  background: rgba(0, 0, 0, 0.015);
+  border-color: var(--glass-border-subtle);
+  border-left-color: var(--accent-primary);
+}
+
+body.dark-mode .github-stats-container:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.github-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  border-bottom: 1px solid var(--glass-border-subtle);
+  padding-bottom: var(--spacing-md);
+}
+
+.github-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.github-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.github-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  margin-top: 2px;
+}
+
+.github-profile-link:hover {
+  color: var(--accent-secondary);
+}
+
+.github-profile-link svg {
+  font-size: 0.75rem;
+}
+
+/* Custom Analytics Dashboard Content */
+.github-dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.github-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.metric-box {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 4px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid var(--glass-border-subtle);
+  transition: all var(--duration-normal) var(--ease-spring);
+}
+
+.metric-box:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+  background: rgba(0, 0, 0, 0.015);
+  box-shadow: none;
+}
+
+body.dark-mode .metric-box:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.metric-icon {
+  font-size: 1.25rem;
+  color: var(--accent-primary);
+}
+
+.metric-value {
+  font-size: 1.4rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.github-languages-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.github-languages-section h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.languages-chart {
+  display: flex;
+  height: 10px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background-color: var(--glass-border-subtle);
+}
+
+.lang-chart-segment {
+  height: 100%;
+  transition: transform var(--duration-normal) var(--ease-smooth);
+}
+
+.languages-legend {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-xs) 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.lang-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-name {
+  color: var(--text-secondary);
+}
+
+.legend-percentage {
+  color: var(--text-tertiary);
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════
+   Responsive layouts
+   ═══════════════════════════════════════════ */
+@media (max-width: 992px) {
+  .skills-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .github-stats-container {
+    padding: var(--spacing-md);
+  }
+}

@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import "./BottomNav.css";
-import { FiHome, FiBriefcase, FiCode, FiAward, FiMail } from "react-icons/fi";
+import { FiHome, FiBriefcase, FiCode, FiCpu, FiAward, FiMail } from "react-icons/fi";
 
 const tabs = [
   { id: "home", label: "Home", icon: <FiHome /> },
   { id: "experience", label: "Experience", icon: <FiBriefcase /> },
   { id: "projects", label: "Projects", icon: <FiCode /> },
+  { id: "skills", label: "Skills", icon: <FiCpu /> },
   { id: "certifications", label: "Certs", icon: <FiAward /> },
   { id: "contact", label: "Contact", icon: <FiMail /> },
 ];

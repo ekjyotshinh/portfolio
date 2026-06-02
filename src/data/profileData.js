@@ -117,3 +117,34 @@ export const general = {
   linkedin: "https://linkedin.com/in/ekjyotshinh",
   github: "https://github.com/ekjyotshinh",
 };
+
+export const skills = {
+  languages: ["Python", "JavaScript", "Go", "PHP", "Java", "C++", "CUDA"],
+  databases: ["MySQL", "MSSQL", "Firestore", "Redis"],
+  webTech: ["React", "React Native", "Node.js", "Gin", "Docker", "REST APIs", "gRPC"],
+  tools: ["Git", "VS Code", "Figma", "Postman", "Swagger", "Jira"],
+};
+
+export const achievements = [
+  {
+    title: "Graduated Summa Cum Laude",
+    organization: "California State University, Sacramento",
+    description: "Recognized on the Dean's Honor List for all academic semesters.",
+  },
+];
+
+export const githubStats = {
+  stars: 8,
+  commits: "850+",
+  prs: "40+",
+  repos: 18,
+  languages: [
+    { name: "Python", percentage: 25, color: "hsl(210, 100%, 55%)" },
+    { name: "TypeScript", percentage: 15, color: "hsl(200, 100%, 40%)" },
+    { name: "Go", percentage: 15, color: "hsl(180, 100%, 40%)" },
+    { name: "Java", percentage: 15, color: "hsl(15, 95%, 45%)" },
+    { name: "JavaScript", percentage: 10, color: "hsl(45, 100%, 50%)" },
+    { name: "CUDA", percentage: 5, color: "hsl(90, 85%, 40%)" },
+    { name: "Others", percentage: 15, color: "hsl(220, 10%, 60%)" }
+  ]
+};
