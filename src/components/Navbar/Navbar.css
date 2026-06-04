@@ -229,6 +229,7 @@
   .navbar {
     padding: 0 var(--spacing-md);
     margin: 8px 12px 0;
+    width: calc(100% - 24px);
   }
 
   .nav-links {

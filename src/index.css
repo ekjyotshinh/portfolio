@@ -188,6 +188,11 @@ body.dark-mode {
 /* ═══════════════════════════════════════════
    Base Typography
    ═══════════════════════════════════════════ */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -200,7 +205,6 @@ body {
   background-attachment: fixed;
   color: var(--text-primary);
   position: relative;
-  overflow-x: hidden;
 }
 
 /* Add padding for fixed bottom nav on mobile */
@@ -208,15 +212,6 @@ body {
   body {
     padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
   }
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: var(--mesh-bg);
-  z-index: 0;
-  pointer-events: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
