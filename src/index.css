@@ -17,35 +17,35 @@ html {
   color-scheme: light dark;
 
   /* ═══════════════════════════════════════════
-     Natural, Organic Palette - Styled around the logo gradient
+     Catppuccin Latte (Light Mode) Palette
      ═══════════════════════════════════════════ */
   /* Light Mode Colors */
-  --background: #fbfbfa;
-  --background-solid: #fbfbfa;
+  --background: #eff1f5;         /* Base */
+  --background-solid: #e6e9ef;   /* Mantle */
   
-  --text-primary: #1c1c1e;
-  --text-secondary: #5c5c5e;
-  --text-tertiary: #8e8e93;
+  --text-primary: #4c4f69;       /* Text */
+  --text-secondary: #5c5f77;     /* Subtext1 */
+  --text-tertiary: #6c6f85;      /* Subtext0 */
   
-  /* Logo-inspired Accents */
-  --accent-primary: #6c3ce9;     /* Legible Royal Indigo */
-  --accent-secondary: #4988f5;   /* Legible Sky Blue */
-  --accent-tertiary: #8f3fff;    /* Logo Purple Stop */
-  --accent-glow: rgba(108, 60, 233, 0.08);
+  /* Catppuccin Accents */
+  --accent-primary: #8839ef;     /* Mauve */
+  --accent-secondary: #209fb5;   /* Sapphire */
+  --accent-tertiary: #7287fd;    /* Lavender */
+  --accent-glow: rgba(136, 57, 239, 0.08);
   
   /* Success/Warning/Error */
-  --success: #3f5241;
-  --warning: #b08a55;
-  --error: #9e4747;
+  --success: #40a02b;            /* Green */
+  --warning: #df8e1d;            /* Yellow */
+  --error: #d20f39;              /* Red */
   
   /* ═══════════════════════════════════════════
-     Organic Separation System (Fine lines, no neon)
+     Glass System (Catppuccin)
      ═══════════════════════════════════════════ */
-  --glass-bg: #ffffff;
-  --glass-bg-light: rgba(255, 255, 255, 0.6);
-  --glass-bg-heavy: #ffffff;
-  --glass-border: rgba(0, 0, 0, 0.06);
-  --glass-border-subtle: rgba(0, 0, 0, 0.03);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg-light: rgba(255, 255, 255, 0.5);
+  --glass-bg-heavy: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(124, 127, 147, 0.15); /* Overlay2 */
+  --glass-border-subtle: rgba(124, 127, 147, 0.08);
   --glass-tint: transparent;
   --glass-shadow: rgba(0, 0, 0, 0.03);
   
@@ -69,12 +69,12 @@ html {
   --shadow-glow-sm: none;
   
   /* ═══════════════════════════════════════════
-     Muted Logo Gradients
+     Catppuccin Gradients
      ═══════════════════════════════════════════ */
-  --gradient-primary: linear-gradient(135deg, #8f3fff 0%, #5f9fff 100%);
-  --gradient-accent: linear-gradient(135deg, #5f9fff 0%, #8f3fff 100%);
-  --gradient-vibrant: linear-gradient(135deg, #8f3fff 0%, #5f9fff 100%);
-  --gradient-glass: #ffffff;
+  --gradient-primary: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+  --gradient-vibrant: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  --gradient-glass: #eff1f5;
   --gradient-text: none;
   --gradient-section: transparent;
   
@@ -82,9 +82,9 @@ html {
   --mesh-bg: none;
   
   /* Tech Tag Colors */
-  --tech-bg: rgba(143, 63, 255, 0.04);
-  --tech-border: rgba(143, 63, 255, 0.08);
-  --tech-text: #6c3ce9;
+  --tech-bg: rgba(136, 57, 239, 0.06);
+  --tech-border: rgba(136, 57, 239, 0.12);
+  --tech-text: var(--accent-primary);
   
   /* ═══════════════════════════════════════════
      Spacing System
@@ -138,27 +138,32 @@ html {
 }
 
 /* ═══════════════════════════════════════════
-   Dark Mode Theme
+   Catppuccin Mocha (Dark Mode) Theme
    ═══════════════════════════════════════════ */
 body.dark-mode {
-  --background: #121213;
-  --background-solid: #121213;
+  --background: #1e1e2e;         /* Base */
+  --background-solid: #181825;   /* Mantle */
   
-  --text-primary: #f5f5f7;
-  --text-secondary: #a1a1a6;
-  --text-tertiary: #68686e;
+  --text-primary: #cdd6f4;       /* Text */
+  --text-secondary: #bac2de;     /* Subtext1 */
+  --text-tertiary: #a6adc8;      /* Subtext0 */
   
-  --accent-primary: #ad8cfc;     /* Soft Indigo/Purple */
-  --accent-secondary: #85b3ff;   /* Soft Sky Blue */
-  --accent-tertiary: #5f9fff;    /* Logo Blue Stop */
-  --accent-glow: rgba(173, 140, 252, 0.12);
+  --accent-primary: #cba6f7;     /* Mauve */
+  --accent-secondary: #74c7ec;   /* Sapphire */
+  --accent-tertiary: #b4befe;    /* Lavender */
+  --accent-glow: rgba(203, 166, 247, 0.12);
+  
+  /* Success/Warning/Error */
+  --success: #a6e3a1;            /* Green */
+  --warning: #f9e2af;            /* Yellow */
+  --error: #f38ba8;              /* Red */
   
   /* Dark Glass System */
-  --glass-bg: #1c1c1e;
-  --glass-bg-light: rgba(28, 28, 30, 0.7);
-  --glass-bg-heavy: #1c1c1e;
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-border-subtle: rgba(255, 255, 255, 0.04);
+  --glass-bg: rgba(30, 30, 46, 0.7);
+  --glass-bg-light: rgba(30, 30, 46, 0.5);
+  --glass-bg-heavy: rgba(30, 30, 46, 0.9);
+  --glass-border: rgba(147, 153, 178, 0.15); /* Overlay2 */
+  --glass-border-subtle: rgba(147, 153, 178, 0.08);
   --glass-tint: transparent;
   --glass-shadow: rgba(0, 0, 0, 0.2);
   
@@ -171,18 +176,18 @@ body.dark-mode {
   --shadow-2xl: 0 24px 48px rgba(0, 0, 0, 0.35);
   
   /* Dark Gradients */
-  --gradient-primary: linear-gradient(135deg, #8f3fff 0%, #5f9fff 100%);
-  --gradient-accent: linear-gradient(135deg, #5f9fff 0%, #8f3fff 100%);
-  --gradient-vibrant: linear-gradient(135deg, #8f3fff 0%, #5f9fff 100%);
-  --gradient-glass: #1c1c1e;
+  --gradient-primary: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+  --gradient-vibrant: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  --gradient-glass: #1e1e2e;
   --gradient-section: transparent;
   
   /* Dark Mesh Gradient - Disabled */
   --mesh-bg: none;
   
-  --tech-bg: rgba(143, 63, 255, 0.12);
-  --tech-border: rgba(143, 63, 255, 0.2);
-  --tech-text: #ad8cfc;
+  --tech-bg: rgba(203, 166, 247, 0.12);
+  --tech-border: rgba(203, 166, 247, 0.2);
+  --tech-text: var(--accent-primary);
 }
 
 /* ═══════════════════════════════════════════
